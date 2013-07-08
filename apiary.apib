@@ -1,11 +1,65 @@
-HOST: http://www.google.ca/
+HOST: http://mal-api.com/
+      
+--- MyAnimeList Unofficial API Documentation ---
+---
+This unofficial API is a supplement to the official API. The main reasons I'm working on this are:
 
---- Refactor of MyAnimeList Unofficial API Documentation ---
+* development of the official API has been rather slow,
+* to focus on the more commonly used features on MyAnimeList.net
+* to provide a developer-friendly API following HTTP REST principles.
 ---
-This is a refactor of the Unofficial MyAnimeList API. I am attempting to restructure the
-application using a different framework (Padrino), modularize each piece of the api, and
-have a well defined test suite.
----
+
+-- Anime --
+
+Fetch an anime with the given anime id
+GET /anime/{anime_id}
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+Search for anime matching a query.
+GET /anime/search
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+Search the top ranking anime.
+GET /anime/top
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+Search the most popular anime.
+GET /anime/popular
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+Fetch the upcoming anime.
+GET /anime/upcoming
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+Search anime that have just been added to the MyAnimeList database.
+GET /anime/just_added
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+-- Manga --
+
+Fetch a manga with the given manga id
+GET /manga/{manga_id}
+> Accept: application/json
+< 200
+< Content-Type: application/json
+
+Search for manga matching a query.
+GET /manga/search
+> Accept: application/json
+< 200
+< Content-Type: application/json
 
 -- User --
 
@@ -17,6 +71,18 @@ Fetch a users anime list.
 GET /animelist/{username}
 < 200
 
+Adds an anime to your anime list.
+POST /animelist/anime
+< 200
+
+Update an anime on your anime list.
+PUT /animelist/anime/{anime_id}
+< 200
+
+Removes an anime on your anime list.
+DELETE /animelist/anime/{anime_id}
+< 200
+
 Fetch a users manga list.
 GET /mangalist/{username}
 < 200
@@ -24,3 +90,11 @@ GET /mangalist/{username}
 Fetch a users anime and manga history.
 GET /history/username
 < 200
+
+-- Account --
+
+Test whether supplied user credentials are valid.
+GET /account/verify_credentials
+> Accept: application/json
+< 200
+< Content-Type: application/json
