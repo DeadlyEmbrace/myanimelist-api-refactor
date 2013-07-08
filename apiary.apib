@@ -1,0 +1,26 @@
+HOST: http://www.google.ca/
+
+--- Refactor of MyAnimeList Unofficial API Documentation ---
+---
+This is a refactor of the Unofficial MyAnimeList API. I am attempting to restructure the
+application using a different framework (Padrino), modularize each piece of the api, and
+have a well defined test suite.
+---
+
+-- User --
+
+Fetch a users MyAnimeList profile.
+GET /profile/{username}
+< 200
+
+Fetch a users anime list.
+GET /animelist/{username}
+< 200
+
+Fetch a users manga list.
+GET /mangalist/{username}
+< 200
+
+Fetch a users anime and manga history.
+GET /history/username
+< 200

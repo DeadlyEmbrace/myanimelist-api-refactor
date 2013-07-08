@@ -2,15 +2,23 @@
 *.rbc
 .bundle
 .config
+.DS_Store
+.idea
+.sass-cache/*
+bin/*
 coverage
+db/*.db
 InstalledFiles
 lib/bundler/man
+log/**/*
 pkg
 rdoc
 spec/reports
 test/tmp
 test/version_tmp
 tmp
+vendor/gems/*
+!vendor/gems/cache/
 
 # YARD artifacts
 .yardoc

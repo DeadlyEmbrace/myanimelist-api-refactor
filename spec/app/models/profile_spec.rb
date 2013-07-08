@@ -1,0 +1,2 @@
+describe Profile do
+end
