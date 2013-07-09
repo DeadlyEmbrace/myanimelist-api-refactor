@@ -12,7 +12,11 @@ class ProfileScraper
       page_content = profile_page.at('#content')
       left_profile_content = page_content.at('.profile_leftcell')
       main_profile_content = page_content.at('#horiznav_nav').next_element
-      details, updates, anime_stats, manga_stats = main_profile_content.search('> table table')
+
+      details = main_profile_content.at('div.normal_header:contains("Details")').next_element
+      updates = main_profile_content.at('div.normal_header:contains("Last List Updates")').next_element
+      anime_stats = main_profile_content.at('h2:contains("Anime Stats")').next_element
+      manga_stats = main_profile_content.at('h2:contains("Manga Stats")').next_element
 
       profile.avatar_url = left_profile_content.at("#profileRows").previous_element.at('img')['src']
       profile.details = scrape_details(profile.details, details)
