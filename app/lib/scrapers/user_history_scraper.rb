@@ -1,12 +1,12 @@
 class UserHistoryScraper
   def scrape(html)
-    history_page = Nokogiri::HTML(html)
     invalid_user = html =~ /Invalid member/i
     history = nil
 
     unless invalid_user
       history = []
 
+      history_page = Nokogiri::HTML(html)
       history_page.search('div#content table tr').each do |tr|
         cells = tr.search('td')
         next unless cells && cells.size == 2

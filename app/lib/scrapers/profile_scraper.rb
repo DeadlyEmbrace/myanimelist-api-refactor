@@ -1,14 +1,13 @@
 class ProfileScraper
 
   def scrape(html)
-    profile_page = Nokogiri::HTML(html)
     invalid_user = html =~ /Invalid user/i
-
     profile = nil
 
     unless invalid_user
       profile = Profile.new
 
+      profile_page = Nokogiri::HTML(html)
       page_content = profile_page.at('#content')
       left_profile_content = page_content.at('.profile_leftcell')
       main_profile_content = page_content.at('#horiznav_nav').next_element
