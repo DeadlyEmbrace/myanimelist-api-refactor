@@ -9,6 +9,7 @@ GEM
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
     atomic (1.1.10)
+    chronic (0.9.1)
     crack (0.4.0)
       safe_yaml (~> 0.9.0)
     daemons (1.1.9)
@@ -103,6 +104,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  chronic (= 0.9.1)
   httparty (= 0.11.0)
   nokogiri (= 1.6.0)
   padrino (= 0.11.2)

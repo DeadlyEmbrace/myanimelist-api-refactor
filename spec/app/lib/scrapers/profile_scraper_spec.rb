@@ -1,5 +1,5 @@
 describe ProfileScraper do
-  before(:each) do
+  before :each do
     @profile_scraper = ProfileScraper.new
   end
 
@@ -14,7 +14,7 @@ describe ProfileScraper do
   end
 
   describe 'complete profile' do
-    before(:each) do
+    before :each  do
       VCR.use_cassette('profile/valid_profile') do
         response = HTTParty.get('http://myanimelist.net/profile/astraldragon88')
         @profile = @profile_scraper.scrape(response.body)
@@ -45,7 +45,7 @@ describe ProfileScraper do
   end
 
   describe 'partial profile' do
-    before(:each) do
+    before :each do
       VCR.use_cassette('profile/partial_profile') do
         response = HTTParty.get('http://myanimelist.net/profile/partial_profile')
         @profile = @profile_scraper.scrape(response.body)

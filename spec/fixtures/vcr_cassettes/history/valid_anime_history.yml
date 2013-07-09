@@ -1,0 +1,170 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/history/astraldragon88/anime
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 Jul 2013 13:26:02 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app2v-mal.ao.prd.lax
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html>\n<head>\n\t<title>astraldragon88's
+        History - MyAnimeList.net</title>\n    <meta name=\"Description\" content=\"Start
+        cataloging anime you've watched or manga you've read. Browse through our extensive
+        anime and manga database. Get anime or manga suggestions, recommendations
+        and reviews. View top rated anime and manga. Create anime and manga favorites.
+        Tons more too!\" />\n    <meta name=\"Keywords\" content=\"anime, animelist,
+        myanimelist, anime list, log anime seen, catalog anime watched, anime reviews,
+        top anime, anime characters, favorite anime, anime discussion, anime information,
+        manga series, manga information, top manga, mangalist, manga list, manga,
+        manga reviews, voice actors, seiyuu\" />\n    <meta name=\"Author\" content=\"Garrett
+        Gyssler\">\n\t\n\t\t<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js\"></script>\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/hover.v5.js\"></script>\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/jquery.fancybox.pack.v1.js\"></script>\n\t\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/fav.js\"></script>\n\t\t\n\t\t\t\t<link
+        rel=\"stylesheet\" href=\"http://cdn.myanimelist.net/css/myanimelist.v44.css\"
+        type=\"text/css\" />\n\t\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/mal.ridlayout.css\"
+        />\n\t<script type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/myanimelist.v18.js\"></script>\n\t<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/jquery.fancybox.v3.css\"
+        />\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/dialog.v1.css\"
+        />\n\t<link rel=\"search\" type=\"application/opensearchdescription+xml\"
+        href=\"http://cdn.myanimelist.net/plugins/myanimelist.xml\" title=\"MyAnimeList\"
+        />\n\t\n\t<link rel=\"shortcut icon\" href=\"http://cdn.myanimelist.net/images/faviconv5.ico\"
+        />\n\n\t<!-- BEGIN TRIGGER TAG INITIALIZATION -->\n\t<script type=\"text/javascript\"
+        src=\"http://cdn.triggertag.gorillanation.com/js/triggertag.js\"></script>\n\t<script
+        type=\"text/javascript\">getTrigger('4834');</script>\n\t<!-- END TRIGGER
+        TAG INITIALIZATION -->\n\t<!-- GAM HEADER SCRIPT -->\n\t\t<script type=\"text/javascript\"
+        src=\"http://partner.googleadservices.com/gampad/google_service.js\">\n\t\t</script>\n\t\t<script
+        type=\"text/javascript\">\n\t\tGS_googleAddAdSenseService(\"ca-pub-1304704158939332\");\n\t\tGS_googleEnableAllServices();\n\t\t</script>\n\t\t<script
+        type=\"text/javascript\">\n\t\tGA_googleUseIframeRendering();\n\t\t</script>\n\t<!--
+        END OF GAM HEADER SCRIPT -->\n\n\t<script type=\"text/javascript\">\n\n  var
+        _gaq = _gaq || [];\n  _gaq.push(['_setAccount', 'UA-369102-1']);\n  _gaq.push(['_trackPageview']);\n\n
+        \ (function() {\n    var ga = document.createElement('script'); ga.type =
+        'text/javascript'; ga.async = true;\n    ga.src = ('https:' == document.location.protocol
+        ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n    var
+        s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\n  })();\n\n</script>\n</head>\n\n<body onload=\"\">\n<div id=\"myanimelist\">\n\n\n\t<div
+        id=\"headerSmall\">\n\t\t<a href=\"/\">MyAnimeList.net</a>\n\t</div>\n\t\n<div
+        id=\"menu\">\n    \n    <div id=\"menu_right\">\n    \t\n        <div id=\"searchBar\">\n\n
+        \       <input type=\"text\" class=\"inputtext\" id=\"topSearchText\" value=\"Search\"
+        onkeydown=\"return ts_checkEnter(event);\" size=\"30\" /> \n        <select
+        id=\"topSearchValue\" class=\"inputtext\" onchange=\"ts_selection();\">\n
+        \       <option value=\"0\">Anime</option>\n        <option value=\"1\">Manga</option>\n
+        \       <option value=\"2\">Characters</option>\n        <option value=\"6\">People</option>\n
+        \       <option value=\"3\">Fansub Groups</option>\n        <option value=\"4\">Clubs</option>\n
+        \       <option value=\"5\">Users</option>\n        </select>\n        \n
+        \       <input type=\"image\" src=\"http://cdn.myanimelist.net/images/magnify.gif\"
+        value=\"Search\" onclick=\"ts_subSearch(5);\" />\n        \n        </div>\n
+        \       \n\t</div>\n\t\n\t<div id=\"menu_left\">\n\t\t<ul id=\"nav\">\n\t\t\t\t\t\t<li
+        class=\"small\"><a href=\"/anime.php\">Anime</a>\n\t\t\t\t<ul class=\"wider\">\n\t\t\t\t\t\t\t\t\t\t<li><a
+        href=\"/reviews.php?t=anime\">Reviews</a></li>\n\t\t\t\t\t<li><a href=\"/recommendations.php?s=recentrecs&t=anime\">Recommendations</a></li>\n\t\t\t\t\t<li><a
+        href=\"/topanime.php\">Top Anime</a></li>\n\t\t\t\t\t<li><a href=\"/fansub-groups.php\">Fansub
+        Groups</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"small\"><a
+        href=\"/manga.php\">Manga</a>\n\t\t\t\t<ul class=\"wider\">\n\t\t\t\t\t\t\t\t\t\t<li><a
+        href=\"/reviews.php?t=manga\">Reviews</a></li>\n\t\t\t\t\t<li><a href=\"/recommendations.php?s=recentrecs&t=manga\">Recommendations</a></li>\n\t\t\t\t\t<li><a
+        href=\"/topmanga.php\">Top Manga</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li><a
+        href=\"#\">Community</a>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"/forum/\">Forums</a></li>\n\t\t\t\t\t<li><a
+        href=\"/clubs.php\">Clubs</a></li>\n\t\t\t\t\t<li><a href=\"/blog.php\">Blogs</a></li>\n\t\t\t\t\t<li><a
+        href=\"/users.php\">Users</a></li>\n\t\t\t\t\t<li><a href=\"/about.php?go=team\">Staff</a></li>\n\t\t\t\t\t<li><a
+        href=\"/about.php?go=support\">Help</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li
+        class=\"medium\"><a href=\"#\">Industry</a>\n\t\t\t\t<ul class=\"wide\">\n\t\t\t\t\t<li><a
+        href=\"/people.php\">People</a></li>\n\t\t\t\t\t<li><a href=\"/character.php\">Characters</a></li>\n\t\t\t\t\t<li><a
+        href=\"/news.php\">News</a></li>\n\t\t\t\t\t<li><a href=\"/favorites.php\">Top
+        Favorites</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t\n\t\t\t<li class=\"tiny\"><a
+        href=\"/register.php\">Join</a></li>\n\t\t\t<li class=\"smaller\"><a href=\"/ajaxtb.php?login\"
+        id=\"malLogin\">Login</a></li>\n\t\t\t\t\t\t</ul>\n\t</div>\n</div>\n\n<div
+        id=\"contentWrapper\">\n\n\t<div id=\"roadblock\">\r\n\t\t\t\t<div class=\"ad230\">\r\n\t\t\t\t\t\t<script
+        type=\"text/javascript\">\r\n\t\t\t\t\t\tif ((typeof(f325922)=='undefined'
+        || f325922 > 0) ) {\r\n\t\t\t\t\t\tif(typeof(gnm_ord)=='undefined') gnm_ord=Math.random()*10000000000000000;
+        if(typeof(gnm_tile) == 'undefined') gnm_tile=1;\r\n\t\t\t\t\t\tdocument.write('<scr'+'ipt
+        src=\"http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=230x90,963x90;tile='+(gnm_tile++)+';ord='+gnm_ord+'?\"
+        type=\"text/javascript\"></scr'+'ipt>');\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\tGA_googleFillSlotWithSize(\"ca-pub-1304704158939332\",
+        \"myanimelist_ros_230x90\", 230, 90);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t</script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"ad728\">\r\n\t\t\t\t\t\t<!-- 728x90 -->\r\n\t\t\t\t\t\t<script type=\"text/javascript\">\r\n\t\t\t\t\t\t
+        \ if (typeof(gnm_ord)=='undefined' || (typeof(ad963_enabled)!= 'undefined'
+        && ad963_enabled == false)) gnm_ord=Math.random()*10000000000000000;\r\n\t\t\t\t\t\t
+        \ if (typeof(gnm_tile) == 'undefined') gnm_tile=1;\r\n\t\t\t\t\t\t  document.write('<scr'+'ipt
+        src=\"http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=728x90,970x90;dga=;dgg=;tile='+(gnm_tile++)+';ord='
+        + gnm_ord + ';?\" type=\"text/javascript\"></scr' + 'ipt>');\r\n\t\t\t\t\t\t</script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t</div>\n\t<h1><div
+        style=\"float: right; font-weight: normal;\"><a href=\"http://myanimelist.net/profile/astraldragon88\">Back
+        to astraldragon88's Profile</a></div>\n\t\t\tastraldragon88's History</h1>\n\t<div
+        id=\"content\">\n\t\n\t<div id=\"horiznav_nav\" style=\"margin-bottom: 15px;\">\n\t\t\t<ul>\n\t\t\t<li><a
+        \ href=\"http://myanimelist.net/history/astraldragon88\">All History</a></li>\n\t\t\t<li><a
+        href=\"http://myanimelist.net/history/astraldragon88/anime\" class=\"horiznav_active\">Anime
+        History</a></li>\n\t\t\t<li><a href=\"http://myanimelist.net/history/astraldragon88/manga\"
+        >Manga History</a></li>\n\t\t\t</ul>\n\t</div>\n\t<div style=\"padding: 0
+        15px 10px 15px;\">\n\t\t<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\"
+        width=\"100%\">\n\t\t\n\t\t\t\t<tr>\n\t\t\t\t\t<td colspan=\"2\">\n\t\t\t\t\t<div
+        class=\"normal_header\">Two Weeks Ago <span style=\"font-weight: normal;\"><small>(1)</small></span></div>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td
+        class=\"borderClass\" ><a href=\"http://myanimelist.net/anime.php?id=11757\">Sword
+        Art Online</a> ep. <strong>8</strong></td>\n\t\t\t\t\t\t<td class=\"borderClass\"
+        \ align=\"right\"> 06-28-13, 3:24 PM</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t\n\t\t\t\t<tr>\n\t\t\t\t\t<td
+        colspan=\"2\">&nbsp;</td>\n\t\t\t\t</tr>\n\t\t\t\t\n\t\t\t\t<tr>\n\t\t\t\t\t<td
+        colspan=\"2\">\n\t\t\t\t\t<div class=\"normal_header\">Three Weeks Ago <span
+        style=\"font-weight: normal;\"><small>(2)</small></span></div>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td
+        class=\"borderClass\" ><a href=\"http://myanimelist.net/anime.php?id=11757\">Sword
+        Art Online</a> ep. <strong>2</strong></td>\n\t\t\t\t\t\t<td class=\"borderClass\"
+        \ align=\"right\"> 06-20-13, 3:04 AM</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td
+        class=\"borderClass\" style=\"border-width: 1px 0;\"><a href=\"http://myanimelist.net/anime.php?id=11757\">Sword
+        Art Online</a> ep. <strong>1</strong></td>\n\t\t\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 1px 0;\" align=\"right\"> 06-19-13, 4:49 PM</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t\n\t\t\t\t<tr>\n\t\t\t\t\t<td
+        colspan=\"2\">&nbsp;</td>\n\t\t\t\t</tr>\n\t\t\t\t\n\t\t</table></div>\n<script
+        type='text/javascript'>\n$(document).ready(function() {\n\t$('.lightbox').fancybox({\n\t\t'width'\t\t\t\t:
+        400,\n\t\t'height'\t\t\t\t: 425,\n        'hideOnContentClick' : false,\n
+        \   \t'hideOnOverlayClick' : true\n\t});\n});\n</script>\n\n</div>\n\n<div
+        id=\"rightcontentunder\">\n\n<a href=\"http://myanimelist.net/about.php?go=support\">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/modules.php?go=faq\">FAQ</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/about.php\">About</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/about.php?go=contact\">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://www.craveonline.com/termsofuse.php?site=www.MyAnimeList.net\"
+        target=\"_blank\">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a href=\"http://www.craveonline.com/privacy.php?site=www.MyAnimeList.net\"
+        target=\"_blank\">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a id=\"_bapw-link\"
+        href=\"#\" target=\"_blank\" style=\"\"><img id=\"_bapw-icon\" style=\"border:0
+        !important;display:inline !important;vertical-align:middle !important\"/>
+        <span style=\"vertical-align:middle !important\">AdChoices</span></a><script>/*<![CDATA[*/(function(){var
+        c=247,g=595,b=false,i=document,f=i.getElementById(\"_bapw-link\"),a=(i.location.protocol==\"https:\"?\"https\":\"http\"),h=(a==\"https\"?\"https://info.evidon.com/c/betrad/pub/\":\"http://cdn.betrad.com/pub/\");function
+        e(j){var d=new Image();d.src=a+\"://l.betrad.com/pub/p.gif?pid=\"+c+\"&ocid=\"+g+\"&i\"+j+\"=1&r=\"+Math.random()}i.getElementById(\"_bapw-icon\").src=h+\"icon1.png\";f.onmouseover=function(){if(/#$/.test(f.href)){f.href=\"http://info.evidon.com/pub_info/\"+c+\"?v=1\"}};f.onclick=function(){var
+        j=window._bap_p_overrides;function d(m,p){var n=i.getElementsByTagName(\"head\")[0]||i.documentElement,l=b,k=i.createElement(\"script\");function
+        o(){k.onload=k.onreadystatechange=null;n.removeChild(k);p()}k.src=m;k.onreadystatechange=function(){if(!l&&(this.readyState==\"loaded\"||this.readyState==\"complete\")){l=true;o()}};k.onload=o;n.insertBefore(k,n.firstChild)}if(j&&j.hasOwnProperty(c)){if(j[c].new_window){e(\"c\");return
+        true}}this.onclick=\"return \"+b;d(a+\"://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js\",function(){d(h+\"pub2.js\",function(){BAPW.i(f,{pid:c,ocid:g})})});return
+        b};e(\"i\")}());/*]]>*/</script>\n\t\n<div id=\"copyright\">\nMyAnimeList.net
+        is a property of <a href=\"http://www.craveonline.com\">CraveOnline</a>, LLC.
+        an <a href=\"http://www.evolvemediallc.com\">Evolve Media</a>, LLC company.
+        &copy;2013 All Rights Reserved. <div style=\"position: absolute; left: -999em\">monitoring_string
+        = \"1d62297d23059a80b6e7551767f2653f\"</div>\n</div>\n\n</div>\n\n</div>\n\n<!--
+        \ control container height -->\n<div style=\"clear:both;\"></div>\n\n<!--
+        end rightbody -->\n</div>\n\n\n</div>\n<!-- Begin comScore Tag -->\r\n<script>\r\n
+        \   document.write(unescape(\"%3Cscript src='\" + (document.location.protocol
+        == \"https:\" ? \"https://sb\" : \"http://b\") + \".scorecardresearch.com/beacon.js'
+        %3E%3C/script%3E\"));\r\n</script>\r\n\r\n<script>\r\n  COMSCORE.beacon({\r\n
+        \   c1:2,\r\n    c2:6036161,\r\n    c3:\"\",\r\n    c4:\"\",\r\n    c5:\"\",\r\n
+        \   c6:\"\",\r\n    c15:\"\"\r\n  });\r\n</script>\r\n<noscript>\r\n  <img
+        src=\"http://b.scorecardresearch.com/p?c1=2&c2=6036161&c3=&c4=&c5=&c6=&c15=&cj=1\"
+        />\r\n</noscript>\r\n<!-- End comScore Tag -->\r\n\r\n<!-- start Vibrant Media
+        IntelliTXT script section -->\r\n<script type=\"text/javascript\" src=\"http://myanimelist.us.intellitxt.com/intellitxt/front.asp?ipid=30532\"></script>\r\n<!--
+        end Vibrant Media IntelliTXT script section -->\r\n\t\r\n<!-- info links -->\r\n<script
+        type=\"text/javascript\">\r\nvar infolinks_pid = 1568135;\r\nvar infolinks_wsid
+        = 0;\r\n</script>\r\n<script type=\"text/javascript\" src=\"http://resources.infolinks.com/js/infolinks_main.js\"></script>\r\n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Tue, 09 Jul 2013 13:26:03 GMT
+recorded_with: VCR 2.5.0
