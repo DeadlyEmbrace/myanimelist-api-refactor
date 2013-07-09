@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'padrino', '0.11.2'
+gem 'activesupport', '4.0.0'
 gem 'thin', '1.5.1'
 gem 'rake', '10.1.0'
 gem 'httparty', '0.11.0'

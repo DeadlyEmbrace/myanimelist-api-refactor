@@ -1,3 +1,5 @@
+require 'active_support/json'
+
 module MyAnimeListApiRefactor
   class App < Padrino::Application
     register Padrino::Rendering
