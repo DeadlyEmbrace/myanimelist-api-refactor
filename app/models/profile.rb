@@ -2,8 +2,6 @@ class Profile
   attr_accessor :avatar_url, :details, :anime_stats, :manga_stats
 
   def initialize
-    @avatar_url = nil
-
     @details = {
         birthday: nil,
         location: nil,

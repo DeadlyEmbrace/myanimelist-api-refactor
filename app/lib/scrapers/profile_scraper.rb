@@ -2,11 +2,11 @@ class ProfileScraper
 
   def scrape(html)
     profile_page = Nokogiri::HTML(html)
-    invalid_user = profile_page.at('h1:contains("Invalid user")')
+    invalid_user = html =~ /Invalid user/i
 
     profile = nil
 
-    if invalid_user.nil?
+    unless invalid_user
       profile = Profile.new
 
       page_content = profile_page.at('#content')
@@ -14,7 +14,6 @@ class ProfileScraper
       main_profile_content = page_content.at('#horiznav_nav').next_element
 
       details = main_profile_content.at('div.normal_header:contains("Details")').next_element
-      updates = main_profile_content.at('div.normal_header:contains("Last List Updates")').next_element
       anime_stats = main_profile_content.at('h2:contains("Anime Stats")').next_element
       manga_stats = main_profile_content.at('h2:contains("Manga Stats")').next_element
 
