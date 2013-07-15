@@ -11,12 +11,44 @@ describe UserHistoryScraper do
         history.should be_nil
       end
     end
+
+    it 'should return nil for anime history' do
+      VCR.use_cassette('history/invalid_anime_history') do
+        response = HTTParty.get('http://myanimelist.net/history/user_does_not_exist/anime')
+        history = @user_history_scraper.scrape(response.body)
+        history.should be_nil
+      end
+    end
+
+    it 'should return nil for manga history' do
+      VCR.use_cassette('history/invalid_manga_history') do
+        response = HTTParty.get('http://myanimelist.net/history/user_does_not_exist/manga')
+        history = @user_history_scraper.scrape(response.body)
+        history.should be_nil
+      end
+    end
   end
 
   describe 'user with no history' do
     it 'should return an empty history' do
       VCR.use_cassette('history/no_history') do
         response = HTTParty.get('http://myanimelist.net/history/partial_profile')
+        history = @user_history_scraper.scrape(response.body)
+        history.should be_empty
+      end
+    end
+
+    it 'should return an empty anime history' do
+      VCR.use_cassette('history/no_anime_history') do
+        response = HTTParty.get('http://myanimelist.net/history/partial_profile/anime')
+        history = @user_history_scraper.scrape(response.body)
+        history.should be_empty
+      end
+    end
+
+    it 'should return an empty manga history' do
+      VCR.use_cassette('history/no_manga_history') do
+        response = HTTParty.get('http://myanimelist.net/history/partial_profile/manga')
         history = @user_history_scraper.scrape(response.body)
         history.should be_empty
       end

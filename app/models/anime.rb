@@ -23,11 +23,11 @@ class Anime
       when /completed/i, '2', 2
         :completed
       when /on-hold/i, /onhold/i, '3', 3
-        :"on-hold"
+        :'on-hold'
       when /dropped/i, '4', 4
         :dropped
       when /plan to watch/i, /plantowatch/i, '6', 6
-        :"plan to watch"
+        :'plan to watch'
     end
   end
 
@@ -50,14 +50,12 @@ class Anime
 
   def status=(value)
     @status = case value
-      when '2', 2, /finished airing/i
-        :'finished airing'
-      when '1', 1, /currently airing/i
+      when /currently airing/i, '1', 1
         :'currently airing'
-      when '3', 3, /not yet aired/i
-        :'not yet aired'
-      else
+      when /finished airing/i, '2', 2
         :'finished airing'
+      when /not yet aired/i, '3', 3
+        :'not yet aired'
     end
   end
 
