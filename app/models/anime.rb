@@ -51,13 +51,13 @@ class Anime
   def status=(value)
     @status = case value
       when '2', 2, /finished airing/i
-        :"finished airing"
+        :'finished airing'
       when '1', 1, /currently airing/i
-        :"currently airing"
+        :'currently airing'
       when '3', 3, /not yet aired/i
-        :"not yet aired"
+        :'not yet aired'
       else
-        :"finished airing"
+        :'finished airing'
     end
   end
 
