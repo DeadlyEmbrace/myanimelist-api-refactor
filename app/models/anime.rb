@@ -58,23 +58,4 @@ class Anime
         :'not yet aired'
     end
   end
-
-  def ==(other)
-    @id == other.id && @title == other.title && 
-    @popularity_rank == other.popularity_rank && @image_url == other.image_url &&
-    @episodes == other.episodes && @classification == other.classification &&
-    @members_score == other.members_score && @members_count == other.members_count &&
-    @favorited_count == other.favorited_count && @synopsis == other.synopsis &&
-    @start_date == other.start_date && @end_date == other.end_date &&
-    @listed_anime_id == other.listed_anime_id && @parent_story == other.parent_story &&
-    @type == other.type && @status == other.status && @genres == other.genres &&
-    @tags == other.tags && @other_titles == other.other_titles &&
-    @manga_adaptations == other.manga_adaptations && @prequels == other.prequels &&
-    @sequels == other.sequels && @side_stories == other.side_stories &&
-    @character_anime == other.character_anime && @spin_offs == other.spin_offs &&
-    @summaries == other.summaries && @alternative_versions == alternative_versions &&
-    @alternative_versions == other.alternative_versions &&
-    @watched_episodes == other.watched_episodes && @score == other.score &&
-    @watched_status == other.watched_status
-  end
 end

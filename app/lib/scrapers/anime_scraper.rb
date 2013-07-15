@@ -1,5 +1,5 @@
 class AnimeScraper
-  def scrape(html)
+  def self.scrape(html)
     invalid_anime = html =~ /No series found/i
     anime = nil
 
@@ -53,8 +53,8 @@ class AnimeScraper
 
       if (node = left_detail_content.at('//span[text()="Aired:"]')) && node.next
         airdates_text = node.next.text.strip
-        anime.start_date = parse_start_date(airdates_text)
-        anime.end_date = parse_end_date(airdates_text)
+        anime.start_date = self.parse_start_date(airdates_text)
+        anime.end_date = self.parse_end_date(airdates_text)
       end
 
       if (node = left_detail_content.at('//span[text()="Genres:"]'))
@@ -234,7 +234,7 @@ class AnimeScraper
 
   # TODO - Maybe move out date parsing
   private
-    def parse_start_date(text)
+    def self.parse_start_date(text)
       text = text.strip
 
       case text
@@ -252,7 +252,7 @@ class AnimeScraper
       end
     end
 
-    def parse_end_date(text)
+    def self.parse_end_date(text)
       text = text.strip
 
       case text

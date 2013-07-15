@@ -1,13 +1,12 @@
 describe ProfileScraper do
   before :each do
-    @profile_scraper = ProfileScraper.new
   end
 
   describe 'invalid profile' do
     it 'should return a nil profile' do
       VCR.use_cassette('profile/invalid_profile') do
         response = HTTParty.get('http://myanimelist.net/profile/user_does_not_exist')
-        profile = @profile_scraper.scrape(response.body)
+        profile = ProfileScraper.scrape(response.body)
         profile.should be_nil
       end
     end
@@ -17,7 +16,7 @@ describe ProfileScraper do
     before :each  do
       VCR.use_cassette('profile/valid_profile') do
         response = HTTParty.get('http://myanimelist.net/profile/astraldragon88')
-        @profile = @profile_scraper.scrape(response.body)
+        @profile = ProfileScraper.scrape(response.body)
       end
     end
 
@@ -48,7 +47,7 @@ describe ProfileScraper do
     before :each do
       VCR.use_cassette('profile/partial_profile') do
         response = HTTParty.get('http://myanimelist.net/profile/partial_profile')
-        @profile = @profile_scraper.scrape(response.body)
+        @profile = ProfileScraper.scrape(response.body)
       end
     end
 

@@ -1,5 +1,5 @@
 class UserHistoryScraper
-  def scrape(html)
+  def self.scrape(html)
     invalid_user = html =~ /Invalid member/i
     history = nil
 
@@ -23,7 +23,7 @@ class UserHistoryScraper
         title = link.text.strip
         episode_or_chapter = cells[0].at('strong').text.to_i
 
-        # TODO - date parsing should be checked out
+        # TODO - date parsing should be investigated
         #time = Chronic.parse(cells[1].text.strip)
 
         history << Hash.new.tap do |history_entry|

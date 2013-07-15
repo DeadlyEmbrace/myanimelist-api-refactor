@@ -1,13 +1,9 @@
 describe UserHistoryScraper do
-  before :each do
-    @user_history_scraper = UserHistoryScraper.new
-  end
-
   describe 'history for invalid user' do
     it 'should return nil' do
       VCR.use_cassette('history/invalid_history') do
         response = HTTParty.get('http://myanimelist.net/history/user_does_not_exist')
-        history = @user_history_scraper.scrape(response.body)
+        history = UserHistoryScraper.scrape(response.body)
         history.should be_nil
       end
     end
@@ -15,7 +11,7 @@ describe UserHistoryScraper do
     it 'should return nil for anime history' do
       VCR.use_cassette('history/invalid_anime_history') do
         response = HTTParty.get('http://myanimelist.net/history/user_does_not_exist/anime')
-        history = @user_history_scraper.scrape(response.body)
+        history = UserHistoryScraper.scrape(response.body)
         history.should be_nil
       end
     end
@@ -23,7 +19,7 @@ describe UserHistoryScraper do
     it 'should return nil for manga history' do
       VCR.use_cassette('history/invalid_manga_history') do
         response = HTTParty.get('http://myanimelist.net/history/user_does_not_exist/manga')
-        history = @user_history_scraper.scrape(response.body)
+        history = UserHistoryScraper.scrape(response.body)
         history.should be_nil
       end
     end
@@ -33,7 +29,7 @@ describe UserHistoryScraper do
     it 'should return an empty history' do
       VCR.use_cassette('history/no_history') do
         response = HTTParty.get('http://myanimelist.net/history/partial_profile')
-        history = @user_history_scraper.scrape(response.body)
+        history = UserHistoryScraper.scrape(response.body)
         history.should be_empty
       end
     end
@@ -41,7 +37,7 @@ describe UserHistoryScraper do
     it 'should return an empty anime history' do
       VCR.use_cassette('history/no_anime_history') do
         response = HTTParty.get('http://myanimelist.net/history/partial_profile/anime')
-        history = @user_history_scraper.scrape(response.body)
+        history = UserHistoryScraper.scrape(response.body)
         history.should be_empty
       end
     end
@@ -49,7 +45,7 @@ describe UserHistoryScraper do
     it 'should return an empty manga history' do
       VCR.use_cassette('history/no_manga_history') do
         response = HTTParty.get('http://myanimelist.net/history/partial_profile/manga')
-        history = @user_history_scraper.scrape(response.body)
+        history = UserHistoryScraper.scrape(response.body)
         history.should be_empty
       end
     end
@@ -67,7 +63,7 @@ describe UserHistoryScraper do
 
         VCR.use_cassette('history/valid_history') do
           response = HTTParty.get('http://myanimelist.net/history/astraldragon88')
-          history = @user_history_scraper.scrape(response.body)
+          history = UserHistoryScraper.scrape(response.body)
           history.should eq expected
         end
       end
@@ -83,7 +79,7 @@ describe UserHistoryScraper do
 
         VCR.use_cassette('history/valid_anime_history') do
           response = HTTParty.get('http://myanimelist.net/history/astraldragon88/anime')
-          history = @user_history_scraper.scrape(response.body)
+          history = UserHistoryScraper.scrape(response.body)
           history.should eq expected
         end
       end
@@ -97,7 +93,7 @@ describe UserHistoryScraper do
 
         VCR.use_cassette('history/valid_manga_history') do
           response = HTTParty.get('http://myanimelist.net/history/astraldragon88/manga')
-          history = @user_history_scraper.scrape(response.body)
+          history = UserHistoryScraper.scrape(response.body)
           history.should eq expected
         end
       end
