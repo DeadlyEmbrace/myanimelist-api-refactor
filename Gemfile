@@ -13,4 +13,5 @@ group :test do
   gem 'rack-test', '0.6.2', require: 'rack/test'
   gem 'vcr', '2.5.0'
   gem 'webmock', '1.13.0'
+  gem 'simplecov', '0.8.0.pre', require: false
 end
