@@ -50,7 +50,7 @@ describe AnimeScraper do
     it 'should be able to scrape japanese titles' do
       html = create_left_detail '<div><span>Japanese:</span> ブリーチ, ブリー</div>'
       anime = @anime_scraper.scrape(html)
-      anime.other_titles.should eq({ japanese: ['ブリーチ', 'ブリー'] })
+      anime.other_titles.should eq({ japanese: %w(ブリーチ ブリー)})
     end
   end
 
@@ -76,7 +76,7 @@ describe AnimeScraper do
     it 'should be able to scrape genres' do
       html = create_left_detail '<div><span>Genres:</span><a>comedy</a><a>horror</a></div>'
       anime = @anime_scraper.scrape(html)
-      anime.genres.should eq ['comedy', 'horror']
+      anime.genres.should eq %w(comedy horror)
     end
 
     it 'should be able to scrape rating' do
@@ -115,7 +115,7 @@ describe AnimeScraper do
   it 'should be able to scrape popular tags' do
     html = create_left_detail '<h2>Popular Tags</h2><span><a>comedy</a><a>horror</a></span>'
     anime = @anime_scraper.scrape(html)
-    anime.tags.should eq ['comedy', 'horror']
+    anime.tags.should eq %w(comedy horror)
   end
 
   describe 'synopsis' do
@@ -148,7 +148,7 @@ describe AnimeScraper do
     anime.watched_episodes = 0
     anime.score = nil
     anime.watched_status = nil
-    anime.other_titles = {english: ['Lucky☆Star'], japanese: ['らき☆すた']}
+    anime.other_titles = {english: %w(Lucky☆Star), japanese: %w(らき☆すた)}
     anime.genres = ['Comedy', 'Parody', 'School', 'Slice of Life']
     anime.tags = ['comedy', 'parody', 'school', 'slice of life']
     anime.manga_adaptations = [{manga_id: '587', title: 'Lucky&#9734;Star', url: 'http://myanimelist.net/manga/587/Lucky%E2%98%86Star'}]
@@ -159,7 +159,7 @@ describe AnimeScraper do
     anime
   end
 
-  def create_left_detail(html = "")
+  def create_left_detail(html = '')
     "<input name='aid' value='1234' /><h1>Bleach <div>Ranked #450</div></h1>
       <div id='content'>
       <table>
@@ -170,7 +170,7 @@ describe AnimeScraper do
       </div>"
   end
 
-  def create_right_detail(html = "")
+  def create_right_detail(html = '')
     "<input name='aid' value='1234' /><h1>Bleach <div>Ranked #450</div></h1>
       <div id='content'>
       <table>
