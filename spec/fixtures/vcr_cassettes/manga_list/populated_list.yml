@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/malappinfo.php?status=all&type=manga&u=small_profile
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Jul 2013 18:06:35 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app3v-mal.ao.prd.lax
+      Content-Length:
+      - '4537'
+      Connection:
+      - close
+      Content-Type:
+      - application/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <myanimelist><myinfo><user_id>2881493</user_id><user_name>small_profile</user_name><user_reading>0</user_reading><user_completed>0</user_completed><user_onhold>0</user_onhold><user_dropped>0</user_dropped><user_plantoread>0</user_plantoread><user_days_spent_watching>1.25</user_days_spent_watching></myinfo><manga><series_mangadb_id>2</series_mangadb_id><series_title>Berserk</series_title><series_synonyms>; Berserk</series_synonyms><series_type>1</series_type><series_chapters>0</series_chapters><series_volumes>0</series_volumes><series_status>1</series_status><series_start>1989-08-25</series_start><series_end>0000-00-00</series_end><series_image>http://cdn.myanimelist.net/images/manga/3/26544.jpg</series_image><my_id>24710533</my_id><my_read_chapters>1</my_read_chapters><my_read_volumes>1</my_read_volumes><my_start_date>2013-07-16</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>1</my_status><my_rereadingg></my_rereadingg><my_rereading_chap>0</my_rereading_chap><my_last_updated>1373997936</my_last_updated><my_tags></my_tags></manga><manga><series_mangadb_id>11734</series_mangadb_id><series_title>Watashitachi no Shiawase na Jikan</series_title><series_synonyms>Watashi-tachi no Shiawase na Jikan; Our Happy Hours; Our Happy Time</series_synonyms><series_type>1</series_type><series_chapters>8</series_chapters><series_volumes>1</series_volumes><series_status>2</series_status><series_start>2007-00-00</series_start><series_end>2007-00-00</series_end><series_image>http://cdn.myanimelist.net/images/manga/3/66993.jpg</series_image><my_id>24710537</my_id><my_read_chapters>8</my_read_chapters><my_read_volumes>1</my_read_volumes><my_start_date>2013-07-16</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>10</my_score><my_status>2</my_status><my_rereadingg></my_rereadingg><my_rereading_chap>0</my_rereading_chap><my_last_updated>1373997946</my_last_updated><my_tags></my_tags></manga><manga><series_mangadb_id>3</series_mangadb_id><series_title>20th Century Boys</series_title><series_synonyms>20 Seiki Shounen; Nijuu Seiki Shounen; Nijuusseiki Shounen; 20thCB </series_synonyms><series_type>1</series_type><series_chapters>249</series_chapters><series_volumes>22</series_volumes><series_status>2</series_status><series_start>1999-09-27</series_start><series_end>2006-04-24</series_end><series_image>http://cdn.myanimelist.net/images/manga/1/54437.jpg</series_image><my_id>24710541</my_id><my_read_chapters>2</my_read_chapters><my_read_volumes>1</my_read_volumes><my_start_date>2013-07-16</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>3</my_status><my_rereadingg></my_rereadingg><my_rereading_chap>0</my_rereading_chap><my_last_updated>1373997957</my_last_updated><my_tags></my_tags></manga><manga><series_mangadb_id>25</series_mangadb_id><series_title>Fullmetal Alchemist</series_title><series_synonyms>Full Metal Alchemist; Hagane no Renkinjutsushi; FMA; Fullmetal Alchemist Gaiden; Fullmetal Alchemist</series_synonyms><series_type>1</series_type><series_chapters>109</series_chapters><series_volumes>27</series_volumes><series_status>2</series_status><series_start>2001-07-12</series_start><series_end>2010-06-11</series_end><series_image>http://cdn.myanimelist.net/images/manga/1/27600.jpg</series_image><my_id>24710547</my_id><my_read_chapters>0</my_read_chapters><my_read_volumes>0</my_read_volumes><my_start_date>2013-07-16</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>6</my_status><my_rereadingg></my_rereadingg><my_rereading_chap>0</my_rereading_chap><my_last_updated>1373997967</my_last_updated><my_tags></my_tags></manga><manga><series_mangadb_id>1</series_mangadb_id><series_title>Monster</series_title><series_synonyms>; Monster</series_synonyms><series_type>1</series_type><series_chapters>162</series_chapters><series_volumes>18</series_volumes><series_status>2</series_status><series_start>1994-12-05</series_start><series_end>2001-12-20</series_end><series_image>http://cdn.myanimelist.net/images/manga/3/54525.jpg</series_image><my_id>24710557</my_id><my_read_chapters>30</my_read_chapters><my_read_volumes>3</my_read_volumes><my_start_date>2013-07-16</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>4</my_status><my_rereadingg></my_rereadingg><my_rereading_chap>0</my_rereading_chap><my_last_updated>1373997977</my_last_updated><my_tags></my_tags></manga></myanimelist>
+    http_version: 
+  recorded_at: Tue, 16 Jul 2013 18:06:35 GMT
+recorded_with: VCR 2.5.0
