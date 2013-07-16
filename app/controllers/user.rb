@@ -25,6 +25,15 @@ MyAnimeListApiRefactor::App.controllers :user do
   end
 
   get :mangalist, map: '/user/:username/mangalist' do
+    manga_list_page = MALRequester.get("http://myanimelist.net/malappinfo.php?u=#{params[:username]}&status=all&type=manga")
+    manga_list = MangaListScraper.scrape(manga_list_page.body)
+
+    if manga_list.nil?
+      status 404
+      body "User #{params[:username]} could not be found"
+    else
+      manga_list.to_json
+    end
   end
 
   get :history, map: '/user/:username/history(/:type)' do
