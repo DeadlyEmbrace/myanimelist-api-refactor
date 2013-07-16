@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/malappinfo.php?status=all&type=anime&u=partial_profile
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Jul 2013 15:03:38 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app2v-mal.ao.prd.lax
+      Content-Length:
+      - '367'
+      Connection:
+      - close
+      Content-Type:
+      - application/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <myanimelist><myinfo><user_id>2838311</user_id><user_name>partial_profile</user_name><user_watching>0</user_watching><user_completed>0</user_completed><user_onhold>0</user_onhold><user_dropped>0</user_dropped><user_plantowatch>0</user_plantowatch><user_days_spent_watching>0.00</user_days_spent_watching></myinfo></myanimelist>
+    http_version: 
+  recorded_at: Tue, 16 Jul 2013 15:03:38 GMT
+recorded_with: VCR 2.5.0

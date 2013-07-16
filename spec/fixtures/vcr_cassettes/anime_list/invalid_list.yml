@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/malappinfo.php?status=all&type=anime&u=does_not_exist
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Jul 2013 14:56:18 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app2v-mal.ao.prd.lax
+      Content-Length:
+      - '98'
+      Connection:
+      - close
+      Content-Type:
+      - application/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <myanimelist><error>Invalid username</error></myanimelist>
+    http_version: 
+  recorded_at: Tue, 16 Jul 2013 14:56:18 GMT
+recorded_with: VCR 2.5.0

@@ -1,7 +1,7 @@
 MyAnimeListApiRefactor::App.controllers :user do
 
   get :profile, map: '/user/:username/profile' do
-    profile_page = HTTParty.get("http://myanimelist.net/profile/#{params[:username]}")
+    profile_page = MALRequester.get("http://myanimelist.net/profile/#{params[:username]}")
     profile = ProfileScraper.scrape(profile_page.body)
 
     if profile.nil?
@@ -13,6 +13,15 @@ MyAnimeListApiRefactor::App.controllers :user do
   end
 
   get :animelist, map: '/user/:username/animelist' do
+    anime_list_page = MALRequester.get("http://myanimelist.net/malappinfo.php?u=#{params[:username]}&status=all&type=anime")
+    anime_list = AnimeListScraper.scrape(anime_list_page.body)
+
+    if anime_list.nil?
+      status 404
+      body "User #{params[:username]} could not be found"
+    else
+      anime_list.to_json
+    end
   end
 
   get :mangalist, map: '/user/:username/mangalist' do
@@ -23,7 +32,7 @@ MyAnimeListApiRefactor::App.controllers :user do
     type = params[:type]
     unless type.nil? then url << "/#{type.to_s}" end
 
-    history_page = HTTParty.get(url)
+    history_page = MALRequester.get(url)
     history = UserHistoryScraper.scrape(history_page.body)
 
     if history.nil?

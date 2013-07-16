@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/malappinfo.php?status=all&type=anime&u=small_profile
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Jul 2013 15:13:45 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app3v-mal.ao.prd.lax
+      Content-Length:
+      - '4126'
+      Connection:
+      - close
+      Content-Type:
+      - application/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <myanimelist><myinfo><user_id>2881493</user_id><user_name>small_profile</user_name><user_watching>1</user_watching><user_completed>1</user_completed><user_onhold>1</user_onhold><user_dropped>1</user_dropped><user_plantowatch>1</user_plantowatch><user_days_spent_watching>1.25</user_days_spent_watching></myinfo><anime><series_animedb_id>934</series_animedb_id><series_title>Higurashi no Naku Koro ni</series_title><series_synonyms>The Moment the Cicadas Cry; When They Cry</series_synonyms><series_type>1</series_type><series_episodes>26</series_episodes><series_status>2</series_status><series_start>2006-04-05</series_start><series_end>2006-09-27</series_end><series_image>http://cdn.myanimelist.net/images/anime/12/19634.jpg</series_image><my_id>0</my_id><my_watched_episodes>26</my_watched_episodes><my_start_date>0000-00-00</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>10</my_score><my_status>2</my_status><my_rewatching>0</my_rewatching><my_rewatching_ep>0</my_rewatching_ep><my_last_updated>1373987557</my_last_updated><my_tags></my_tags></anime><anime><series_animedb_id>4181</series_animedb_id><series_title>Clannad: After Story</series_title><series_synonyms>; CLANNAD After Story</series_synonyms><series_type>1</series_type><series_episodes>24</series_episodes><series_status>2</series_status><series_start>2008-10-03</series_start><series_end>2009-03-27</series_end><series_image>http://cdn.myanimelist.net/images/anime/13/24647.jpg</series_image><my_id>0</my_id><my_watched_episodes>0</my_watched_episodes><my_start_date>0000-00-00</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>6</my_status><my_rewatching>0</my_rewatching><my_rewatching_ep>0</my_rewatching_ep><my_last_updated>1373987609</my_last_updated><my_tags></my_tags></anime><anime><series_animedb_id>5114</series_animedb_id><series_title>Fullmetal Alchemist: Brotherhood</series_title><series_synonyms>Hagane no Renkinjutsushi (2009); Fullmetal Alchemist (2009); FMA; Fullmetal Alchemist: Brotherhood</series_synonyms><series_type>1</series_type><series_episodes>64</series_episodes><series_status>2</series_status><series_start>2009-04-05</series_start><series_end>2010-07-04</series_end><series_image>http://cdn.myanimelist.net/images/anime/5/47421.jpg</series_image><my_id>0</my_id><my_watched_episodes>1</my_watched_episodes><my_start_date>0000-00-00</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>1</my_status><my_rewatching>0</my_rewatching><my_rewatching_ep>0</my_rewatching_ep><my_last_updated>1373987571</my_last_updated><my_tags></my_tags></anime><anime><series_animedb_id>9253</series_animedb_id><series_title>Steins;Gate</series_title><series_synonyms></series_synonyms><series_type>1</series_type><series_episodes>24</series_episodes><series_status>2</series_status><series_start>2011-04-06</series_start><series_end>2011-09-14</series_end><series_image>http://cdn.myanimelist.net/images/anime/11/41011.jpg</series_image><my_id>0</my_id><my_watched_episodes>12</my_watched_episodes><my_start_date>0000-00-00</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>4</my_status><my_rewatching>0</my_rewatching><my_rewatching_ep>0</my_rewatching_ep><my_last_updated>1373987598</my_last_updated><my_tags></my_tags></anime><anime><series_animedb_id>9969</series_animedb_id><series_title>Gintama'</series_title><series_synonyms>Gintama (2011)</series_synonyms><series_type>1</series_type><series_episodes>51</series_episodes><series_status>2</series_status><series_start>2011-04-04</series_start><series_end>2012-03-26</series_end><series_image>http://cdn.myanimelist.net/images/anime/4/50361.jpg</series_image><my_id>0</my_id><my_watched_episodes>12</my_watched_episodes><my_start_date>0000-00-00</my_start_date><my_finish_date>0000-00-00</my_finish_date><my_score>0</my_score><my_status>3</my_status><my_rewatching>0</my_rewatching><my_rewatching_ep>0</my_rewatching_ep><my_last_updated>1373987585</my_last_updated><my_tags></my_tags></anime></myanimelist>
+    http_version: 
+  recorded_at: Tue, 16 Jul 2013 15:13:45 GMT
+recorded_with: VCR 2.5.0
