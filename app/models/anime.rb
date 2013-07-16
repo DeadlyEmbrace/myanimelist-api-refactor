@@ -28,6 +28,8 @@ class Anime
         :dropped
       when /plan to watch/i, /plantowatch/i, '6', 6
         :'plan to watch'
+      else
+        nil
     end
   end
 
@@ -45,6 +47,8 @@ class Anime
         :ONA
       when /Music/i, '6', 6
         :Music
+      else
+        nil
     end
   end
 
@@ -56,6 +60,8 @@ class Anime
         :'finished airing'
       when /not yet aired/i, '3', 3
         :'not yet aired'
+      else
+        nil
     end
   end
 end

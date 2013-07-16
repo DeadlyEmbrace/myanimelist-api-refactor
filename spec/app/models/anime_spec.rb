@@ -1,11 +1,10 @@
 describe Anime do
-  
   before :each do
     @anime = Anime.new
   end
 
   describe 'watched status' do
-    WATCHED_STATUSES = [
+    watched_statuses = [
       { text_value: 'watching', id_value: 1, expected_value: :watching },
       { text_value: 'completed', id_value: 2, expected_value: :completed },
       { text_value: 'on-hold', id_value: 3, expected_value: :'on-hold' },
@@ -24,21 +23,21 @@ describe Anime do
     end
 
     it 'should be able to set by text' do
-      WATCHED_STATUSES.each do |watched_status|
+      watched_statuses.each do |watched_status|
         @anime.watched_status = watched_status[:text_value]
         @anime.watched_status.should be watched_status[:expected_value]
       end
     end
 
     it 'should be able to set by id' do
-      WATCHED_STATUSES.each do |watched_status|
+      watched_statuses.each do |watched_status|
         @anime.watched_status = watched_status[:id_value]
         @anime.watched_status.should be watched_status[:expected_value]
       end
     end
 
     it 'should be able to set by id as text' do
-      WATCHED_STATUSES.each do |watched_status|
+      watched_statuses.each do |watched_status|
         @anime.watched_status = watched_status[:id_value].to_s
         @anime.watched_status.should be watched_status[:expected_value]
       end
@@ -46,7 +45,7 @@ describe Anime do
   end
 
   describe 'type' do
-    TYPES = [
+    types = [
       { text_value: 'TV', id_value: 1, expected_value: :TV },
       { text_value: 'OVA', id_value: 2, expected_value: :OVA },
       { text_value: 'Movie', id_value: 3, expected_value: :Movie },
@@ -65,21 +64,21 @@ describe Anime do
     end
 
     it 'should be able to set by text' do
-      TYPES.each do |type|
+      types.each do |type|
         @anime.type = type[:text_value]
         @anime.type.should be type[:expected_value]
       end
     end
 
     it 'should be able to set by id' do
-      TYPES.each do |type|
+      types.each do |type|
         @anime.type = type[:id_value]
         @anime.type.should be type[:expected_value]
       end
     end
 
     it 'should be able to set by id as text' do
-      TYPES.each do |type|
+      types.each do |type|
         @anime.type = type[:id_value].to_s
         @anime.type.should be type[:expected_value]
       end
@@ -87,7 +86,7 @@ describe Anime do
   end
 
   describe 'status' do
-    STATUSES = [
+    statuses = [
       { text_value: 'currently airing', id_value: 1, expected_value: :'currently airing' },
       { text_value: 'finished airing', id_value: 2, expected_value: :'finished airing' },
       { text_value: 'not yet aired', id_value: 3, expected_value: :'not yet aired' }
@@ -103,21 +102,21 @@ describe Anime do
     end
 
     it 'should be able to set by text' do
-      STATUSES.each do |status|
+      statuses.each do |status|
         @anime.status = status[:text_value]
         @anime.status.should be status[:expected_value]
       end
     end
 
     it 'should be able to set by id' do
-      STATUSES.each do |status|
+      statuses.each do |status|
         @anime.status = status[:id_value]
         @anime.status.should be status[:expected_value]
       end
     end
 
     it 'should be able to set by id as text' do
-      STATUSES.each do |status|
+      statuses.each do |status|
         @anime.status = status[:id_value].to_s
         @anime.status.should be status[:expected_value]
       end
