@@ -53,7 +53,7 @@ class AnimeScraper
 
       if (node = left_detail_content.at('//span[text()="Aired:"]')) && node.next
         airdates_text = node.next.text.strip
-        date_range = DateParser.parse_anime_date airdates_text
+        date_range = DateParser.parse_date_range airdates_text
         anime.start_date = date_range[:start_date]
         anime.end_date = date_range[:end_date]
       end

@@ -1,5 +1,14 @@
 class DateParser
-  def self.parse_anime_date(date_string)
+
+  def self.parse_date(date_string)
+    date = nil
+    date_string = date_string.strip
+    parsed_date = Chronic.parse date_string
+    date = parsed_date.to_date unless parsed_date.nil?
+    date
+  end
+
+  def self.parse_date_range(date_string)
     date_range = { start_date: nil, end_date: nil }
     date_string = date_string.strip
 
