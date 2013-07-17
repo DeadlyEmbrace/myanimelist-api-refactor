@@ -53,8 +53,9 @@ class AnimeScraper
 
       if (node = left_detail_content.at('//span[text()="Aired:"]')) && node.next
         airdates_text = node.next.text.strip
-        anime.start_date = self.parse_start_date(airdates_text)
-        anime.end_date = self.parse_end_date(airdates_text)
+        date_range = DateParser.parse_anime_date airdates_text
+        anime.start_date = date_range[:start_date]
+        anime.end_date = date_range[:end_date]
       end
 
       if (node = left_detail_content.at('//span[text()="Genres:"]'))
@@ -231,42 +232,4 @@ class AnimeScraper
 
     anime
   end
-
-  # TODO - Maybe move out date parsing
-  private
-    def self.parse_start_date(text)
-      text = text.strip
-
-      case text
-        when /^\d{4}$/
-          return text.strip
-        when /^(\d{4}) to \?/
-          return $1
-        when /^\d{2}-\d{2}-\d{2}$/
-          return Date.strptime(text, '%m-%d-%y')
-        else
-          date_string = text.split(/\s+to\s+/).first
-          return nil if !date_string
-
-          Chronic.parse(date_string)
-      end
-    end
-
-    def self.parse_end_date(text)
-      text = text.strip
-
-      case text
-        when /^\d{4}$/
-          return text.strip
-        when /^\? to (\d{4})/
-          return $1
-        when /^\d{2}-\d{2}-\d{2}$/
-          return Date.strptime(text, '%m-%d-%y')
-        else
-          date_string = text.split(/\s+to\s+/).last
-          return nil if !date_string
-
-          Chronic.parse(date_string)
-      end
-    end
 end
