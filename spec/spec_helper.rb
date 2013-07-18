@@ -1,15 +1,20 @@
-require 'simplecov'
-require 'webmock/rspec'
+require 'spork'
 
 PADRINO_ENV = 'test' unless defined?(PADRINO_ENV)
-require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 
-Dir[Padrino.root('spec/support/**/*.rb')].each { |f| require f }
+Spork.prefork do
+  require 'webmock/rspec'
+  require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
+  Dir[Padrino.root('spec/support/**/*.rb')].each { |f| require f }
 
-RSpec.configure do |conf|
-  conf.include Rack::Test::Methods
+  RSpec.configure do |conf|
+    conf.include Rack::Test::Methods
+  end
+
+  def app
+    Padrino.application
+  end
 end
 
-def app
-  Padrino.application
+Spork.each_run do
 end
