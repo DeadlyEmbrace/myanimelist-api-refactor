@@ -20,10 +20,6 @@ class DateParser
         date_range[:start_date] = $1
       when /^\? to (\d{4})/
         date_range[:end_date] = $1
-      when /^\d{2}-\d{2}-\d{2}$/
-        parsed_date = Chronic.parse(date_string).to_date
-        date_range[:start_date] = parsed_date
-        date_range[:end_date] = parsed_date
       else
         date_string = date_string.split(/\s+to\s+/)
         start_date = Chronic.parse(date_string.first)
