@@ -11,4 +11,18 @@ MyAnimeListApiRefactor::App.controllers :anime do
       anime.to_json
     end
   end
+
+  get :search, with: :query do
+    search_page = MALRequester.get "http://myanimelist.net/anime.php?c[]=a&c[]=b&c[]=c&c[]=d&c[]=e&c[]=f&c[]=g&q=#{CGI.escape(params[:query])}"
+
+    # If the search page only has one result, MyAnimeList redirects to the
+    # anime details page of that results.
+    if search_page.request.redirect
+      search_results = [AnimeScraper.scrape(search_page.body)]
+    else
+      search_results = AnimeSearchScraper.scrape(search_page.body)
+    end
+
+    search_results.to_json
+  end
 end

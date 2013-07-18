@@ -1,4 +1,5 @@
 require 'active_support/json'
+require 'cgi/util'
 
 module MyAnimeListApiRefactor
   class App < Padrino::Application
