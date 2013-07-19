@@ -9,11 +9,11 @@ gem 'nokogiri', '1.6.0'
 gem 'chronic', '0.9.1'
 
 group :development, :test do
-  gem 'rspec', '2.14.0'
+  gem 'rspec', '2.14.1'
   gem 'rack-test', '0.6.2', require: 'rack/test'
   gem 'vcr', '2.5.0'
-  gem 'guard', '1.6.2'
-  gem 'guard-rspec', '2.5.1'
+  gem 'guard', '1.8.1'
+  gem 'guard-rspec', '3.0.2'
   gem 'spork', '0.9.2'
   gem 'guard-spork', '1.5.1'
   gem 'growl', '1.0.3'
@@ -22,4 +22,5 @@ end
 
 group :test do
   gem 'webmock', '1.13.0'
+  gem 'excon', '0.25.3'
 end
