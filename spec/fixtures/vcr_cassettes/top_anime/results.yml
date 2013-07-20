@@ -1,0 +1,570 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/topanime.php
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 20 Jul 2013 02:15:22 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app3v-mal.ao.prd.lax
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html>\n<head>\n\t<title>Top
+        Anime - MyAnimeList.net</title>\n    <meta name=\"Description\" content=\"Start
+        cataloging anime you've watched or manga you've read. Browse through our extensive
+        anime and manga database. Get anime or manga suggestions, recommendations
+        and reviews. View top rated anime and manga. Create anime and manga favorites.
+        Tons more too!\" />\n    <meta name=\"Keywords\" content=\"anime, animelist,
+        myanimelist, anime list, log anime seen, catalog anime watched, anime reviews,
+        top anime, anime characters, favorite anime, anime discussion, anime information,
+        manga series, manga information, top manga, mangalist, manga list, manga,
+        manga reviews, voice actors, seiyuu\" />\n    <meta name=\"Author\" content=\"Garrett
+        Gyssler\">\n\t\n\t\t<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js\"></script>\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/hover.v5.js\"></script>\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/jquery.fancybox.pack.v1.js\"></script>\n\t\n\t\t\t\t<link
+        rel=\"stylesheet\" href=\"http://cdn.myanimelist.net/css/myanimelist.v44.css\"
+        type=\"text/css\" />\n\t\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/mal.ridlayout.css\"
+        />\n\t<script type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/myanimelist.v18.js\"></script>\n\t<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/jquery.fancybox.v3.css\"
+        />\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/dialog.v1.css\"
+        />\n\t<link rel=\"search\" type=\"application/opensearchdescription+xml\"
+        href=\"http://cdn.myanimelist.net/plugins/myanimelist.xml\" title=\"MyAnimeList\"
+        />\n\t\n\t<link rel=\"shortcut icon\" href=\"http://cdn.myanimelist.net/images/faviconv5.ico\"
+        />\n\n\t<!-- BEGIN TRIGGER TAG INITIALIZATION -->\n\t<script type=\"text/javascript\"
+        src=\"http://cdn.triggertag.gorillanation.com/js/triggertag.js\"></script>\n\t<script
+        type=\"text/javascript\">getTrigger('4834');</script>\n\t<!-- END TRIGGER
+        TAG INITIALIZATION -->\n\t<!-- GAM HEADER SCRIPT -->\n\t\t<script type=\"text/javascript\"
+        src=\"http://partner.googleadservices.com/gampad/google_service.js\">\n\t\t</script>\n\t\t<script
+        type=\"text/javascript\">\n\t\tGS_googleAddAdSenseService(\"ca-pub-1304704158939332\");\n\t\tGS_googleEnableAllServices();\n\t\t</script>\n\t\t<script
+        type=\"text/javascript\">\n\t\tGA_googleUseIframeRendering();\n\t\t</script>\n\t<!--
+        END OF GAM HEADER SCRIPT -->\n\n\t<script type=\"text/javascript\">\n\n  var
+        _gaq = _gaq || [];\n  _gaq.push(['_setAccount', 'UA-369102-1']);\n  _gaq.push(['_trackPageview']);\n\n
+        \ (function() {\n    var ga = document.createElement('script'); ga.type =
+        'text/javascript'; ga.async = true;\n    ga.src = ('https:' == document.location.protocol
+        ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n    var
+        s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\n  })();\n\n</script>\n</head>\n\n<body onload=\"\">\n<div id=\"myanimelist\">\n\n\n\t<div
+        id=\"headerSmall\">\n\t\t<a href=\"/\">MyAnimeList.net</a>\n\t</div>\n\t\n<div
+        id=\"menu\">\n    \n    <div id=\"menu_right\">\n    \t\n        <div id=\"searchBar\">\n\n
+        \       <input type=\"text\" class=\"inputtext\" id=\"topSearchText\" value=\"Search\"
+        onkeydown=\"return ts_checkEnter(event);\" size=\"30\" /> \n        <select
+        id=\"topSearchValue\" class=\"inputtext\" onchange=\"ts_selection();\">\n
+        \       <option value=\"0\">Anime</option>\n        <option value=\"1\">Manga</option>\n
+        \       <option value=\"2\">Characters</option>\n        <option value=\"6\">People</option>\n
+        \       <option value=\"3\">Fansub Groups</option>\n        <option value=\"4\">Clubs</option>\n
+        \       <option value=\"5\">Users</option>\n        </select>\n        \n
+        \       <input type=\"image\" src=\"http://cdn.myanimelist.net/images/magnify.gif\"
+        value=\"Search\" onclick=\"ts_subSearch(5);\" />\n        \n        </div>\n
+        \       \n\t</div>\n\t\n\t<div id=\"menu_left\">\n\t\t<ul id=\"nav\">\n\t\t\t\t\t\t<li
+        class=\"small\"><a href=\"/anime.php\">Anime</a>\n\t\t\t\t<ul class=\"wider\">\n\t\t\t\t\t\t\t\t\t\t<li><a
+        href=\"/reviews.php?t=anime\">Reviews</a></li>\n\t\t\t\t\t<li><a href=\"/recommendations.php?s=recentrecs&t=anime\">Recommendations</a></li>\n\t\t\t\t\t<li><a
+        href=\"/topanime.php\">Top Anime</a></li>\n\t\t\t\t\t<li><a href=\"/fansub-groups.php\">Fansub
+        Groups</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"small\"><a
+        href=\"/manga.php\">Manga</a>\n\t\t\t\t<ul class=\"wider\">\n\t\t\t\t\t\t\t\t\t\t<li><a
+        href=\"/reviews.php?t=manga\">Reviews</a></li>\n\t\t\t\t\t<li><a href=\"/recommendations.php?s=recentrecs&t=manga\">Recommendations</a></li>\n\t\t\t\t\t<li><a
+        href=\"/topmanga.php\">Top Manga</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li><a
+        href=\"#\">Community</a>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"/forum/\">Forums</a></li>\n\t\t\t\t\t<li><a
+        href=\"/clubs.php\">Clubs</a></li>\n\t\t\t\t\t<li><a href=\"/blog.php\">Blogs</a></li>\n\t\t\t\t\t<li><a
+        href=\"/users.php\">Users</a></li>\n\t\t\t\t\t<li><a href=\"/about.php?go=team\">Staff</a></li>\n\t\t\t\t\t<li><a
+        href=\"/about.php?go=support\">Help</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li
+        class=\"medium\"><a href=\"#\">Industry</a>\n\t\t\t\t<ul class=\"wide\">\n\t\t\t\t\t<li><a
+        href=\"/people.php\">People</a></li>\n\t\t\t\t\t<li><a href=\"/character.php\">Characters</a></li>\n\t\t\t\t\t<li><a
+        href=\"/news.php\">News</a></li>\n\t\t\t\t\t<li><a href=\"/favorites.php\">Top
+        Favorites</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t\n\t\t\t<li class=\"tiny\"><a
+        href=\"/register.php\">Join</a></li>\n\t\t\t<li class=\"smaller\"><a href=\"/ajaxtb.php?login\"
+        id=\"malLogin\">Login</a></li>\n\t\t\t\t\t\t</ul>\n\t</div>\n</div>\n\n<div
+        id=\"contentWrapper\">\n\n\t<div id=\"roadblock\">\r\n\t\t\t\t<div class=\"ad230\">\r\n\t\t\t\t\t\t<script
+        type=\"text/javascript\">\r\n\t\t\t\t\t\tif ((typeof(f325922)=='undefined'
+        || f325922 > 0) ) {\r\n\t\t\t\t\t\tif(typeof(gnm_ord)=='undefined') gnm_ord=Math.random()*10000000000000000;
+        if(typeof(gnm_tile) == 'undefined') gnm_tile=1;\r\n\t\t\t\t\t\tdocument.write('<scr'+'ipt
+        src=\"http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=230x90,963x90;tile='+(gnm_tile++)+';ord='+gnm_ord+'?\"
+        type=\"text/javascript\"></scr'+'ipt>');\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\tGA_googleFillSlotWithSize(\"ca-pub-1304704158939332\",
+        \"myanimelist_ros_230x90\", 230, 90);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t</script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"ad728\">\r\n\t\t\t\t\t\t<!-- 728x90 -->\r\n\t\t\t\t\t\t<script type=\"text/javascript\">\r\n\t\t\t\t\t\t
+        \ if (typeof(gnm_ord)=='undefined' || (typeof(ad963_enabled)!= 'undefined'
+        && ad963_enabled == false)) gnm_ord=Math.random()*10000000000000000;\r\n\t\t\t\t\t\t
+        \ if (typeof(gnm_tile) == 'undefined') gnm_tile=1;\r\n\t\t\t\t\t\t  document.write('<scr'+'ipt
+        src=\"http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=728x90,970x90;dga=;dgg=;tile='+(gnm_tile++)+';ord='
+        + gnm_ord + ';?\" type=\"text/javascript\"></scr' + 'ipt>');\r\n\t\t\t\t\t\t</script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t</div>\n\t<h1>Top
+        Anime</h1>\n\t<div id=\"content\">\n\t\n\t<div id=\"horiznav_nav\">\n\t\t\t<ul
+        style=\"margin-right: 0; padding-right: 0;\">\n\t\t\t<li><a href=\"topanime.php\"
+        class=\"horiznav_active\">All Anime</a></li>\n\t\t\t<li><a  href=\"?type=tv\">Top
+        TV Series</a></li>\n\t\t\t<li><a  href=\"?type=movie\">Top Movies</a></li>\n\t\t\t<li><a
+        \ href=\"?type=ova\">Top OVAs</a></li>\n\t\t\t<li><a  href=\"?type=special\">Top
+        Specials</a></li>\n\t\t\t<li><a  href=\"?type=bypopularity\">Most Popular</a></li>\n\t\t\t</ul>\n\t</div>\n\t<div
+        style=\"padding: 0 10px 10px 10px;\">\n\n\t<h2 style=\"font-size: 14px;\">Top
+        Anime Series  <a href=\"?type=&limit=30\">Next 30</a></h2>\n\t<table border=\"0\"
+        cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n    \n            <tr>\n\t\t\t\t<td
+        class=\"borderClass\" style=\"border-width: 0 0 1px 0;\" align=\"center\"
+        valign=\"top\" width=\"30\"><span style=\"font-weight: bold; font-size: 24px;\"
+        class=\"lightLink\">1</span></td>\n              <td class=\"borderClass\"
+        align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/5114/Fullmetal_Alchemist:_Brotherhood\"
+        class=\"hoverinfo_trigger\" id=\"#area5114\" rel=\"#info5114\"><img src=\"http://cdn.myanimelist.net/images/anime/5/47421t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area5114\">\n\t<div id=\"info5114\" rel=\"a5114\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/5114/Fullmetal_Alchemist:_Brotherhood\"
+        class=\"hoverinfo_trigger\" id=\"#area5114\" rel=\"#info5114\"><strong>Fullmetal
+        Alchemist: Brotherhood</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=5114&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 64 eps, scored 9.22<br />\n\t\t\t\t<span
+        class=\"lightLink\">224,763 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">2</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/9969/Gintama\"
+        class=\"hoverinfo_trigger\" id=\"#area9969\" rel=\"#info9969\"><img src=\"http://cdn.myanimelist.net/images/anime/4/50361t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area9969\">\n\t<div id=\"info9969\" rel=\"a9969\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/9969/Gintama\" class=\"hoverinfo_trigger\"
+        id=\"#area9969\" rel=\"#info9969\"><strong>Gintama'</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=9969&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 51 eps, scored 9.19<br />\n\t\t\t\t<span
+        class=\"lightLink\">44,875 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">3</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/9253/Steins;Gate\" class=\"hoverinfo_trigger\"
+        id=\"#area9253\" rel=\"#info9253\"><img src=\"http://cdn.myanimelist.net/images/anime/11/41011t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area9253\">\n\t<div id=\"info9253\" rel=\"a9253\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/9253/Steins;Gate\" class=\"hoverinfo_trigger\"
+        id=\"#area9253\" rel=\"#info9253\"><strong>Steins;Gate</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=9253&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 24 eps, scored 9.17<br />\n\t\t\t\t<span
+        class=\"lightLink\">155,305 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">4</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/4181/Clannad:_After_Story\"
+        class=\"hoverinfo_trigger\" id=\"#area4181\" rel=\"#info4181\"><img src=\"http://cdn.myanimelist.net/images/anime/13/24647t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area4181\">\n\t<div id=\"info4181\" rel=\"a4181\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/4181/Clannad:_After_Story\" class=\"hoverinfo_trigger\"
+        id=\"#area4181\" rel=\"#info4181\"><strong>Clannad: After Story</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=4181&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 24 eps, scored 9.16<br />\n\t\t\t\t<span
+        class=\"lightLink\">160,870 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">5</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/15417/Gintama:_Enchousen\"
+        class=\"hoverinfo_trigger\" id=\"#area15417\" rel=\"#info15417\"><img src=\"http://cdn.myanimelist.net/images/anime/4/43157t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area15417\">\n\t<div id=\"info15417\" rel=\"a15417\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/15417/Gintama:_Enchousen\" class=\"hoverinfo_trigger\"
+        id=\"#area15417\" rel=\"#info15417\"><strong>Gintama': Enchousen</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=15417&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 13 eps, scored 9.11<br />\n\t\t\t\t<span
+        class=\"lightLink\">18,360 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">6</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/918/Gintama\" class=\"hoverinfo_trigger\"
+        id=\"#area918\" rel=\"#info918\"><img src=\"http://cdn.myanimelist.net/images/anime/13/50359t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area918\">\n\t<div id=\"info918\" rel=\"a918\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/918/Gintama\" class=\"hoverinfo_trigger\"
+        id=\"#area918\" rel=\"#info918\"><strong>Gintama</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=918&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 201 eps, scored 9.07<br />\n\t\t\t\t<span
+        class=\"lightLink\">113,512 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">7</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/820/Ginga_Eiyuu_Densetsu\"
+        class=\"hoverinfo_trigger\" id=\"#area820\" rel=\"#info820\"><img src=\"http://cdn.myanimelist.net/images/anime/13/13225t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area820\">\n\t<div id=\"info820\" rel=\"a820\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/820/Ginga_Eiyuu_Densetsu\" class=\"hoverinfo_trigger\"
+        id=\"#area820\" rel=\"#info820\"><strong>Ginga Eiyuu Densetsu</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=820&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tOVA, 110 eps, scored 9.05<br />\n\t\t\t\t<span
+        class=\"lightLink\">27,085 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">8</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/2904/Code_Geass:_Hangyaku_no_Lelouch_R2\"
+        class=\"hoverinfo_trigger\" id=\"#area2904\" rel=\"#info2904\"><img src=\"http://cdn.myanimelist.net/images/anime/4/9391t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area2904\">\n\t<div id=\"info2904\" rel=\"a2904\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/2904/Code_Geass:_Hangyaku_no_Lelouch_R2\"
+        class=\"hoverinfo_trigger\" id=\"#area2904\" rel=\"#info2904\"><strong>Code
+        Geass: Hangyaku no Lelouch R2</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=2904&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 25 eps, scored 8.99<br />\n\t\t\t\t<span
+        class=\"lightLink\">218,228 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">9</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/7311/Suzumiya_Haruhi_no_Shoushitsu\"
+        class=\"hoverinfo_trigger\" id=\"#area7311\" rel=\"#info7311\"><img src=\"http://cdn.myanimelist.net/images/anime/9/24646t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area7311\">\n\t<div id=\"info7311\" rel=\"a7311\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/7311/Suzumiya_Haruhi_no_Shoushitsu\"
+        class=\"hoverinfo_trigger\" id=\"#area7311\" rel=\"#info7311\"><strong>Suzumiya
+        Haruhi no Shoushitsu</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=7311&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.97<br />\n\t\t\t\t<span
+        class=\"lightLink\">95,396 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">10</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/16498/Shingeki_no_Kyojin\" class=\"hoverinfo_trigger\"
+        id=\"#area16498\" rel=\"#info16498\"><img src=\"http://cdn.myanimelist.net/images/anime/10/47347t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area16498\">\n\t<div id=\"info16498\" rel=\"a16498\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/16498/Shingeki_no_Kyojin\" class=\"hoverinfo_trigger\"
+        id=\"#area16498\" rel=\"#info16498\"><strong>Shingeki no Kyojin</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=16498&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 25 eps, scored 8.96<br />\n\t\t\t\t<span
+        class=\"lightLink\">118,666 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">11</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/12355/Ookami_Kodomo_no_Ame_to_Yuki\"
+        class=\"hoverinfo_trigger\" id=\"#area12355\" rel=\"#info12355\"><img src=\"http://cdn.myanimelist.net/images/anime/10/34737t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area12355\">\n\t<div id=\"info12355\" rel=\"a12355\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/12355/Ookami_Kodomo_no_Ame_to_Yuki\"
+        class=\"hoverinfo_trigger\" id=\"#area12355\" rel=\"#info12355\"><strong>Ookami
+        Kodomo no Ame to Yuki</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=12355&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.94<br />\n\t\t\t\t<span
+        class=\"lightLink\">32,771 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">12</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/44/Rurouni_Kenshin:_Meiji_Kenkaku_Romantan_-_Tsuiokuhen\"
+        class=\"hoverinfo_trigger\" id=\"#area44\" rel=\"#info44\"><img src=\"http://cdn.myanimelist.net/images/anime/4/7076t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area44\">\n\t<div id=\"info44\" rel=\"a44\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/44/Rurouni_Kenshin:_Meiji_Kenkaku_Romantan_-_Tsuiokuhen\"
+        class=\"hoverinfo_trigger\" id=\"#area44\" rel=\"#info44\"><strong>Rurouni
+        Kenshin: Meiji Kenkaku Romantan - Tsuiokuhen</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=44&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tOVA, 4 eps, scored 8.90<br />\n\t\t\t\t<span
+        class=\"lightLink\">65,527 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">13</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/199/Sen_to_Chihiro_no_Kamikakushi\" class=\"hoverinfo_trigger\"
+        id=\"#area199\" rel=\"#info199\"><img src=\"http://cdn.myanimelist.net/images/anime/10/42079t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area199\">\n\t<div id=\"info199\" rel=\"a199\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/199/Sen_to_Chihiro_no_Kamikakushi\"
+        class=\"hoverinfo_trigger\" id=\"#area199\" rel=\"#info199\"><strong>Sen to
+        Chihiro no Kamikakushi</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=199&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.89<br />\n\t\t\t\t<span
+        class=\"lightLink\">179,028 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">14</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/1575/Code_Geass:_Hangyaku_no_Lelouch\"
+        class=\"hoverinfo_trigger\" id=\"#area1575\" rel=\"#info1575\"><img src=\"http://cdn.myanimelist.net/images/anime/5/50331t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area1575\">\n\t<div id=\"info1575\" rel=\"a1575\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/1575/Code_Geass:_Hangyaku_no_Lelouch\"
+        class=\"hoverinfo_trigger\" id=\"#area1575\" rel=\"#info1575\"><strong>Code
+        Geass: Hangyaku no Lelouch</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=1575&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 25 eps, scored 8.88<br />\n\t\t\t\t<span
+        class=\"lightLink\">267,260 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">15</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/263/Hajime_no_Ippo\"
+        class=\"hoverinfo_trigger\" id=\"#area263\" rel=\"#info263\"><img src=\"http://cdn.myanimelist.net/images/anime/10/2025t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area263\">\n\t<div id=\"info263\" rel=\"a263\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/263/Hajime_no_Ippo\" class=\"hoverinfo_trigger\"
+        id=\"#area263\" rel=\"#info263\"><strong>Hajime no Ippo</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=263&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 75 eps, scored 8.86<br />\n\t\t\t\t<span
+        class=\"lightLink\">49,988 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">16</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann\" class=\"hoverinfo_trigger\"
+        id=\"#area2001\" rel=\"#info2001\"><img src=\"http://cdn.myanimelist.net/images/anime/4/5123t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area2001\">\n\t<div id=\"info2001\" rel=\"a2001\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann\" class=\"hoverinfo_trigger\"
+        id=\"#area2001\" rel=\"#info2001\"><strong>Tengen Toppa Gurren Lagann</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=2001&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 27 eps, scored 8.85<br />\n\t\t\t\t<span
+        class=\"lightLink\">192,380 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">17</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/1/Cowboy_Bebop\"
+        class=\"hoverinfo_trigger\" id=\"#area1\" rel=\"#info1\"><img src=\"http://cdn.myanimelist.net/images/anime/4/19644t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area1\">\n\t<div id=\"info1\" rel=\"a1\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/1/Cowboy_Bebop\" class=\"hoverinfo_trigger\"
+        id=\"#area1\" rel=\"#info1\"><strong>Cowboy Bebop</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=1&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 26 eps, scored 8.83<br />\n\t\t\t\t<span
+        class=\"lightLink\">173,252 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">18</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/11741/Fate/Zero_2nd_Season\"
+        class=\"hoverinfo_trigger\" id=\"#area11741\" rel=\"#info11741\"><img src=\"http://cdn.myanimelist.net/images/anime/8/41125t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area11741\">\n\t<div id=\"info11741\" rel=\"a11741\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/11741/Fate/Zero_2nd_Season\" class=\"hoverinfo_trigger\"
+        id=\"#area11741\" rel=\"#info11741\"><strong>Fate/Zero 2nd Season</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=11741&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 12 eps, scored 8.83<br />\n\t\t\t\t<span
+        class=\"lightLink\">76,448 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">19</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/3784/Evangelion:_2.0_You_Can_(Not)_Advance\"
+        class=\"hoverinfo_trigger\" id=\"#area3784\" rel=\"#info3784\"><img src=\"http://cdn.myanimelist.net/images/anime/8/18170t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area3784\">\n\t<div id=\"info3784\" rel=\"a3784\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/3784/Evangelion:_2.0_You_Can_(Not)_Advance\"
+        class=\"hoverinfo_trigger\" id=\"#area3784\" rel=\"#info3784\"><strong>Evangelion:
+        2.0 You Can (Not) Advance</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=3784&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.82<br />\n\t\t\t\t<span
+        class=\"lightLink\">72,225 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">20</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/1535/Death_Note\" class=\"hoverinfo_trigger\"
+        id=\"#area1535\" rel=\"#info1535\"><img src=\"http://cdn.myanimelist.net/images/anime/9/9453t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area1535\">\n\t<div id=\"info1535\" rel=\"a1535\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/1535/Death_Note\" class=\"hoverinfo_trigger\"
+        id=\"#area1535\" rel=\"#info1535\"><strong>Death Note</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=1535&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 37 eps, scored 8.82<br />\n\t\t\t\t<span
+        class=\"lightLink\">346,595 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">21</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/245/Great_Teacher_Onizuka\"
+        class=\"hoverinfo_trigger\" id=\"#area245\" rel=\"#info245\"><img src=\"http://cdn.myanimelist.net/images/anime/13/11460t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area245\">\n\t<div id=\"info245\" rel=\"a245\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/245/Great_Teacher_Onizuka\" class=\"hoverinfo_trigger\"
+        id=\"#area245\" rel=\"#info245\"><strong>Great Teacher Onizuka</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=245&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 43 eps, scored 8.82<br />\n\t\t\t\t<span
+        class=\"lightLink\">112,931 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">22</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/11665/Natsume_Yuujinchou_Shi\"
+        class=\"hoverinfo_trigger\" id=\"#area11665\" rel=\"#info11665\"><img src=\"http://cdn.myanimelist.net/images/anime/3/37449t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area11665\">\n\t<div id=\"info11665\" rel=\"a11665\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/11665/Natsume_Yuujinchou_Shi\" class=\"hoverinfo_trigger\"
+        id=\"#area11665\" rel=\"#info11665\"><strong>Natsume Yuujinchou Shi</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=11665&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 13 eps, scored 8.81<br />\n\t\t\t\t<span
+        class=\"lightLink\">32,291 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">23</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/457/Mushishi\" class=\"hoverinfo_trigger\"
+        id=\"#area457\" rel=\"#info457\"><img src=\"http://cdn.myanimelist.net/images/anime/5/30699t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area457\">\n\t<div id=\"info457\" rel=\"a457\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/457/Mushishi\" class=\"hoverinfo_trigger\"
+        id=\"#area457\" rel=\"#info457\"><strong>Mushishi</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=457&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 26 eps, scored 8.81<br />\n\t\t\t\t<span
+        class=\"lightLink\">99,653 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">24</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/12365/Bakuman._3\" class=\"hoverinfo_trigger\"
+        id=\"#area12365\" rel=\"#info12365\"><img src=\"http://cdn.myanimelist.net/images/anime/6/41845t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area12365\">\n\t<div id=\"info12365\" rel=\"a12365\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/12365/Bakuman._3\" class=\"hoverinfo_trigger\"
+        id=\"#area12365\" rel=\"#info12365\"><strong>Bakuman. 3</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=12365&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 25 eps, scored 8.77<br />\n\t\t\t\t<span
+        class=\"lightLink\">34,729 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">25</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/5258/Hajime_no_Ippo:_New_Challenger\"
+        class=\"hoverinfo_trigger\" id=\"#area5258\" rel=\"#info5258\"><img src=\"http://cdn.myanimelist.net/images/anime/6/12847t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area5258\">\n\t<div id=\"info5258\" rel=\"a5258\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/5258/Hajime_no_Ippo:_New_Challenger\"
+        class=\"hoverinfo_trigger\" id=\"#area5258\" rel=\"#info5258\"><strong>Hajime
+        no Ippo: New Challenger</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=5258&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, 26 eps, scored 8.77<br />\n\t\t\t\t<span
+        class=\"lightLink\">29,335 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">26</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/164/Mononoke_Hime\" class=\"hoverinfo_trigger\"
+        id=\"#area164\" rel=\"#info164\"><img src=\"http://cdn.myanimelist.net/images/anime/9/26570t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area164\">\n\t<div id=\"info164\" rel=\"a164\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/164/Mononoke_Hime\" class=\"hoverinfo_trigger\"
+        id=\"#area164\" rel=\"#info164\"><strong>Mononoke Hime</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=164&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.77<br />\n\t\t\t\t<span
+        class=\"lightLink\">134,071 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n
+        \           </tr>\n            \n            <tr>\n\t\t\t\t<td class=\"borderClass\"
+        style=\"border-width: 0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span
+        style=\"font-weight: bold; font-size: 24px;\" class=\"lightLink\">27</span></td>\n
+        \             <td class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t
+        \ <div class=\"picSurround\"><a href=\"http://myanimelist.net/anime/11061/Hunter_x_Hunter_(2011)\"
+        class=\"hoverinfo_trigger\" id=\"#area11061\" rel=\"#info11061\"><img src=\"http://cdn.myanimelist.net/images/anime/11/33657t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area11061\">\n\t<div id=\"info11061\" rel=\"a11061\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/11061/Hunter_x_Hunter_(2011)\" class=\"hoverinfo_trigger\"
+        id=\"#area11061\" rel=\"#info11061\"><strong>Hunter x Hunter (2011)</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=11061&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tTV, ? eps, scored 8.76<br />\n\t\t\t\t<span
+        class=\"lightLink\">47,419 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">28</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/10408/Hotarubi_no_Mori_e\" class=\"hoverinfo_trigger\"
+        id=\"#area10408\" rel=\"#info10408\"><img src=\"http://cdn.myanimelist.net/images/anime/8/38229t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area10408\">\n\t<div id=\"info10408\" rel=\"a10408\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/10408/Hotarubi_no_Mori_e\" class=\"hoverinfo_trigger\"
+        id=\"#area10408\" rel=\"#info10408\"><strong>Hotarubi no Mori e</strong></a>
+        <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=10408&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.76<br />\n\t\t\t\t<span
+        class=\"lightLink\">44,753 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">29</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/4282/Kara_no_Kyoukai_5:_Mujun_Rasen\"
+        class=\"hoverinfo_trigger\" id=\"#area4282\" rel=\"#info4282\"><img src=\"http://cdn.myanimelist.net/images/anime/11/21738t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area4282\">\n\t<div id=\"info4282\" rel=\"a4282\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/4282/Kara_no_Kyoukai_5:_Mujun_Rasen\"
+        class=\"hoverinfo_trigger\" id=\"#area4282\" rel=\"#info4282\"><strong>Kara
+        no Kyoukai 5: Mujun Rasen</strong></a> <a href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=4282&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tMovie, 1 eps, scored 8.76<br />\n\t\t\t\t<span
+        class=\"lightLink\">49,873 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           \n            <tr>\n\t\t\t\t<td class=\"borderClass\" style=\"border-width:
+        0 0 1px 0;\" align=\"center\" valign=\"top\" width=\"30\"><span style=\"font-weight:
+        bold; font-size: 24px;\" class=\"lightLink\">30</span></td>\n              <td
+        class=\"borderClass\" align=\"center\" width=\"50\">\n\t\t\t  <div class=\"picSurround\"><a
+        href=\"http://myanimelist.net/anime/777/Hellsing_Ultimate\" class=\"hoverinfo_trigger\"
+        id=\"#area777\" rel=\"#info777\"><img src=\"http://cdn.myanimelist.net/images/anime/6/7333t.jpg\"
+        border=\"0\"></a></div></td><td class=\"borderClass\" align=\"left\" valign=\"top\">\n\t\t\t
+        \n\t<div id=\"area777\">\n\t<div id=\"info777\" rel=\"a777\" class=\"hoverinfo\">\n\t</div>\n\t</div>\n\t\n\t\t\t
+        <a href=\"http://myanimelist.net/anime/777/Hellsing_Ultimate\" class=\"hoverinfo_trigger\"
+        id=\"#area777\" rel=\"#info777\"><strong>Hellsing Ultimate</strong></a> <a
+        href=\"http://myanimelist.net/panel.php?go=add&selected_series_id=777&hideLayout\"
+        title=\"Quick add anime to my list\" class=\"Lightbox_AddEdit button_add\">add</a>\n\t\t\t
+        <div class=\"spaceit_pad\">\n\t\t\tOVA, 10 eps, scored 8.76<br />\n\t\t\t\t<span
+        class=\"lightLink\">98,852 members</span>\n\t\t\t</div>\n\t\t\t\t</td>\n            </tr>\n
+        \           </table>\n<div class=\"spaceit\"> <a href=\"?type=&limit=30\">Next
+        30</a></div>\n<div class=\"spaceit\">Rankings are updated twice a day. <a
+        href=\"javascript:void(0);\" onclick=\"window.open('info.php?go=topanime','topanime','menubar=no,scrollbars=no,status=no,width=500,height=280');\">How
+        do we rank shows?</a></div>\n</div>\r\n\t\t\t\t<div class=\"adCenter600\">\r\n\t\t\t\t<div
+        id=\"ad_promo\">\r\n\t\t\t\t\t\t<link href=\"http://cdn.myanimelist.net/css/ad-promo-wide.css\"
+        rel=\"stylesheet\" type=\"text/css\" />\r\n\t\t\t\t\t\t<script type=\"text/javascript\"
+        src=\"http://cms.springboard.gorillanation.com/promotions/index/67/3/133/0/0/6\"></script>\r\n\t\t\t\t\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.springboard.gorillanation.com/js_static/promotions/promotion_feed.js\"></script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\n</div>\n\n<div
+        id=\"rightcontentunder\">\n\n<a href=\"http://myanimelist.net/about.php?go=support\">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/modules.php?go=faq\">FAQ</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/about.php\">About</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/about.php?go=contact\">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://www.craveonline.com/termsofuse.php?site=www.MyAnimeList.net\"
+        target=\"_blank\">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a href=\"http://www.craveonline.com/privacy.php?site=www.MyAnimeList.net\"
+        target=\"_blank\">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a id=\"_bapw-link\"
+        href=\"#\" target=\"_blank\" style=\"\"><img id=\"_bapw-icon\" style=\"border:0
+        !important;display:inline !important;vertical-align:middle !important\"/>
+        <span style=\"vertical-align:middle !important\">AdChoices</span></a><script>/*<![CDATA[*/(function(){var
+        c=247,g=595,b=false,i=document,f=i.getElementById(\"_bapw-link\"),a=(i.location.protocol==\"https:\"?\"https\":\"http\"),h=(a==\"https\"?\"https://info.evidon.com/c/betrad/pub/\":\"http://cdn.betrad.com/pub/\");function
+        e(j){var d=new Image();d.src=a+\"://l.betrad.com/pub/p.gif?pid=\"+c+\"&ocid=\"+g+\"&i\"+j+\"=1&r=\"+Math.random()}i.getElementById(\"_bapw-icon\").src=h+\"icon1.png\";f.onmouseover=function(){if(/#$/.test(f.href)){f.href=\"http://info.evidon.com/pub_info/\"+c+\"?v=1\"}};f.onclick=function(){var
+        j=window._bap_p_overrides;function d(m,p){var n=i.getElementsByTagName(\"head\")[0]||i.documentElement,l=b,k=i.createElement(\"script\");function
+        o(){k.onload=k.onreadystatechange=null;n.removeChild(k);p()}k.src=m;k.onreadystatechange=function(){if(!l&&(this.readyState==\"loaded\"||this.readyState==\"complete\")){l=true;o()}};k.onload=o;n.insertBefore(k,n.firstChild)}if(j&&j.hasOwnProperty(c)){if(j[c].new_window){e(\"c\");return
+        true}}this.onclick=\"return \"+b;d(a+\"://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js\",function(){d(h+\"pub2.js\",function(){BAPW.i(f,{pid:c,ocid:g})})});return
+        b};e(\"i\")}());/*]]>*/</script>\n\t\n<div id=\"copyright\">\nMyAnimeList.net
+        is a property of <a href=\"http://www.craveonline.com\">CraveOnline</a>, LLC.
+        an <a href=\"http://www.evolvemediallc.com\">Evolve Media</a>, LLC company.
+        &copy;2013 All Rights Reserved. <div style=\"position: absolute; left: -999em\">monitoring_string
+        = \"1d62297d23059a80b6e7551767f2653f\"</div>\n</div>\n\n</div>\n\n</div>\n\n<!--
+        \ control container height -->\n<div style=\"clear:both;\"></div>\n\n<!--
+        end rightbody -->\n</div>\n\n\n</div>\n<!-- Begin comScore Tag -->\r\n<script>\r\n
+        \   document.write(unescape(\"%3Cscript src='\" + (document.location.protocol
+        == \"https:\" ? \"https://sb\" : \"http://b\") + \".scorecardresearch.com/beacon.js'
+        %3E%3C/script%3E\"));\r\n</script>\r\n\r\n<script>\r\n  COMSCORE.beacon({\r\n
+        \   c1:2,\r\n    c2:6036161,\r\n    c3:\"\",\r\n    c4:\"\",\r\n    c5:\"\",\r\n
+        \   c6:\"\",\r\n    c15:\"\"\r\n  });\r\n</script>\r\n<noscript>\r\n  <img
+        src=\"http://b.scorecardresearch.com/p?c1=2&c2=6036161&c3=&c4=&c5=&c6=&c15=&cj=1\"
+        />\r\n</noscript>\r\n<!-- End comScore Tag -->\r\n\r\n<!-- start Vibrant Media
+        IntelliTXT script section -->\r\n<script type=\"text/javascript\" src=\"http://myanimelist.us.intellitxt.com/intellitxt/front.asp?ipid=30532\"></script>\r\n<!--
+        end Vibrant Media IntelliTXT script section -->\r\n\t\r\n<!-- info links -->\r\n<script
+        type=\"text/javascript\">\r\nvar infolinks_pid = 1568135;\r\nvar infolinks_wsid
+        = 0;\r\n</script>\r\n<script type=\"text/javascript\" src=\"http://resources.infolinks.com/js/infolinks_main.js\"></script>\r\n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Sat, 20 Jul 2013 02:15:33 GMT
+recorded_with: VCR 2.5.0
