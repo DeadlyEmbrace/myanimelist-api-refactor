@@ -1,5 +1,4 @@
 MyAnimeListApiRefactor::App.controllers :anime do
-
   get :upcoming do
     page = (params[:page].to_i - 1) * 20 unless params[:page].nil?
     date = Chronic.parse('today')
@@ -35,6 +34,16 @@ MyAnimeListApiRefactor::App.controllers :anime do
     search_results.to_json
   end
 
+  get :top do
+    options = {}
+    options[:limit] = (params[:page].to_i - 1) * 20 unless params[:page].nil?
+    options[:type] = params[:type].to_s.downcase unless params[:type].nil?
+    options = nil if options.empty?
+    top_anime_page = MALRequester.get '/topanime.php', query: options
+    top_anime = TopAnimeScraper.scrape top_anime_page.body
+    top_anime.to_json
+  end
+
   get :index, with: :id do
     anime_page = MALRequester.get "/anime/#{params[:id]}"
     anime = AnimeScraper.scrape(anime_page.body)
@@ -63,5 +72,4 @@ MyAnimeListApiRefactor::App.controllers :anime do
 
     search_results.to_json
   end
-
 end

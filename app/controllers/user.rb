@@ -1,5 +1,4 @@
 MyAnimeListApiRefactor::App.controllers :user do
-
   get :profile, map: '/user/:username/profile' do
     profile_page = MALRequester.get("/profile/#{params[:username]}")
     profile = ProfileScraper.scrape(profile_page.body)
@@ -13,7 +12,8 @@ MyAnimeListApiRefactor::App.controllers :user do
   end
 
   get :animelist, map: '/user/:username/animelist' do
-    anime_list_page = MALRequester.get("/malappinfo.php?u=#{params[:username]}&status=all&type=anime")
+    options = { u: params[:username], status: 'all', type: 'anime' }
+    anime_list_page = MALRequester.get '/malappinfo.php', query: options
     anime_list = AnimeListScraper.scrape(anime_list_page.body)
 
     if anime_list.nil?
@@ -25,7 +25,8 @@ MyAnimeListApiRefactor::App.controllers :user do
   end
 
   get :mangalist, map: '/user/:username/mangalist' do
-    manga_list_page = MALRequester.get("/malappinfo.php?u=#{params[:username]}&status=all&type=manga")
+    options = { u: params[:username], status: 'all', type: 'manga' }
+    manga_list_page = MALRequester.get '/malappinfo.php', query: options
     manga_list = MangaListScraper.scrape(manga_list_page.body)
 
     if manga_list.nil?
