@@ -5,47 +5,25 @@ class AnimeScraper
 
     unless invalid_anime
       anime_page = Nokogiri::HTML(html)
-      anime = Anime.new
-
-      anime.id = self.parse_id anime_page
-      anime.title = anime_page.at(:h1).children.find { |o| o.text? }.to_s
-      anime.rank = anime_page.at('h1 > div').text.gsub(/\D/, '').to_i
-
-      if (image_node = anime_page.at('div#content tr td div img'))
-        anime.image_url = image_node['src']
-      end
-
       left_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td[@class="borderClass"]')
+      right_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td/div/table')
+      date_range = self.parse_date_range left_detail_content
 
-      anime.other_titles = self.parse_alternative_titles left_detail_content
-
-      # Information
-      if (node = left_detail_content.at('//span[text()="Type:"]')) && node.next
-        anime.type = node.next.text.strip
-      end
-
-      anime.episodes = self.parse_episodes left_detail_content
-
-      if (node = left_detail_content.at('//span[text()="Status:"]')) && node.next
-        anime.status = node.next.text.strip
-      end
-
-      if (node = left_detail_content.at('//span[text()="Aired:"]')) && node.next
-        airdates_text = node.next.text.strip
-        date_range = DateParser.parse_date_range airdates_text
-        anime.start_date = date_range[:start_date]
-        anime.end_date = date_range[:end_date]
-      end
-
-      if (node = left_detail_content.at('//span[text()="Genres:"]'))
-        node.parent.search('a').each do |a|
-          anime.genres << a.text.strip
-        end
-      end
-
-      if (node = left_detail_content.at('//span[text()="Rating:"]')) && node.next
-        anime.classification = node.next.text.strip
-      end
+      anime = Anime.new({
+        id: self.parse_id(anime_page),
+        title: anime_page.at(:h1).children.find { |o| o.text? }.to_s,
+        rank: anime_page.at('h1 > div').text.gsub(/\D/, '').to_i,
+        image_url: self.parse_image_url(anime_page),
+        other_titles: self.parse_alternative_titles(left_detail_content),
+        type: self.parse_generic(left_detail_content.at('//span[text()="Type:"]')),
+        episodes: self.parse_episodes(left_detail_content),
+        status: self.parse_generic(left_detail_content.at('//span[text()="Status:"]')),
+        start_date: date_range[:start_date],
+        end_date: date_range[:end_date],
+        genres: self.parse_genres(left_detail_content),
+        synopsis: self.parse_synopsis(right_detail_content),
+        classification: self.parse_generic(left_detail_content.at('//span[text()="Rating:"]')),
+      })
 
       # Statistics
       if (node = left_detail_content.at('//span[text()="Score:"]')) && node.next
@@ -70,10 +48,6 @@ class AnimeScraper
           anime.tags << a.text
         end
       end
-
-      right_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td/div/table')
-
-      anime.synopsis = self.parse_synopsis right_detail_content
 
       # Related Anime
       related_anime_h2 = anime_page.at('//h2[text()="Related Anime"]')
@@ -228,6 +202,16 @@ class AnimeScraper
       alternative_titles
     end
 
+    def self.parse_image_url(anime_page)
+      image_url = nil
+
+      if (image_node = anime_page.at('div#content tr td div img'))
+        image_url = image_node['src']
+      end
+
+      image_url
+    end
+
     def self.parse_episodes(left_detail_content)
       episodes = nil
 
@@ -237,6 +221,18 @@ class AnimeScraper
       end
 
       episodes
+    end
+
+    def self.parse_genres(left_detail_content)
+      genres = []
+
+      if (node = left_detail_content.at('//span[text()="Genres:"]'))
+        node.parent.search('a').each do |a|
+          genres << a.text.strip
+        end
+      end
+
+      genres
     end
 
     def self.parse_synopsis(right_detail_content)
@@ -257,5 +253,26 @@ class AnimeScraper
       end
 
       synopsis
+    end
+
+    def self.parse_date_range(left_detail_content)
+      date_range = { start_date: nil, end_date: nil }
+
+      if (node = left_detail_content.at('//span[text()="Aired:"]')) && node.next
+        airdates_text = node.next.text.strip
+        date_range = DateParser.parse_date_range airdates_text
+      end
+
+      date_range
+    end
+
+    def self.parse_generic(node)
+      result = nil
+
+      if node && node.next
+        result = node.next.text.strip
+      end
+
+      result
     end
 end

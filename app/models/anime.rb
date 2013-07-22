@@ -5,15 +5,21 @@ class Anime
                 :manga_adaptations, :prequels, :sequels, :side_stories, :character_anime, :spin_offs,
                 :summaries, :alternative_versions, :watched_episodes, :score, :watched_status
 
-  def initialize
-    @id, @title, @rank, @popularity_rank, @image_url, @episodes, @classification,
-    @members_score, @members_count, @favorited_count, @synopsis, @start_date,
-    @end_date, @listed_anime_id, @parent_story, @type, @status, @watched_episodes, @score,
-    @watched_status = nil
+  def initialize(options = {})
+    defaults = {
+      id: nil, title: nil, popularity_rank: nil, image_url: nil, episodes: nil,
+      classification: nil, members_score: nil, members_count: nil, favorited_count: nil,
+      synopsis: nil, start_date: nil, end_date: nil, listed_anime_id: nil,
+      parent_story: nil, type: nil, status: nil, watched_episodes: nil, score: nil,
+      watched_status: nil, other_titles: {}, genres: [], tags: [], manga_adaptations: [],
+      prequels: [], sequels: [], side_stories: [], character_anime: [], spin_offs: [],
+      summaries: [], alternative_versions: []
+    }
 
-    @other_titles = {}
-    @genres, @tags, @manga_adaptations, @prequels, @sequels, @side_stories,
-    @character_anime, @spin_offs, @summaries, @alternative_versions = Array.new(10) { [] }
+    options = defaults.merge(options)
+    options.each do |attribute, value|
+      self.send("#{attribute}=", value)
+    end
   end
 
   def watched_status=(value)
