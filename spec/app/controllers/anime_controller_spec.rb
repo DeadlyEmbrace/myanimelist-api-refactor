@@ -226,4 +226,35 @@ describe "AnimeController" do
       last_response.body.should eq top_anime.to_json
     end
   end
+
+  describe :popular do
+    popular_url = 'http://myanimelist.net/topanime.php?type=bypopularity'
+
+    it 'should hit the MyAnimeList top anime url with filter type bypopularity' do
+      stub_request :get, popular_url
+      get '/anime/popular'
+      assert_requested :get, popular_url
+    end
+
+    it 'should hit the MyAnimeList top anime url with pagination' do
+      paging_url = popular_url + '&limit=40'
+      stub_request :get, paging_url
+      get '/anime/popular?page=3'
+      assert_requested :get, paging_url
+    end
+
+    it 'should return a status code 200' do
+      stub_request :get, popular_url
+      get '/anime/popular'
+      last_response.should be_ok
+    end
+
+    it 'should return top anime as json' do
+      popular_anime = [Anime.new, Anime.new]
+      stub_request :get, popular_url
+      allow(TopAnimeScraper).to receive(:scrape).and_return popular_anime
+      get '/anime/popular'
+      last_response.body.should eq popular_anime.to_json
+    end
+  end
 end

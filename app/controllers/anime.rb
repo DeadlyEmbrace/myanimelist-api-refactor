@@ -44,6 +44,14 @@ MyAnimeListApiRefactor::App.controllers :anime do
     top_anime.to_json
   end
 
+  get :popular do
+    options = { type: 'bypopularity' }
+    options[:limit] = (params[:page].to_i - 1) * 20 unless params[:page].nil?
+    top_anime_page = MALRequester.get '/topanime.php', query: options
+    top_anime = TopAnimeScraper.scrape top_anime_page.body
+    top_anime.to_json
+  end
+
   get :index, with: :id do
     anime_page = MALRequester.get "/anime/#{params[:id]}"
     anime = AnimeScraper.scrape(anime_page.body)
