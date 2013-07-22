@@ -17,20 +17,22 @@ class AnimeSearchScraper
 
   private
     def self.parse_anime(id, search_result, anime_title_node)
-      anime = Anime.new
-      anime.id = id.to_i
-      anime.title = anime_title_node.text
-      anime.image_url = self.parse_image_url search_result
-      anime.synopsis = self.parse_synopsis search_result
       anime_info = search_result.search('td')
-      anime.type = anime_info[2].text
-      anime.episodes = anime_info[3].text.to_i
-      anime.members_score = anime_info[4].text.to_f
-      anime.start_date = DateParser.parse_date(anime_info[5].text)
-      anime.end_date = DateParser.parse_date(anime_info[6].text)
-      anime.classification = anime_info[8].text if anime_info[8] and not anime_info[8].text.empty?
+      classification = nil
+      classification = anime_info[8].text if anime_info[8] and not anime_info[8].text.empty?
 
-      anime
+      Anime.new({
+        id: id.to_i,
+        title: anime_title_node.text,
+        image_url: self.parse_image_url(search_result),
+        synopsis: self.parse_synopsis(search_result),
+        type: anime_info[2].text,
+        episodes: anime_info[3].text.to_i,
+        members_score: anime_info[4].text.to_f,
+        start_date: DateParser.parse_date(anime_info[5].text),
+        end_date: DateParser.parse_date(anime_info[6].text),
+        classification: classification
+      })
     end
 
     def self.parse_image_url(search_result)
