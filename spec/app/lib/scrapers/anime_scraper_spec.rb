@@ -48,7 +48,13 @@ describe AnimeScraper do
   end
 
   describe 'image url' do
-    it 'should be able to scrape image url' do
+    it 'should be able to scrape anime with no image url' do
+      html = create_left_detail
+      anime = AnimeScraper.scrape(html)
+      anime.image_url.should be_nil
+    end
+
+    it 'should be able to scrape anime with image url' do
       expected = 'http://cdn.myanimelist.net/images/anime/3/20349.jpg'
       html = create_left_detail "<div><img src='#{expected}' /></div>"
       anime = AnimeScraper.scrape(html)
@@ -82,7 +88,7 @@ describe AnimeScraper do
     end
   end
 
-  describe 'information section' do
+  describe 'information' do
     it 'should be able to scrape type' do
       html = create_left_detail '<div><span>Type:</span> TV</div>'
       anime = AnimeScraper.scrape(html)
@@ -114,7 +120,7 @@ describe AnimeScraper do
     end
   end
 
-  describe 'statistics section' do
+  describe 'statistics' do
     it 'should be able to scrape score' do
       html = create_left_detail '<div><span>Score:</span>8.56</div>'
       anime = AnimeScraper.scrape(html)

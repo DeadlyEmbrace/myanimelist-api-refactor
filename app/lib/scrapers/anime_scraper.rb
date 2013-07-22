@@ -7,14 +7,7 @@ class AnimeScraper
       anime_page = Nokogiri::HTML(html)
       anime = Anime.new
 
-      anime_id_input = anime_page.at('input[@name="aid"]')
-      if anime_id_input
-        anime.id = anime_id_input['value'].to_i
-      else
-        details_link = anime_page.at('//a[text()="Details"]')
-        anime.id = details_link['href'][%r{http://myanimelist.net/anime/(\d+)/.*?}, 1].to_i
-      end
-
+      anime.id = self.parse_id anime_page
       anime.title = anime_page.at(:h1).children.find { |o| o.text? }.to_s
       anime.rank = anime_page.at('h1 > div').text.gsub(/\D/, '').to_i
 
@@ -24,28 +17,14 @@ class AnimeScraper
 
       left_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td[@class="borderClass"]')
 
-      # Alternative Titles
-      if (node = left_detail_content.at('//span[text()="English:"]')) && node.next
-        anime.other_titles[:english] = node.next.text.strip.split(/,\s?/)
-      end
-
-      if (node = left_detail_content.at('//span[text()="Synonyms:"]')) && node.next
-        anime.other_titles[:synonyms] = node.next.text.strip.split(/,\s?/)
-      end
-
-      if (node = left_detail_content.at('//span[text()="Japanese:"]')) && node.next
-        anime.other_titles[:japanese] = node.next.text.strip.split(/,\s?/)
-      end
+      anime.other_titles = self.parse_alternative_titles left_detail_content
 
       # Information
       if (node = left_detail_content.at('//span[text()="Type:"]')) && node.next
         anime.type = node.next.text.strip
       end
 
-      if (node = left_detail_content.at('//span[text()="Episodes:"]')) && node.next
-        anime.episodes = node.next.text.strip.gsub(',', '').to_i
-        anime.episodes = nil if anime.episodes == 0
-      end
+      anime.episodes = self.parse_episodes left_detail_content
 
       if (node = left_detail_content.at('//span[text()="Status:"]')) && node.next
         anime.status = node.next.text.strip
@@ -92,22 +71,9 @@ class AnimeScraper
         end
       end
 
-      right_column_details = anime_page.xpath('//div[@id="content"]/table/tr/td/div/table')
+      right_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td/div/table')
 
-      # Synopsis
-      synopsis_h2 = right_column_details.at('//h2[text()="Synopsis"]')
-      if synopsis_h2
-        node = synopsis_h2.next
-        while node
-          if anime.synopsis
-            anime.synopsis << node.to_s
-          else
-            anime.synopsis = node.to_s
-          end
-
-          node = node.next
-        end
-      end
+      anime.synopsis = self.parse_synopsis right_detail_content
 
       # Related Anime
       related_anime_h2 = anime_page.at('//h2[text()="Related Anime"]')
@@ -232,4 +198,64 @@ class AnimeScraper
 
     anime
   end
+
+  private
+    def self.parse_id(anime_page)
+      anime_id_input = anime_page.at('input[@name="aid"]')
+      if anime_id_input
+        anime_id_input['value'].to_i
+      else
+        details_link = anime_page.at('//a[text()="Details"]')
+        details_link['href'][%r{http://myanimelist.net/anime/(\d+)/.*?}, 1].to_i
+      end
+    end
+
+    def self.parse_alternative_titles(left_detail_content)
+      alternative_titles = {}
+
+      if (node = left_detail_content.at('//span[text()="English:"]')) && node.next
+        alternative_titles[:english] = node.next.text.strip.split(/,\s?/)
+      end
+
+      if (node = left_detail_content.at('//span[text()="Synonyms:"]')) && node.next
+        alternative_titles[:synonyms] = node.next.text.strip.split(/,\s?/)
+      end
+
+      if (node = left_detail_content.at('//span[text()="Japanese:"]')) && node.next
+        alternative_titles[:japanese] = node.next.text.strip.split(/,\s?/)
+      end
+
+      alternative_titles
+    end
+
+    def self.parse_episodes(left_detail_content)
+      episodes = nil
+
+      if (node = left_detail_content.at('//span[text()="Episodes:"]')) && node.next
+        episodes = node.next.text.strip.gsub(',', '').to_i
+        episodes = nil if episodes == 0
+      end
+
+      episodes
+    end
+
+    def self.parse_synopsis(right_detail_content)
+      synopsis = nil
+      synopsis_h2 = right_detail_content.at('//h2[text()="Synopsis"]')
+
+      if synopsis_h2
+        node = synopsis_h2.next
+        while node
+          if synopsis
+            synopsis << node.to_s
+          else
+            synopsis = node.to_s
+          end
+
+          node = node.next
+        end
+      end
+
+      synopsis
+    end
 end
