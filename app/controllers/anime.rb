@@ -34,7 +34,7 @@ MyAnimeListApiRefactor::App.controllers :anime do
     search_results.to_json
   end
 
-  get :top do
+  get :top, '/anime/top(/:type)' do
     options = {}
     options[:limit] = (params[:page].to_i - 1) * 20 unless params[:page].nil?
     options[:type] = params[:type].to_s.downcase unless params[:type].nil?

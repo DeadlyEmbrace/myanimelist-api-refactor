@@ -194,7 +194,7 @@ describe "AnimeController" do
     it 'should hit the MyAnimeList top anime url with filter type' do
       filter_url = top_anime_url + '?type=ova'
       stub_request :get, filter_url
-      get '/anime/top?type=ova'
+      get '/anime/top/OVA'
       assert_requested :get, filter_url
     end
 
@@ -208,7 +208,7 @@ describe "AnimeController" do
     it 'should it the MyAnimeList top anime url with filter and pagination' do
       filter_paging_url = top_anime_url + '?type=ova&limit=40'
       stub_request :get, filter_paging_url
-      get 'anime/top?type=OVA&page=3'
+      get 'anime/top/OVA?page=3'
       assert_requested :get, filter_paging_url
     end
 
