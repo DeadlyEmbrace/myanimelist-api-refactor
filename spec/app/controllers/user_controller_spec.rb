@@ -1,27 +1,27 @@
 require 'spec_helper'
 
 describe 'UserController' do
-  describe :profile do
+  describe :index do
     profile_url = 'http://myanimelist.net/profile/astraldragon88'
 
     it 'should hit the MyAnimeList profile URL' do
       stub_request(:get, profile_url)
       allow(ProfileScraper).to receive(:scrape).and_return nil
-      get '/user/astraldragon88/profile'
+      get '/user/astraldragon88'
       assert_requested :get, profile_url
     end
 
     it 'should return a status code 404 if the profile returned is nil' do
       stub_request(:get, profile_url)
       allow(ProfileScraper).to receive(:scrape).and_return nil
-      get '/user/astraldragon88/profile'
+      get '/user/astraldragon88'
       last_response.should be_not_found
     end
 
     it 'should return a status code 200 when valid profile is returned' do
       stub_request(:get, profile_url)
       allow(ProfileScraper).to receive(:scrape).and_return({})
-      get '/user/astraldragon88/profile'
+      get '/user/astraldragon88'
       last_response.should be_ok
     end
 
@@ -29,7 +29,7 @@ describe 'UserController' do
       profile = Profile.new
       stub_request(:get, profile_url)
       allow(ProfileScraper).to receive(:scrape).and_return profile
-      get '/user/astraldragon88/profile'
+      get '/user/astraldragon88'
       last_response.body.should eq profile.to_json
     end
   end

@@ -1,5 +1,5 @@
 MyAnimeListApiRefactor::App.controllers :user do
-  get :profile, map: '/user/:username/profile' do
+  get :index, with: :username do
     profile_page = MALRequester.get("/profile/#{params[:username]}")
     profile = ProfileScraper.scrape(profile_page.body)
 
