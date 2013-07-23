@@ -1,20 +1,24 @@
 class Manga
   attr_accessor :id, :title, :rank, :popularity_rank, :image_url, :volumes, :chapters,
                 :members_score, :members_count, :favorited_count, :synopsis,
-                :listed_manga_id, :type, :status, :genres, :tags, :other_titles,
+                :listed_manga_id, :type, :status, :other_titles, :genres, :tags,
                 :anime_adaptations, :related_manga, :alternative_versions,
                 :volumes_read, :chapters_read, :score, :read_status
 
-  def initialize
-    @id, @title, @rank, @popularity_rank, @image_url, @volumes, @chapters,
-    @members_score, @members_count, @favorited_count, @synopsis,
-    @listed_manga_id, @type, @status, @genres, @tags, @other_titles,
-    @anime_adaptations, @related_manga, @alternative_versions,
-    @volumes_read, @chapters_read, @score, @read_status = nil
+  def initialize(options = {})
+    defaults = {
+      id: nil, title: nil, rank: nil, popularity_rank: nil, image_url: nil,
+      volumes: nil, chapters: nil, members_score: nil, members_count: nil,
+      favorited_count: nil, synopsis: nil, listed_manga_id: nil, type: nil,
+      status: nil, volumes_read: nil, chapters_read: nil, score: nil,
+      read_status: nil, other_titles: {}, genres: [], tags: [],
+      anime_adaptations: [], related_manga: [], alternative_versions: [],
+    }
 
-    @other_titles = {}
-    @genres, @tags, @anime_adaptations, @related_manga,
-    @alternative_versions = Array.new(5) { [] }
+    options = defaults.merge(options)
+    options.each do |attribute, value|
+      self.send("#{attribute}=", value)
+    end
   end
 
   def read_status=(value)

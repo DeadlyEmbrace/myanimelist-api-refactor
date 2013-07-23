@@ -9,7 +9,7 @@ class MangaScraper
       right_detail_content = manga_page.xpath('//div[@id="content"]/table/tr/td/div/table')
 
       manga = Manga.new({
-        id: self.parse_id(manga_page),
+        id: CommonScraper.scrape_id_input(manga_page, 'mid', %r{http://myanimelist.net/manga/(\d+)/.*?}),
         title: manga_page.at(:h1).children.find { |o| o.text? }.to_s.strip,
         rank: manga_page.at('h1 > div').text.gsub(/\D/, '').to_i,
         image_url: self.parse_image_url(manga_page),
@@ -18,12 +18,12 @@ class MangaScraper
         volumes: self.parse_generic_number(left_detail_content.at('//span[text()="Volumes:"]')),
         chapters: self.parse_generic_number(left_detail_content.at('//span[text()="Chapters:"]')),
         status: self.parse_generic(left_detail_content.at('//span[text()="Status:"]')),
-        genres: self.parse_genres(left_detail_content),
+        genres: CommonScraper.scrape_genres(left_detail_content),
         members_score: nil,
         popularity_rank: self.parse_statistic(left_detail_content.at('//span[text()="Popularity:"]')),
         members_count: self.parse_statistic(left_detail_content.at('//span[text()="Members:"]')),
         favorited_count: self.parse_statistic(left_detail_content.at('//span[text()="Favorites:"]')),
-        synopsis: self.parse_synopsis(right_detail_content)
+        synopsis: CommonScraper.scrape_synopsis(right_detail_content)
       })
 
       # Statistics
@@ -106,16 +106,6 @@ class MangaScraper
   end
 
   private
-    def self.parse_id(manga_page)
-      manga_id_input = manga_page.at('input[@name="mid"]')
-      if manga_id_input
-        manga_id_input['value'].to_i
-      else
-        details_link = manga_page.at('//a[text()="Details"]')
-        details_link['href'][%r{http://myanimelist.net/manga/(\d+)/.*?}, 1].to_i
-      end
-    end
-
     def self.parse_image_url(manga_page)
       image_url = nil
 
@@ -142,38 +132,6 @@ class MangaScraper
       end
 
       alternative_titles
-    end
-
-    def self.parse_genres(left_detail_content)
-      genres = []
-
-      if (node = left_detail_content.at('//span[text()="Genres:"]'))
-        node.parent.search('a').each do |a|
-          genres << a.text.strip
-        end
-      end
-
-      genres
-    end
-
-    def self.parse_synopsis(right_detail_content)
-      synopsis = nil
-      synopsis_h2 = right_detail_content.at('//h2[text()="Synopsis"]')
-
-      if synopsis_h2
-        node = synopsis_h2.next
-        while node
-          if synopsis
-            synopsis << node.to_s
-          else
-            synopsis = node.to_s
-          end
-
-          node = node.next
-        end
-      end
-
-      synopsis
     end
 
     def self.parse_statistic(node)

@@ -10,7 +10,7 @@ class AnimeScraper
       date_range = self.parse_date_range left_detail_content
 
       anime = Anime.new({
-        id: self.parse_id(anime_page),
+        id: CommonScraper.scrape_id_input(anime_page, 'aid', %r{http://myanimelist.net/anime/(\d+)/.*?}),
         title: anime_page.at(:h1).children.find { |o| o.text? }.to_s,
         rank: anime_page.at('h1 > div').text.gsub(/\D/, '').to_i,
         image_url: self.parse_image_url(anime_page),
@@ -20,8 +20,8 @@ class AnimeScraper
         status: self.parse_generic(left_detail_content.at('//span[text()="Status:"]')),
         start_date: date_range[:start_date],
         end_date: date_range[:end_date],
-        genres: self.parse_genres(left_detail_content),
-        synopsis: self.parse_synopsis(right_detail_content),
+        genres: CommonScraper.scrape_genres(left_detail_content),
+        synopsis: CommonScraper.scrape_synopsis(right_detail_content),
         classification: self.parse_generic(left_detail_content.at('//span[text()="Rating:"]')),
       })
 
@@ -174,16 +174,6 @@ class AnimeScraper
   end
 
   private
-    def self.parse_id(anime_page)
-      anime_id_input = anime_page.at('input[@name="aid"]')
-      if anime_id_input
-        anime_id_input['value'].to_i
-      else
-        details_link = anime_page.at('//a[text()="Details"]')
-        details_link['href'][%r{http://myanimelist.net/anime/(\d+)/.*?}, 1].to_i
-      end
-    end
-
     def self.parse_alternative_titles(left_detail_content)
       alternative_titles = {}
 
@@ -221,38 +211,6 @@ class AnimeScraper
       end
 
       episodes
-    end
-
-    def self.parse_genres(left_detail_content)
-      genres = []
-
-      if (node = left_detail_content.at('//span[text()="Genres:"]'))
-        node.parent.search('a').each do |a|
-          genres << a.text.strip
-        end
-      end
-
-      genres
-    end
-
-    def self.parse_synopsis(right_detail_content)
-      synopsis = nil
-      synopsis_h2 = right_detail_content.at('//h2[text()="Synopsis"]')
-
-      if synopsis_h2
-        node = synopsis_h2.next
-        while node
-          if synopsis
-            synopsis << node.to_s
-          else
-            synopsis = node.to_s
-          end
-
-          node = node.next
-        end
-      end
-
-      synopsis
     end
 
     def self.parse_date_range(left_detail_content)
