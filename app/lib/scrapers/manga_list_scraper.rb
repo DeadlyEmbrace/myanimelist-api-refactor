@@ -18,19 +18,19 @@ class MangaListScraper
 
   private
     def self.parse_manga(manga_node)
-      manga = Manga.new
-      manga.id = manga_node.at('series_mangadb_id').text.to_i
-      manga.title = manga_node.at('series_title').text
-      manga.type = manga_node.at('series_type').text
-      manga.status = manga_node.at('series_status').text
-      manga.chapters = manga_node.at('series_chapters').text.to_i
-      manga.volumes = manga_node.at('series_volumes').text.to_i
-      manga.image_url = manga_node.at('series_image').text
-      manga.listed_manga_id = manga_node.at('my_id').text.to_i
-      manga.volumes_read = manga_node.at('my_read_volumes').text.to_i
-      manga.chapters_read = manga_node.at('my_read_chapters').text.to_i
-      manga.score = manga_node.at('my_score').text.to_i
-      manga.read_status = manga_node.at('my_status').text
-      manga
+      Manga.new({
+        id: manga_node.at('series_mangadb_id').text.to_i,
+        title: manga_node.at('series_title').text,
+        type: manga_node.at('series_type').text,
+        status: manga_node.at('series_status').text,
+        chapters: manga_node.at('series_chapters').text.to_i,
+        volumes: manga_node.at('series_volumes').text.to_i,
+        image_url: manga_node.at('series_image').text,
+        listed_manga_id: manga_node.at('my_id').text.to_i,
+        volumes_read: manga_node.at('my_read_volumes').text.to_i,
+        chapters_read: manga_node.at('my_read_chapters').text.to_i,
+        score: manga_node.at('my_score').text.to_i,
+        read_status: manga_node.at('my_status').text
+      })
     end
 end
