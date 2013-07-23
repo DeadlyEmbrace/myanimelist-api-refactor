@@ -1,7 +1,7 @@
 describe MangaScraper do
   describe 'invalid manga' do
     it 'should return nil' do
-      VCR.use_cassette('manga/invalid_anime') do
+      VCR.use_cassette('manga/invalid_manga') do
         response = HTTParty.get('http://myanimelist.net/manga/1231313213131231')
         manga = MangaScraper.scrape(response.body)
         manga.should be_nil
