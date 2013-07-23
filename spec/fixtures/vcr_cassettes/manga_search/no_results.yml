@@ -1,0 +1,342 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://myanimelist.net/manga.php?c%5B0%5D=a&c%5B1%5D=b&c%5B2%5D=c&c%5B3%5D=d&c%5B4%5D=e&c%5B5%5D=f&c%5B6%5D=g&q=no_results
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Jul 2013 12:52:14 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Vary:
+      - Accept-Encoding
+      X-Served-By:
+      - app1v-mal.ao.prd.lax
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html>\n<head>\n\t<title>Manga
+        - MyAnimeList.net</title>\n    <meta name=\"Description\" content=\"Start
+        cataloging anime you've watched or manga you've read. Browse through our extensive
+        anime and manga database. Get anime or manga suggestions, recommendations
+        and reviews. View top rated anime and manga. Create anime and manga favorites.
+        Tons more too!\" />\n    <meta name=\"Keywords\" content=\"anime, animelist,
+        myanimelist, anime list, log anime seen, catalog anime watched, anime reviews,
+        top anime, anime characters, favorite anime, anime discussion, anime information,
+        manga series, manga information, top manga, mangalist, manga list, manga,
+        manga reviews, voice actors, seiyuu\" />\n    <meta name=\"Author\" content=\"Garrett
+        Gyssler\">\n\t\n\t\t<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js\"></script>\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/hover.v5.js\"></script>\n\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/jquery.fancybox.pack.v1.js\"></script>\n\t\n\t\t\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/mangainfo.v4.js\"></script>\n\t\t\t\t<script
+        type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/reviews.v2.js\"></script>\n\t\t\t\t<link
+        rel=\"stylesheet\" href=\"http://cdn.myanimelist.net/css/myanimelist.v44.css\"
+        type=\"text/css\" />\n\t\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/mal.ridlayout.css\"
+        />\n\t<script type=\"text/javascript\" src=\"http://cdn.myanimelist.net/js/myanimelist.v18.js\"></script>\n\t<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/jquery.fancybox.v3.css\"
+        />\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"http://cdn.myanimelist.net/css/dialog.v1.css\"
+        />\n\t<link rel=\"search\" type=\"application/opensearchdescription+xml\"
+        href=\"http://cdn.myanimelist.net/plugins/myanimelist.xml\" title=\"MyAnimeList\"
+        />\n\t\n\t<link rel=\"shortcut icon\" href=\"http://cdn.myanimelist.net/images/faviconv5.ico\"
+        />\n\n\t<!-- BEGIN TRIGGER TAG INITIALIZATION -->\n\t<script type=\"text/javascript\"
+        src=\"http://cdn.triggertag.gorillanation.com/js/triggertag.js\"></script>\n\t<script
+        type=\"text/javascript\">getTrigger('4834');</script>\n\t<!-- END TRIGGER
+        TAG INITIALIZATION -->\n\t<!-- GAM HEADER SCRIPT -->\n\t\t<script type=\"text/javascript\"
+        src=\"http://partner.googleadservices.com/gampad/google_service.js\">\n\t\t</script>\n\t\t<script
+        type=\"text/javascript\">\n\t\tGS_googleAddAdSenseService(\"ca-pub-1304704158939332\");\n\t\tGS_googleEnableAllServices();\n\t\t</script>\n\t\t<script
+        type=\"text/javascript\">\n\t\tGA_googleUseIframeRendering();\n\t\t</script>\n\t<!--
+        END OF GAM HEADER SCRIPT -->\n\n\t<script type=\"text/javascript\">\n\n  var
+        _gaq = _gaq || [];\n  _gaq.push(['_setAccount', 'UA-369102-1']);\n  _gaq.push(['_trackPageview']);\n\n
+        \ (function() {\n    var ga = document.createElement('script'); ga.type =
+        'text/javascript'; ga.async = true;\n    ga.src = ('https:' == document.location.protocol
+        ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n    var
+        s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\n  })();\n\n</script>\n</head>\n\n<body onload=\"\">\n<div id=\"myanimelist\">\n\n\n\t<div
+        id=\"headerSmall\">\n\t\t<a href=\"/\">MyAnimeList.net</a>\n\t</div>\n\t\n<div
+        id=\"menu\">\n    \n    <div id=\"menu_right\">\n    \t\n        <div id=\"searchBar\">\n\n
+        \       <input type=\"text\" class=\"inputtext\" id=\"topSearchText\" value=\"Search\"
+        onkeydown=\"return ts_checkEnter(event);\" size=\"30\" /> \n        <select
+        id=\"topSearchValue\" class=\"inputtext\" onchange=\"ts_selection();\">\n
+        \       <option value=\"0\">Anime</option>\n        <option value=\"1\">Manga</option>\n
+        \       <option value=\"2\">Characters</option>\n        <option value=\"6\">People</option>\n
+        \       <option value=\"3\">Fansub Groups</option>\n        <option value=\"4\">Clubs</option>\n
+        \       <option value=\"5\">Users</option>\n        </select>\n        \n
+        \       <input type=\"image\" src=\"http://cdn.myanimelist.net/images/magnify.gif\"
+        value=\"Search\" onclick=\"ts_subSearch(5);\" />\n        \n        </div>\n
+        \       \n\t</div>\n\t\n\t<div id=\"menu_left\">\n\t\t<ul id=\"nav\">\n\t\t\t\t\t\t<li
+        class=\"small\"><a href=\"/anime.php\">Anime</a>\n\t\t\t\t<ul class=\"wider\">\n\t\t\t\t\t\t\t\t\t\t<li><a
+        href=\"/reviews.php?t=anime\">Reviews</a></li>\n\t\t\t\t\t<li><a href=\"/recommendations.php?s=recentrecs&t=anime\">Recommendations</a></li>\n\t\t\t\t\t<li><a
+        href=\"/topanime.php\">Top Anime</a></li>\n\t\t\t\t\t<li><a href=\"/fansub-groups.php\">Fansub
+        Groups</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"small\"><a
+        href=\"/manga.php\">Manga</a>\n\t\t\t\t<ul class=\"wider\">\n\t\t\t\t\t\t\t\t\t\t<li><a
+        href=\"/reviews.php?t=manga\">Reviews</a></li>\n\t\t\t\t\t<li><a href=\"/recommendations.php?s=recentrecs&t=manga\">Recommendations</a></li>\n\t\t\t\t\t<li><a
+        href=\"/topmanga.php\">Top Manga</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li><a
+        href=\"#\">Community</a>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><a href=\"/forum/\">Forums</a></li>\n\t\t\t\t\t<li><a
+        href=\"/clubs.php\">Clubs</a></li>\n\t\t\t\t\t<li><a href=\"/blog.php\">Blogs</a></li>\n\t\t\t\t\t<li><a
+        href=\"/users.php\">Users</a></li>\n\t\t\t\t\t<li><a href=\"/about.php?go=team\">Staff</a></li>\n\t\t\t\t\t<li><a
+        href=\"/about.php?go=support\">Help</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li
+        class=\"medium\"><a href=\"#\">Industry</a>\n\t\t\t\t<ul class=\"wide\">\n\t\t\t\t\t<li><a
+        href=\"/people.php\">People</a></li>\n\t\t\t\t\t<li><a href=\"/character.php\">Characters</a></li>\n\t\t\t\t\t<li><a
+        href=\"/news.php\">News</a></li>\n\t\t\t\t\t<li><a href=\"/favorites.php\">Top
+        Favorites</a></li>\n\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t\n\t\t\t<li class=\"tiny\"><a
+        href=\"/register.php\">Join</a></li>\n\t\t\t<li class=\"smaller\"><a href=\"/ajaxtb.php?login\"
+        id=\"malLogin\">Login</a></li>\n\t\t\t\t\t\t</ul>\n\t</div>\n</div>\n\n<div
+        id=\"contentWrapper\">\n\n\t<div id=\"roadblock\">\r\n\t\t\t\t<div class=\"ad230\">\r\n\t\t\t\t\t\t<script
+        type=\"text/javascript\">\r\n\t\t\t\t\t\tif ((typeof(f325922)=='undefined'
+        || f325922 > 0) ) {\r\n\t\t\t\t\t\tif(typeof(gnm_ord)=='undefined') gnm_ord=Math.random()*10000000000000000;
+        if(typeof(gnm_tile) == 'undefined') gnm_tile=1;\r\n\t\t\t\t\t\tdocument.write('<scr'+'ipt
+        src=\"http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=230x90,963x90;tile='+(gnm_tile++)+';ord='+gnm_ord+'?\"
+        type=\"text/javascript\"></scr'+'ipt>');\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\tGA_googleFillSlotWithSize(\"ca-pub-1304704158939332\",
+        \"myanimelist_ros_230x90\", 230, 90);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t</script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"ad728\">\r\n\t\t\t\t\t\t<!-- 728x90 -->\r\n\t\t\t\t\t\t<script type=\"text/javascript\">\r\n\t\t\t\t\t\t
+        \ if (typeof(gnm_ord)=='undefined' || (typeof(ad963_enabled)!= 'undefined'
+        && ad963_enabled == false)) gnm_ord=Math.random()*10000000000000000;\r\n\t\t\t\t\t\t
+        \ if (typeof(gnm_tile) == 'undefined') gnm_tile=1;\r\n\t\t\t\t\t\t  document.write('<scr'+'ipt
+        src=\"http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=728x90,970x90;dga=;dgg=;tile='+(gnm_tile++)+';ord='
+        + gnm_ord + ';?\" type=\"text/javascript\"></scr' + 'ipt>');\r\n\t\t\t\t\t\t</script>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t</div>\n\t<h1>Manga</h1>\n\t<div
+        id=\"content\">\n\t\n\t<div id=\"horiznav_nav\" style=\"text-align: center;
+        margin-top: 8px;\">\n\t\t\t<ul>\n\t\t\t<li><a href=\"?sd=9&sm=7&sy=2013&em=0&ed=0&ey=0&o=2&w=1&c[]=d&c[]=a&cv=1\"
+        >Upcoming</a></li>\n\t\t\t<li><a href=\"?o=9&c[]=a&c[]=d&cv=2\" >Just Added</a></li>\n\t\t\t<li><a
+        \ href=\"?letter=.\">#</a></li>\n\t\t\t<li><a href=\"?letter=A\" >A</a></li>\n\t\t\t<li><a
+        href=\"?letter=B\" >B</a></li>\n\t\t\t<li><a href=\"?letter=C\" >C</a></li>\n\t\t\t<li><a
+        href=\"?letter=D\" >D</a></li>\n\t\t\t<li><a href=\"?letter=E\" >E</a></li>\n\t\t\t<li><a
+        href=\"?letter=F\" >F</a></li>\n\t\t\t<li><a href=\"?letter=G\" >G</a></li>\n\t\t\t<li><a
+        href=\"?letter=H\" >H</a></li>\n\t\t\t<li><a href=\"?letter=I\" >I</a></li>\n\t\t\t<li><a
+        href=\"?letter=J\" >J</a></li>\n\t\t\t<li><a href=\"?letter=K\" >K</a></li>\n\t\t\t<li><a
+        href=\"?letter=L\" >L</a></li>\n\t\t\t<li><a href=\"?letter=M\" >M</a></li>\n\t\t\t<li><a
+        href=\"?letter=N\" >N</a></li>\n\t\t\t<li><a href=\"?letter=O\" >O</a></li>\n\t\t\t<li><a
+        href=\"?letter=P\" >P</a></li>\n\t\t\t<li><a href=\"?letter=Q\" >Q</a></li>\n\t\t\t<li><a
+        href=\"?letter=R\" >R</a></li>\n\t\t\t<li><a href=\"?letter=S\" >S</a></li>\n\t\t\t<li><a
+        href=\"?letter=T\" >T</a></li>\n\t\t\t<li><a href=\"?letter=U\" >U</a></li>\n\t\t\t<li><a
+        href=\"?letter=V\" >V</a></li>\n\t\t\t<li><a href=\"?letter=W\" >W</a></li>\n\t\t\t<li><a
+        href=\"?letter=X\" >X</a></li>\n\t\t\t<li><a href=\"?letter=Y\" >Y</a></li>\n\t\t\t<li><a
+        href=\"?letter=Z\" >Z</a></li>\n\n\t\t\t</ul>\n\t</div>\n\t<div style=\"padding:
+        10px;\">\n\t\n\t<form method=\"GET\" style=\"display: inline;\">\n\t<input
+        type=\"text\" name=\"q\" id=\"q\" value=\"no_results\" size=\"50\" class=\"inputtext\"
+        />\n\t<input type=\"submit\" value=\"Search Manga\" class=\"inputButton\"
+        />\n\t<a href=\"javascript:void(0);\" onclick=\"search_showAdvanced();\">Advanced
+        Search</a>\n\n\t<div id=\"advancedSearch\" class=\"spaceit\" style=\"display:
+        none;\">\n\t\n\t<div class=\"normal_header\">Filters</div>\n\t<table border=\"0\"
+        width=\"100%\" cellpadding=\"0\" cellspacing=\"5\">\n\t<tr>\n\t\t<td width=\"100\">Type</td>\n\t\t<td><select
+        name=\"type\" id=\"filterByType\" class=\"inputtext\"><option value=\"0\">Select
+        type<option value=\"1\" >Manga</option><option value=\"2\" >Novel</option><option
+        value=\"3\" >One Shot</option><option value=\"4\" >Doujin</option><option
+        value=\"5\" >Manhwa</option><option value=\"6\" >Manhua</option><option value=\"7\"
+        >OEL</option></select></td>\n\t</tr>\n\t<tr>\n\t\t<td>Score</td>\n\t\t<td><select
+        name=\"score\" class=\"inputtext\"><option value=\"0\">Select score<option
+        value=\"10\" >(10) Masterpiece<option value=\"9\" >(9) Great<option value=\"8\"
+        >(8) Very Good<option value=\"7\" >(7) Good<option value=\"6\" >(6) Fine<option
+        value=\"5\" >(5) Average<option value=\"4\" >(4) Bad<option value=\"3\" >(3)
+        Very Bad<option value=\"2\" >(2) Horrible<option value=\"1\" >(1) Appalling</select></td>\n\t</tr>\n\t<tr>\n\t\t<td>Status</td>\n\t\t<td><select
+        name=\"status\" class=\"inputtext\"><option value=\"0\">Select status<option
+        value=\"2\" >Finished</option><option value=\"1\" >Publishing</option><option
+        value=\"3\" >Not yet published</option></select></td>\n\t</tr>\n\t<tr>\n\t\t<td>Tag</td>\n\t\t<td><input
+        type=\"text\" name=\"tag\" class=\"inputtext\" size=\"20\" value=\"\"></td>\n\t</tr>\n\t\n\t<tr>\n\t\t<td>Start
+        Date</td>\n\t\t<td><select name=\"sm\" class=\"inputtext\"><option value=\"0\">-</option><option
+        value=\"1\" >1</option><option value=\"2\" >2</option><option value=\"3\"
+        >3</option><option value=\"4\" >4</option><option value=\"5\" >5</option><option
+        value=\"6\" >6</option><option value=\"7\" >7</option><option value=\"8\"
+        >8</option><option value=\"9\" >9</option><option value=\"10\" >10</option><option
+        value=\"11\" >11</option><option value=\"12\" >12</option></select>-<select
+        name=\"sd\" class=\"inputtext\"><option value=\"0\">-</option><option value=\"1\"
+        >1</option><option value=\"2\" >2</option><option value=\"3\" >3</option><option
+        value=\"4\" >4</option><option value=\"5\" >5</option><option value=\"6\"
+        >6</option><option value=\"7\" >7</option><option value=\"8\" >8</option><option
+        value=\"9\" >9</option><option value=\"10\" >10</option><option value=\"11\"
+        >11</option><option value=\"12\" >12</option><option value=\"13\" >13</option><option
+        value=\"14\" >14</option><option value=\"15\" >15</option><option value=\"16\"
+        >16</option><option value=\"17\" >17</option><option value=\"18\" >18</option><option
+        value=\"19\" >19</option><option value=\"20\" >20</option><option value=\"21\"
+        >21</option><option value=\"22\" >22</option><option value=\"23\" >23</option><option
+        value=\"24\" >24</option><option value=\"25\" >25</option><option value=\"26\"
+        >26</option><option value=\"27\" >27</option><option value=\"28\" >28</option><option
+        value=\"29\" >29</option><option value=\"30\" >30</option><option value=\"31\"
+        >31</option></select>-<select name=\"sy\" class=\"inputtext\"><option value=\"0\">-</option><option
+        value=\"2014\" >2014</option><option value=\"2013\" >2013</option><option
+        value=\"2012\" >2012</option><option value=\"2011\" >2011</option><option
+        value=\"2010\" >2010</option><option value=\"2009\" >2009</option><option
+        value=\"2008\" >2008</option><option value=\"2007\" >2007</option><option
+        value=\"2006\" >2006</option><option value=\"2005\" >2005</option><option
+        value=\"2004\" >2004</option><option value=\"2003\" >2003</option><option
+        value=\"2002\" >2002</option><option value=\"2001\" >2001</option><option
+        value=\"2000\" >2000</option><option value=\"1999\" >1999</option><option
+        value=\"1998\" >1998</option><option value=\"1997\" >1997</option><option
+        value=\"1996\" >1996</option><option value=\"1995\" >1995</option><option
+        value=\"1994\" >1994</option><option value=\"1993\" >1993</option><option
+        value=\"1992\" >1992</option><option value=\"1991\" >1991</option><option
+        value=\"1990\" >1990</option><option value=\"1989\" >1989</option><option
+        value=\"1988\" >1988</option><option value=\"1987\" >1987</option><option
+        value=\"1986\" >1986</option><option value=\"1985\" >1985</option><option
+        value=\"1984\" >1984</option><option value=\"1983\" >1983</option><option
+        value=\"1982\" >1982</option><option value=\"1981\" >1981</option><option
+        value=\"1980\" >1980</option><option value=\"1979\" >1979</option><option
+        value=\"1978\" >1978</option><option value=\"1977\" >1977</option><option
+        value=\"1976\" >1976</option><option value=\"1975\" >1975</option><option
+        value=\"1974\" >1974</option><option value=\"1973\" >1973</option><option
+        value=\"1972\" >1972</option><option value=\"1971\" >1971</option><option
+        value=\"1970\" >1970</option><option value=\"1969\" >1969</option><option
+        value=\"1968\" >1968</option><option value=\"1967\" >1967</option><option
+        value=\"1966\" >1966</option><option value=\"1965\" >1965</option><option
+        value=\"1964\" >1964</option><option value=\"1963\" >1963</option><option
+        value=\"1962\" >1962</option><option value=\"1961\" >1961</option><option
+        value=\"1960\" >1960</option></select> <small>mm-dd-yyyy</small></td>\n\t</tr>\n\t<tr>\n\t\t<td>End
+        Date</td>\n\t\t<td><select name=\"em\" class=\"inputtext\"><option value=\"0\">-</option><option
+        value=\"1\" >1</option><option value=\"2\" >2</option><option value=\"3\"
+        >3</option><option value=\"4\" >4</option><option value=\"5\" >5</option><option
+        value=\"6\" >6</option><option value=\"7\" >7</option><option value=\"8\"
+        >8</option><option value=\"9\" >9</option><option value=\"10\" >10</option><option
+        value=\"11\" >11</option><option value=\"12\" >12</option></select>-<select
+        name=\"ed\" class=\"inputtext\"><option value=\"0\">-</option><option value=\"1\"
+        >1</option><option value=\"2\" >2</option><option value=\"3\" >3</option><option
+        value=\"4\" >4</option><option value=\"5\" >5</option><option value=\"6\"
+        >6</option><option value=\"7\" >7</option><option value=\"8\" >8</option><option
+        value=\"9\" >9</option><option value=\"10\" >10</option><option value=\"11\"
+        >11</option><option value=\"12\" >12</option><option value=\"13\" >13</option><option
+        value=\"14\" >14</option><option value=\"15\" >15</option><option value=\"16\"
+        >16</option><option value=\"17\" >17</option><option value=\"18\" >18</option><option
+        value=\"19\" >19</option><option value=\"20\" >20</option><option value=\"21\"
+        >21</option><option value=\"22\" >22</option><option value=\"23\" >23</option><option
+        value=\"24\" >24</option><option value=\"25\" >25</option><option value=\"26\"
+        >26</option><option value=\"27\" >27</option><option value=\"28\" >28</option><option
+        value=\"29\" >29</option><option value=\"30\" >30</option><option value=\"31\"
+        >31</option></select>-<select name=\"ey\" class=\"inputtext\"><option value=\"0\">-</option><option
+        value=\"2014\" >2014</option><option value=\"2013\" >2013</option><option
+        value=\"2012\" >2012</option><option value=\"2011\" >2011</option><option
+        value=\"2010\" >2010</option><option value=\"2009\" >2009</option><option
+        value=\"2008\" >2008</option><option value=\"2007\" >2007</option><option
+        value=\"2006\" >2006</option><option value=\"2005\" >2005</option><option
+        value=\"2004\" >2004</option><option value=\"2003\" >2003</option><option
+        value=\"2002\" >2002</option><option value=\"2001\" >2001</option><option
+        value=\"2000\" >2000</option><option value=\"1999\" >1999</option><option
+        value=\"1998\" >1998</option><option value=\"1997\" >1997</option><option
+        value=\"1996\" >1996</option><option value=\"1995\" >1995</option><option
+        value=\"1994\" >1994</option><option value=\"1993\" >1993</option><option
+        value=\"1992\" >1992</option><option value=\"1991\" >1991</option><option
+        value=\"1990\" >1990</option><option value=\"1989\" >1989</option><option
+        value=\"1988\" >1988</option><option value=\"1987\" >1987</option><option
+        value=\"1986\" >1986</option><option value=\"1985\" >1985</option><option
+        value=\"1984\" >1984</option><option value=\"1983\" >1983</option><option
+        value=\"1982\" >1982</option><option value=\"1981\" >1981</option><option
+        value=\"1980\" >1980</option><option value=\"1979\" >1979</option><option
+        value=\"1978\" >1978</option><option value=\"1977\" >1977</option><option
+        value=\"1976\" >1976</option><option value=\"1975\" >1975</option><option
+        value=\"1974\" >1974</option><option value=\"1973\" >1973</option><option
+        value=\"1972\" >1972</option><option value=\"1971\" >1971</option><option
+        value=\"1970\" >1970</option><option value=\"1969\" >1969</option><option
+        value=\"1968\" >1968</option><option value=\"1967\" >1967</option><option
+        value=\"1966\" >1966</option><option value=\"1965\" >1965</option><option
+        value=\"1964\" >1964</option><option value=\"1963\" >1963</option><option
+        value=\"1962\" >1962</option><option value=\"1961\" >1961</option><option
+        value=\"1960\" >1960</option></select> <small>mm-dd-yyyy</small></td>\n\t</tr>\n\t<tr>\n\t\t<td
+        valign=\"top\">Columns</td>\n\t\t<td>\n\t\t<select name=\"c[]\" multiple=\"multiple\"
+        size=\"5\" class=\"inputtext\">\n\t\t<option value=\"a\" selected>Type</option>\n\t\t<option
+        value=\"b\" selected>Volumes</option>\n\t\t<option value=\"f\" selected>Chapters</option>\n\t\t<option
+        value=\"c\" selected>Score</option>\n\t\t<option value=\"d\" selected>Start
+        Date</option>\n\t\t<option value=\"e\" selected>End Date</option>\n\t\t<option
+        value=\"f\" selected>Total Members</option>\n\t\t</select>\n\t\t</td>\n\t</tr>\n\t</table>\n\t<br
+        />\n\t<div class=\"normal_header\">Genre Filter <span style=\"font-weight:
+        normal\"><small><a href=\"javascript:void(0);\" onclick=\"window.open('info.php?go=genre','infoWindow','menubar=no,scrollbars=yes,status=no,width=300,height=400');\">More
+        Info</a></small></span></div>\n\t\n\t<div class=\"spaceit_pad\"><select name=\"gx\"><option
+        value=\"0\" selected>Include genres selected<option value=\"1\" >Exclude genres
+        selected</select></div>\n\t<table border=\"0\" cellpadding=\"1\" cellspacing=\"0\"
+        width=\"100%\" class=\"space_table\">\n\t<td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"1\" >Action</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"2\" >Adventure</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"3\" >Cars</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"4\" >Comedy</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"5\" >Dementia</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"6\" >Demons</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"43\" >Doujinshi</label></td><td><label><input type=\"Checkbox\"
+        name=\"genre[]\" value=\"8\" >Drama</label></td></tr><tr><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"9\" >Ecchi</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"10\" >Fantasy</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"11\" >Game</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"44\" >Gender Bender</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"35\" >Harem</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"12\" >Hentai</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"13\" >Historical</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"14\" >Horror</label></td></tr><tr><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"42\" >Josei</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"15\" >Kids</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"16\" >Magic</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"17\" >Martial Arts</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"18\" >Mecha</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"38\" >Military</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"19\" >Music</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"7\" >Mystery</label></td></tr><tr><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"20\" >Parody</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"39\" >Police</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"40\" >Psychological</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"22\" >Romance</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"21\" >Samurai</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"23\" >School</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"24\" >Sci-Fi</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"41\" >Seinen</label></td></tr><tr><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"25\" >Shoujo</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"26\" >Shoujo Ai</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"27\" >Shounen</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"28\" >Shounen Ai</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"36\" >Slice of Life</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"29\" >Space</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"30\" >Sports</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"31\" >Super Power</label></td></tr><tr><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"37\" >Supernatural</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"45\" >Thriller</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"32\" >Vampire</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"33\" >Yaoi</label></td><td><label><input
+        type=\"Checkbox\" name=\"genre[]\" value=\"34\" >Yuri</label></td>\n\t</table><br
+        />\n\t</div>\n\t</form>\n\t<script language=\"javascript\" type=\"text/javascript\">\nfunction
+        search_mangaSearchLoad()\n{\n\tvar titleObj = document.getElementById(\"q\");\n\ttitleObj.focus();\n}\n\nfunction
+        search_showAdvanced()\n{\n\t$(\"#advancedSearch\").toggle();\n}\n</script>\n
+        \   \n\t\t<br />\n\t\t<br />\n\t\t<div class=\"normal_header\">Search Results</div>\n\t\t<div>No
+        titles that matched your query were found.</div><div class=\"borderClass\"
+        style=\"text-align: right; margin: 5px 0; border-width: 0;\"></div>\n\t</div>\n</div>\n\n<div
+        id=\"rightcontentunder\">\n\n<a href=\"http://myanimelist.net/about.php?go=support\">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/modules.php?go=faq\">FAQ</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/about.php\">About</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://myanimelist.net/about.php?go=contact\">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a
+        href=\"http://www.craveonline.com/termsofuse.php?site=www.MyAnimeList.net\"
+        target=\"_blank\">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a href=\"http://www.craveonline.com/privacy.php?site=www.MyAnimeList.net\"
+        target=\"_blank\">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;\n<a id=\"_bapw-link\"
+        href=\"#\" target=\"_blank\" style=\"\"><img id=\"_bapw-icon\" style=\"border:0
+        !important;display:inline !important;vertical-align:middle !important\"/>
+        <span style=\"vertical-align:middle !important\">AdChoices</span></a><script>/*<![CDATA[*/(function(){var
+        c=247,g=595,b=false,i=document,f=i.getElementById(\"_bapw-link\"),a=(i.location.protocol==\"https:\"?\"https\":\"http\"),h=(a==\"https\"?\"https://info.evidon.com/c/betrad/pub/\":\"http://cdn.betrad.com/pub/\");function
+        e(j){var d=new Image();d.src=a+\"://l.betrad.com/pub/p.gif?pid=\"+c+\"&ocid=\"+g+\"&i\"+j+\"=1&r=\"+Math.random()}i.getElementById(\"_bapw-icon\").src=h+\"icon1.png\";f.onmouseover=function(){if(/#$/.test(f.href)){f.href=\"http://info.evidon.com/pub_info/\"+c+\"?v=1\"}};f.onclick=function(){var
+        j=window._bap_p_overrides;function d(m,p){var n=i.getElementsByTagName(\"head\")[0]||i.documentElement,l=b,k=i.createElement(\"script\");function
+        o(){k.onload=k.onreadystatechange=null;n.removeChild(k);p()}k.src=m;k.onreadystatechange=function(){if(!l&&(this.readyState==\"loaded\"||this.readyState==\"complete\")){l=true;o()}};k.onload=o;n.insertBefore(k,n.firstChild)}if(j&&j.hasOwnProperty(c)){if(j[c].new_window){e(\"c\");return
+        true}}this.onclick=\"return \"+b;d(a+\"://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js\",function(){d(h+\"pub2.js\",function(){BAPW.i(f,{pid:c,ocid:g})})});return
+        b};e(\"i\")}());/*]]>*/</script>\n\t\n<div id=\"copyright\">\nMyAnimeList.net
+        is a property of <a href=\"http://www.craveonline.com\">CraveOnline</a>, LLC.
+        an <a href=\"http://www.evolvemediallc.com\">Evolve Media</a>, LLC company.
+        &copy;2013 All Rights Reserved. <div style=\"position: absolute; left: -999em\">monitoring_string
+        = \"1d62297d23059a80b6e7551767f2653f\"</div>\n</div>\n\n</div>\n\n</div>\n\n<!--
+        \ control container height -->\n<div style=\"clear:both;\"></div>\n\n<!--
+        end rightbody -->\n</div>\n\n\n</div>\n<!-- Begin comScore Tag -->\r\n<script>\r\n
+        \   document.write(unescape(\"%3Cscript src='\" + (document.location.protocol
+        == \"https:\" ? \"https://sb\" : \"http://b\") + \".scorecardresearch.com/beacon.js'
+        %3E%3C/script%3E\"));\r\n</script>\r\n\r\n<script>\r\n  COMSCORE.beacon({\r\n
+        \   c1:2,\r\n    c2:6036161,\r\n    c3:\"\",\r\n    c4:\"\",\r\n    c5:\"\",\r\n
+        \   c6:\"\",\r\n    c15:\"\"\r\n  });\r\n</script>\r\n<noscript>\r\n  <img
+        src=\"http://b.scorecardresearch.com/p?c1=2&c2=6036161&c3=&c4=&c5=&c6=&c15=&cj=1\"
+        />\r\n</noscript>\r\n<!-- End comScore Tag -->\r\n\r\n<!-- start Vibrant Media
+        IntelliTXT script section -->\r\n<script type=\"text/javascript\" src=\"http://myanimelist.us.intellitxt.com/intellitxt/front.asp?ipid=30532\"></script>\r\n<!--
+        end Vibrant Media IntelliTXT script section -->\r\n\t\r\n<!-- info links -->\r\n<script
+        type=\"text/javascript\">\r\nvar infolinks_pid = 1568135;\r\nvar infolinks_wsid
+        = 0;\r\n</script>\r\n<script type=\"text/javascript\" src=\"http://resources.infolinks.com/js/infolinks_main.js\"></script>\r\n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Tue, 23 Jul 2013 12:52:14 GMT
+recorded_with: VCR 2.5.0
