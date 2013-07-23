@@ -12,31 +12,42 @@ class UserHistoryScraper
         next unless cells && cells.size == 2
 
         link = cells[0].at('a')
-        anime_id = link['href'][%r{http://myanimelist.net/anime.php\?id=(\d+)}, 1]
-        anime_id = link['href'][%r{http://myanimelist.net/anime/(\d+)/?.*}, 1] unless anime_id
-        anime_id = anime_id.to_i
-
-        manga_id = link['href'][%r{http://myanimelist.net/manga.php\?id=(\d+)}, 1]
-        manga_id = link['href'][%r{http://myanimelist.net/manga/(\d+)/?.*}, 1] unless manga_id
-        manga_id = manga_id.to_i
-
+        anime_id = self.parse_anime_id link
+        manga_id = self.parse_manga_id link
         title = link.text.strip
         episode_or_chapter = cells[0].at('strong').text.to_i
 
         # TODO - date parsing should be investigated
         #time = Chronic.parse(cells[1].text.strip)
 
-        history << Hash.new.tap do |history_entry|
-          history_entry[:anime_id] = anime_id if anime_id > 0
-          history_entry[:episode] = episode_or_chapter if anime_id > 0
-          history_entry[:manga_id] = manga_id if manga_id > 0
-          history_entry[:chapter] = episode_or_chapter if manga_id > 0
-          history_entry[:title] = title
-          #history_entry[:time] = time
-        end
+        history << self.create_history_entry(anime_id, manga_id, episode_or_chapter, title, nil)
       end
     end
 
     history
   end
+
+  private
+    def self.parse_anime_id(link)
+      anime_id = link['href'][%r{http://myanimelist.net/anime.php\?id=(\d+)}, 1]
+      anime_id = link['href'][%r{http://myanimelist.net/anime/(\d+)/?.*}, 1] unless anime_id
+      anime_id.to_i
+    end
+
+    def self.parse_manga_id(link)
+      manga_id = link['href'][%r{http://myanimelist.net/manga.php\?id=(\d+)}, 1]
+      manga_id = link['href'][%r{http://myanimelist.net/manga/(\d+)/?.*}, 1] unless manga_id
+      manga_id.to_i
+    end
+
+    def self.create_history_entry(anime_id, manga_id, episode_or_chapter, title, time)
+      Hash.new.tap do |history_entry|
+        history_entry[:anime_id] = anime_id if anime_id > 0
+        history_entry[:episode] = episode_or_chapter if anime_id > 0
+        history_entry[:manga_id] = manga_id if manga_id > 0
+        history_entry[:chapter] = episode_or_chapter if manga_id > 0
+        history_entry[:title] = title
+        #history_entry[:time] = time
+      end
+    end
 end
