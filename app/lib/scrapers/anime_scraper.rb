@@ -7,22 +7,22 @@ class AnimeScraper
       anime_page = Nokogiri::HTML(html)
       left_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td[@class="borderClass"]')
       right_detail_content = anime_page.xpath('//div[@id="content"]/table/tr/td/div/table')
-      date_range = self.parse_date_range left_detail_content
+      date_range = parse_date_range left_detail_content
 
       anime = Anime.new({
         id: CommonScraper.scrape_id_input(anime_page, 'aid', %r{http://myanimelist.net/anime/(\d+)/.*?}),
         title: anime_page.at(:h1).children.find { |o| o.text? }.to_s,
         rank: anime_page.at('h1 > div').text.gsub(/\D/, '').to_i,
-        image_url: self.parse_image_url(anime_page),
-        other_titles: self.parse_alternative_titles(left_detail_content),
-        type: self.parse_generic(left_detail_content.at('//span[text()="Type:"]')),
-        episodes: self.parse_episodes(left_detail_content),
-        status: self.parse_generic(left_detail_content.at('//span[text()="Status:"]')),
+        image_url: parse_image_url(anime_page),
+        other_titles: parse_alternative_titles(left_detail_content),
+        type: parse_generic(left_detail_content.at('//span[text()="Type:"]')),
+        episodes: parse_episodes(left_detail_content),
+        status: parse_generic(left_detail_content.at('//span[text()="Status:"]')),
         start_date: date_range[:start_date],
         end_date: date_range[:end_date],
         genres: CommonScraper.scrape_genres(left_detail_content),
         synopsis: CommonScraper.scrape_synopsis(right_detail_content),
-        classification: self.parse_generic(left_detail_content.at('//span[text()="Rating:"]')),
+        classification: parse_generic(left_detail_content.at('//span[text()="Rating:"]')),
       })
 
       # Statistics

@@ -9,7 +9,7 @@ class MangaListScraper
 
 
       manga_list_xml.search('manga').each do |manga_node|
-        manga_list.manga << self.parse_manga(manga_node)
+        manga_list.manga << parse_manga(manga_node)
       end
     end
 

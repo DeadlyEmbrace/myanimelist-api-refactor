@@ -9,7 +9,7 @@ class TopAnimeScraper
       anime_url = anime_title_node.parent['href']
       next unless anime_url
       anime_url.match %r{http://myanimelist.net/anime/(\d+)/?.*}
-      top_anime << self.parse_anime($1, search_result, anime_title_node)
+      top_anime << parse_anime($1, search_result, anime_title_node)
     end
 
     top_anime
@@ -20,17 +20,17 @@ class TopAnimeScraper
     def self.parse_anime(id, search_result, anime_title_node)
       table_cell_nodes = search_result.search('td')
       content_cell = table_cell_nodes.at('div.spaceit_pad')
-      members_count = self.parse_members_count(content_cell.at('span.lightLink'))
+      members_count = parse_members_count(content_cell.at('span.lightLink'))
       stats = content_cell.text.strip.split(',')
 
       Anime.new({
         id: id.to_i,
         title: anime_title_node.text,
         type: stats[0],
-        image_url: self.parse_image_url(search_result),
+        image_url: parse_image_url(search_result),
         members_count: members_count,
         members_score: stats[2].match(/\d+(\.\d+)?/).to_s.to_f,
-        episodes: self.parse_episodes(stats[1])
+        episodes: parse_episodes(stats[1])
       })
     end
 

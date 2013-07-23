@@ -18,8 +18,8 @@ class ProfileScraper
 
       profile.avatar_url = left_profile_content.at("#profileRows").previous_element.at('img')['src']
       profile.details = scrape_details(profile.details, details)
-      profile.anime_stats = self.scrape_stats(profile.anime_stats, anime_stats)
-      profile.manga_stats = self.scrape_stats(profile.manga_stats, manga_stats)
+      profile.anime_stats = scrape_stats profile.anime_stats, anime_stats
+      profile.manga_stats = scrape_stats profile.manga_stats, manga_stats
     end
 
     profile
@@ -30,20 +30,23 @@ class ProfileScraper
       details_node.search('tr').each do |tr|
         label, value = tr.search('> td')
         parameterized_label = label.text.downcase.gsub(/\s+/, '_').to_sym
-
-        details[parameterized_label] = case parameterized_label
-           when :anime_list_views, :manga_list_views, :comments
-             value.text.to_i
-           when :forum_posts
-             value.text.match(/^[,0-9]+/)[0].to_i
-           when :website
-             value.at('a')['href']
-           else
-             value.text
-         end
+        details[parameterized_label] = scrape_label parameterized_label, value
       end
 
       details
+    end
+
+    def self.scrape_label(key, value)
+      case key
+        when :anime_list_views, :manga_list_views, :comments
+          value.text.to_i
+        when :forum_posts
+          value.text.match(/^[,0-9]+/)[0].to_i
+        when :website
+          value.at('a')['href']
+        else
+          value.text
+      end
     end
 
     def self.scrape_stats(stats, stats_node)

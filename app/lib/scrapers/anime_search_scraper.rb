@@ -9,7 +9,7 @@ class AnimeSearchScraper
       next unless anime_title_node
       url = anime_title_node.parent['href']
       next unless url.match %r{http://myanimelist.net/anime/(\d+)/?.*}
-      animes << self.parse_anime($1, search_result, anime_title_node)
+      animes << parse_anime($1, search_result, anime_title_node)
     end
 
     animes
@@ -24,8 +24,8 @@ class AnimeSearchScraper
       Anime.new({
         id: id.to_i,
         title: anime_title_node.text,
-        image_url: self.parse_image_url(search_result),
-        synopsis: self.parse_synopsis(search_result),
+        image_url: parse_image_url(search_result),
+        synopsis: parse_synopsis(search_result),
         type: anime_info[2].text,
         episodes: anime_info[3].text.to_i,
         members_score: anime_info[4].text.to_f,

@@ -8,7 +8,7 @@ class AnimeListScraper
       anime_list = AnimeList.new
 
       anime_list_xml.search('anime').each do |anime_node|
-        anime_list.anime << self.parse_anime(anime_node)
+        anime_list.anime << parse_anime(anime_node)
       end
 
       anime_list.statistics[:days] = anime_list_xml.at('myinfo user_days_spent_watching').text.to_f

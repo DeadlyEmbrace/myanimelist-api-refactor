@@ -12,15 +12,15 @@ class UserHistoryScraper
         next unless cells && cells.size == 2
 
         link = cells[0].at('a')
-        anime_id = self.parse_anime_id link
-        manga_id = self.parse_manga_id link
+        anime_id = parse_anime_id link
+        manga_id = parse_manga_id link
         title = link.text.strip
         episode_or_chapter = cells[0].at('strong').text.to_i
 
         # TODO - date parsing should be investigated
         #time = Chronic.parse(cells[1].text.strip)
 
-        history << self.create_history_entry(anime_id, manga_id, episode_or_chapter, title, nil)
+        history << create_history_entry(anime_id, manga_id, episode_or_chapter, title, nil)
       end
     end
 
