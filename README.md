@@ -2,7 +2,7 @@ myanimelist-api-refactor
 ========================
 
 [![Build Status](https://secure.travis-ci.org/astraldragon/myanimelist-api-refactor.png)](https://travis-ci.org/astraldragon/myanimelist-api-refactor)
-[![Code Climate](https://codeclimate.com/repos/51ed4c3af3ea00171d03260b/badges/456fcc98331cd3d9c212/gpa.png)](https://codeclimate.com/repos/51ed4c3af3ea00171d03260b/feed)
+[![Code Climate](https://codeclimate.com/github/astraldragon/myanimelist-api-refactor.png)](https://codeclimate.com/github/astraldragon/myanimelist-api-refactor)
 [![Dependency Status](https://gemnasium.com/astraldragon/myanimelist-api-refactor.png)](https://gemnasium.com/astraldragon/myanimelist-api-refactor)
 
 Refactor of the Unofficial MyAnimeList API
