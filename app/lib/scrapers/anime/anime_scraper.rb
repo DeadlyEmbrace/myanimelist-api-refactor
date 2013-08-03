@@ -14,7 +14,7 @@ class AnimeScraper
         title: anime_page.at(:h1).children.find { |o| o.text? }.to_s,
         rank: anime_page.at('h1 > div').text.gsub(/\D/, '').to_i,
         image_url: parse_image_url(anime_page),
-        other_titles: parse_alternative_titles(left_detail_content),
+        other_titles: CommonScraper.parse_alternative_titles(left_detail_content),
         type: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Type:"]')),
         status: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Status:"]')),
         start_date: date_range[:start_date],
@@ -36,24 +36,6 @@ class AnimeScraper
   end
 
   private
-    def self.parse_alternative_titles(left_detail_content)
-      alternative_titles = {}
-
-      if (node = left_detail_content.at('//span[text()="English:"]')) && node.next
-        alternative_titles[:english] = node.next.text.strip.split(/,\s?/)
-      end
-
-      if (node = left_detail_content.at('//span[text()="Synonyms:"]')) && node.next
-        alternative_titles[:synonyms] = node.next.text.strip.split(/,\s?/)
-      end
-
-      if (node = left_detail_content.at('//span[text()="Japanese:"]')) && node.next
-        alternative_titles[:japanese] = node.next.text.strip.split(/,\s?/)
-      end
-
-      alternative_titles
-    end
-
     def self.parse_image_url(anime_page)
       image_url = nil
 

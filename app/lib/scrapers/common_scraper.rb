@@ -104,4 +104,22 @@ class CommonScraper
       end
     end
   end
+
+  def self.parse_alternative_titles(left_detail_content)
+    alternative_titles = {}
+
+    if (node = left_detail_content.at('//span[text()="English:"]')) && node.next
+      alternative_titles[:english] = node.next.text.strip.split(/,\s?/)
+    end
+
+    if (node = left_detail_content.at('//span[text()="Synonyms:"]')) && node.next
+      alternative_titles[:synonyms] = node.next.text.strip.split(/,\s?/)
+    end
+
+    if (node = left_detail_content.at('//span[text()="Japanese:"]')) && node.next
+      alternative_titles[:japanese] = node.next.text.strip.split(/,\s?/)
+    end
+
+    alternative_titles
+  end
 end
