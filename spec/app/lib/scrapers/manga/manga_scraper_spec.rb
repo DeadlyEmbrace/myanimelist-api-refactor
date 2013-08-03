@@ -101,10 +101,22 @@ describe MangaScraper do
       manga.volumes.should be 3
     end
 
+    it 'should be able to scrape ? volumes' do
+      html = create_left_detail '<div><span>Volumes:</span> ?</div>'
+      manga = MangaScraper.scrape html
+      manga.volumes.should be_nil
+    end
+
     it 'should be able to scrape chapters' do
       html = create_left_detail '<div><span>Chapters:</span> 300</div>'
       manga = MangaScraper.scrape html
       manga.chapters.should be 300
+    end
+
+    it 'should be able to scrape ? chapters' do
+      html = create_left_detail '<div><span>Chapters:</span> ?</div>'
+      manga = MangaScraper.scrape html
+      manga.chapters.should be_nil
     end
 
     it 'should be able to scrape status' do

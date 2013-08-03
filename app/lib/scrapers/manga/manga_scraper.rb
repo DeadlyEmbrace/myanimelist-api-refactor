@@ -14,28 +14,32 @@ class MangaScraper
         rank: manga_page.at('h1 > div').text.gsub(/\D/, '').to_i,
         image_url: parse_image_url(manga_page),
         other_titles:  parse_alternative_titles(left_detail_content),
-        type: parse_generic(left_detail_content.at('//span[text()="Type:"]')),
-        volumes: parse_generic_number(left_detail_content.at('//span[text()="Volumes:"]')),
-        chapters: parse_generic_number(left_detail_content.at('//span[text()="Chapters:"]')),
-        status: parse_generic(left_detail_content.at('//span[text()="Status:"]')),
+        type: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Type:"]')),
+        status: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Status:"]')),
         genres: CommonScraper.scrape_genres(left_detail_content),
-        members_score: nil,
-        popularity_rank: parse_statistic(left_detail_content.at('//span[text()="Popularity:"]')),
-        members_count: parse_statistic(left_detail_content.at('//span[text()="Members:"]')),
-        favorited_count: parse_statistic(left_detail_content.at('//span[text()="Favorites:"]')),
         synopsis: CommonScraper.scrape_details_synopsis(right_detail_content)
       })
 
-      # Statistics
-      if (node = left_detail_content.at('//span[text()="Score:"]')) && node.next
-        manga.members_score = node.next.text.strip.to_f
-      end
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Volumes:"]')
+      manga.volumes = result.to_i unless result.nil?
 
-      if (node = left_detail_content.at('//span[preceding-sibling::h2[text()="Popular Tags"]]'))
-        node.search('a').each do |a|
-          manga.tags << a.text
-        end
-      end
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Chapters:"]')
+      manga.chapters = result.to_i unless result.nil?
+
+      # Statistics
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Score:"]')
+      manga.members_score = result.to_f unless result.nil?
+
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Popularity:"]')
+      manga.popularity_rank = result.to_i unless result.nil?
+
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Members:"]')
+      manga.members_count = result.to_i unless result.nil?
+
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Favorites:"]')
+      manga.favorited_count = result.to_i unless result.nil?
+
+      manga.tags = CommonScraper.scrape_popular_tags left_detail_content.at('//span[preceding-sibling::h2[text()="Popular Tags"]]')
 
       # Related Manga
       related_manga_h2 = right_detail_content.at('//h2[text()="Related Manga"]')
@@ -132,36 +136,5 @@ class MangaScraper
       end
 
       alternative_titles
-    end
-
-    def self.parse_statistic(node)
-      result = nil
-
-      if node && node.next
-        result = node.next.text.strip.sub('#', '').gsub(',', '').to_i
-      end
-
-      result
-    end
-
-    def self.parse_generic(node)
-      result = nil
-
-      if node && node.next
-        result = node.next.text.strip
-      end
-
-      result
-    end
-
-    def self.parse_generic_number(node)
-      result = nil
-
-      if node && node.next
-        result = node.next.text.strip.gsub(',', '').to_i
-        result = nil if result == 0
-      end
-
-      result
     end
 end

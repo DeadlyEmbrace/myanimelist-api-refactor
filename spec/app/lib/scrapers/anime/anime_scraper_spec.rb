@@ -101,6 +101,12 @@ describe AnimeScraper do
       anime.episodes.should be 100
     end
 
+    it 'should be able to scrape ? episodes' do
+      html = create_left_detail '<div><span>Episodes:</span> ?</div>'
+      anime = AnimeScraper.scrape(html)
+      anime.episodes.should be_nil
+    end
+
     it 'should be able to scrape status' do
       html = create_left_detail '<div><span>Status:</span> Currently Airing</div>'
       anime = AnimeScraper.scrape(html)

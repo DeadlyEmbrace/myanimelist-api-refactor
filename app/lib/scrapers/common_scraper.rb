@@ -22,6 +22,29 @@ class CommonScraper
     genres
   end
 
+  def self.scrape_statistic(node)
+    result = nil
+
+    if node && node.next
+      result = node.next.text.strip.gsub(/[#,\?]/, '')
+      result = nil if result.empty?
+    end
+
+    result
+  end
+
+  def self.scrape_popular_tags(node)
+    result = []
+
+    unless node.nil?
+      node.search('a').each do |tag|
+        result << tag.text
+      end
+    end
+
+    result
+  end
+
   def self.scrape_details_synopsis(right_detail_content)
     synopsis = nil
     synopsis_h2 = right_detail_content.at('//h2[text()="Synopsis"]')

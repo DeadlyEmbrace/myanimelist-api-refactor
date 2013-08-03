@@ -15,39 +15,32 @@ class AnimeScraper
         rank: anime_page.at('h1 > div').text.gsub(/\D/, '').to_i,
         image_url: parse_image_url(anime_page),
         other_titles: parse_alternative_titles(left_detail_content),
-        type: parse_generic(left_detail_content.at('//span[text()="Type:"]')),
-        episodes: parse_episodes(left_detail_content),
-        status: parse_generic(left_detail_content.at('//span[text()="Status:"]')),
+        type: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Type:"]')),
+        status: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Status:"]')),
         start_date: date_range[:start_date],
         end_date: date_range[:end_date],
         genres: CommonScraper.scrape_genres(left_detail_content),
         synopsis: CommonScraper.scrape_details_synopsis(right_detail_content),
-        classification: parse_generic(left_detail_content.at('//span[text()="Rating:"]')),
+        classification: CommonScraper.scrape_statistic(left_detail_content.at('//span[text()="Rating:"]'))
       })
 
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Episodes:"]')
+      anime.episodes = result.to_i unless result.nil?
+
       # Statistics
-      if (node = left_detail_content.at('//span[text()="Score:"]')) && node.next
-        anime.members_score = node.next.text.strip.to_f
-      end
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Score:"]')
+      anime.members_score = result.to_f unless result.nil?
 
-      if (node = left_detail_content.at('//span[text()="Popularity:"]')) && node.next
-        anime.popularity_rank = node.next.text.strip.sub('#', '').gsub(',', '').to_i
-      end
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Popularity:"]')
+      anime.popularity_rank = result.to_i unless result.nil?
 
-      if (node = left_detail_content.at('//span[text()="Members:"]')) && node.next
-        anime.members_count = node.next.text.strip.gsub(',', '').to_i
-      end
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Members:"]')
+      anime.members_count = result.to_i unless result.nil?
 
-      if (node = left_detail_content.at('//span[text()="Favorites:"]')) && node.next
-        anime.favorited_count = node.next.text.strip.gsub(',', '').to_i
-      end
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Favorites:"]')
+      anime.favorited_count = result.to_i unless result.nil?
 
-      # Popular Tags
-      if (node = left_detail_content.at('//span[preceding-sibling::h2[text()="Popular Tags"]]'))
-        node.search('a').each do |a|
-          anime.tags << a.text
-        end
-      end
+      anime.tags = CommonScraper.scrape_popular_tags left_detail_content.at('//span[preceding-sibling::h2[text()="Popular Tags"]]')
 
       # Related Anime
       related_anime_h2 = anime_page.at('//h2[text()="Related Anime"]')
@@ -202,17 +195,6 @@ class AnimeScraper
       image_url
     end
 
-    def self.parse_episodes(left_detail_content)
-      episodes = nil
-
-      if (node = left_detail_content.at('//span[text()="Episodes:"]')) && node.next
-        episodes = node.next.text.strip.gsub(',', '').to_i
-        episodes = nil if episodes == 0
-      end
-
-      episodes
-    end
-
     def self.parse_date_range(left_detail_content)
       date_range = { start_date: nil, end_date: nil }
 
@@ -222,15 +204,5 @@ class AnimeScraper
       end
 
       date_range
-    end
-
-    def self.parse_generic(node)
-      result = nil
-
-      if node && node.next
-        result = node.next.text.strip
-      end
-
-      result
     end
 end
