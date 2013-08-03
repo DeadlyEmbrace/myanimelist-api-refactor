@@ -3,6 +3,16 @@ describe Manga do
     @manga = Manga.new
   end
 
+  it 'should be able to mass assign multiple fields in the constructor' do
+    @anime = Anime.new({
+     id: 5,
+     title: 'Test title'
+    })
+
+    @anime.id.should be 5
+    @anime.title.should eq 'Test title'
+  end
+
   describe 'read status' do
     read_statuses = [
         { text_value: 'reading', id_value: 1, expected_value: :reading },

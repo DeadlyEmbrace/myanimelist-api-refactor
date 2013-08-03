@@ -22,7 +22,7 @@ class CommonScraper
     genres
   end
 
-  def self.scrape_synopsis(right_detail_content)
+  def self.scrape_details_synopsis(right_detail_content)
     synopsis = nil
     synopsis_h2 = right_detail_content.at('//h2[text()="Synopsis"]')
 
@@ -37,6 +37,18 @@ class CommonScraper
 
         node = node.next
       end
+    end
+
+    synopsis
+  end
+
+  def self.scrape_search_synopsis(search_result, synopsis_class)
+    synopsis = nil
+    synopsis_node = search_result.at(synopsis_class)
+
+    if synopsis_node
+      synopsis_node.search('a').remove
+      synopsis = synopsis_node.text.strip
     end
 
     synopsis

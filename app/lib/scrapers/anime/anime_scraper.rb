@@ -21,7 +21,7 @@ class AnimeScraper
         start_date: date_range[:start_date],
         end_date: date_range[:end_date],
         genres: CommonScraper.scrape_genres(left_detail_content),
-        synopsis: CommonScraper.scrape_synopsis(right_detail_content),
+        synopsis: CommonScraper.scrape_details_synopsis(right_detail_content),
         classification: parse_generic(left_detail_content.at('//span[text()="Rating:"]')),
       })
 

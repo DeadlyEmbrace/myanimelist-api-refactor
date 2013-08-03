@@ -23,7 +23,7 @@ class MangaScraper
         popularity_rank: parse_statistic(left_detail_content.at('//span[text()="Popularity:"]')),
         members_count: parse_statistic(left_detail_content.at('//span[text()="Members:"]')),
         favorited_count: parse_statistic(left_detail_content.at('//span[text()="Favorites:"]')),
-        synopsis: CommonScraper.scrape_synopsis(right_detail_content)
+        synopsis: CommonScraper.scrape_details_synopsis(right_detail_content)
       })
 
       # Statistics

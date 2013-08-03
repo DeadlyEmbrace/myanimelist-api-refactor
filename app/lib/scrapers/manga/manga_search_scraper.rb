@@ -23,7 +23,7 @@ class MangaSearchScraper
         id: id.to_i,
         title: manga_title_node.text,
         image_url: parse_image_url(search_result),
-        synopsis: parse_synopsis(search_result),
+        synopsis: CommonScraper.scrape_search_synopsis(search_result, 'div.spaceit_pad'),
         type: manga_info[2].text,
         volumes: manga_info[3].text.to_i,
         chapters: manga_info[4].text.to_i,
@@ -39,17 +39,5 @@ class MangaSearchScraper
       end
 
       image_url
-    end
-
-    def self.parse_synopsis(search_result)
-      synopsis = nil
-      synopsis_node = search_result.at('div.spaceit_pad')
-
-      if synopsis_node
-        synopsis_node.search('a').remove
-        synopsis = synopsis_node.text.strip
-      end
-
-      synopsis
     end
 end

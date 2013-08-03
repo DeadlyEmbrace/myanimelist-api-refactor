@@ -38,7 +38,7 @@ describe CommonScraper do
   describe 'synopsis' do
     it 'should scrape single line synopsis' do
       html = Nokogiri::HTML '<h2>Synopsis</h2>This is my synopsis'
-      synopsis = CommonScraper.scrape_synopsis html
+      synopsis = CommonScraper.scrape_details_synopsis html
       synopsis.should eq 'This is my synopsis'
     end
   end

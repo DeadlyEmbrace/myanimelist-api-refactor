@@ -25,7 +25,7 @@ class AnimeSearchScraper
         id: id.to_i,
         title: anime_title_node.text,
         image_url: parse_image_url(search_result),
-        synopsis: parse_synopsis(search_result),
+        synopsis: CommonScraper.scrape_search_synopsis(search_result, 'div.spaceit'),
         type: anime_info[2].text,
         episodes: anime_info[3].text.to_i,
         members_score: anime_info[4].text.to_f,
@@ -43,17 +43,5 @@ class AnimeSearchScraper
       end
 
       image_url
-    end
-
-    def self.parse_synopsis(search_result)
-      synopsis = nil
-      synopsis_node = search_result.at('div.spaceit')
-
-      if synopsis_node
-        synopsis_node.search('a').remove
-        synopsis = synopsis_node.text.strip
-      end
-
-      synopsis
     end
 end
