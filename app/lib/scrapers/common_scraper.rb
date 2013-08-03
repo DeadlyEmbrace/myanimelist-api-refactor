@@ -76,4 +76,32 @@ class CommonScraper
 
     synopsis
   end
+
+  def self.scrape_related_anime(related_anime_text, expression)
+    results = []
+
+    if related_anime_text.match expression
+      $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
+        results << {
+          :anime_id => anime_id,
+          :title => title,
+          :url => url
+        }
+      end
+    end
+
+    results
+  end
+
+  def self.scrape_related_manga(related_manga_text, expression)
+    if related_manga_text.match expression
+      $1.scan(%r{<a href="(http://myanimelist.net/manga/(\d+)/.*?)">(.+?)</a>}) do |url, manga_id, title|
+        manga.related_manga << {
+          :manga_id => manga_id,
+          :title => title,
+          :url => url
+        }
+      end
+    end
+  end
 end

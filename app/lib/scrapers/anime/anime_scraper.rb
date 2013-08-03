@@ -27,140 +27,9 @@ class AnimeScraper
       result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Episodes:"]')
       anime.episodes = result.to_i unless result.nil?
 
-      # Statistics
-      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Score:"]')
-      anime.members_score = result.to_f unless result.nil?
-
-      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Popularity:"]')
-      anime.popularity_rank = result.to_i unless result.nil?
-
-      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Members:"]')
-      anime.members_count = result.to_i unless result.nil?
-
-      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Favorites:"]')
-      anime.favorited_count = result.to_i unless result.nil?
-
-      anime.tags = CommonScraper.scrape_popular_tags left_detail_content.at('//span[preceding-sibling::h2[text()="Popular Tags"]]')
-
-      # Related Anime
-      related_anime_h2 = anime_page.at('//h2[text()="Related Anime"]')
-      if related_anime_h2
-
-        # Get all text between <h2>Related Anime</h2> and the next <h2> tag.
-        match_data = related_anime_h2.parent.to_s.match(%r{<h2>Related Anime</h2>(.+?)<h2>}m)
-
-        if match_data
-          related_anime_text = match_data[1]
-
-          if related_anime_text.match %r{Adaptation: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/manga/(\d+)/.*?)">(.+?)</a>}) do |url, manga_id, title|
-              anime.manga_adaptations << {
-                  :manga_id => manga_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Prequel: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.prequels << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Sequel: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.sequels << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Side story: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.side_stories << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Parent story: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.parent_story = {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Character: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.character_anime << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Spin-off: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.spin_offs << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Summary: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.summaries << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-
-          if related_anime_text.match %r{Alternative versions?: ?(<a .+?)<br}
-            $1.scan(%r{<a href="(http://myanimelist.net/anime/(\d+)/.*?)">(.+?)</a>}) do |url, anime_id, title|
-              anime.alternative_versions << {
-                  :anime_id => anime_id,
-                  :title => title,
-                  :url => url
-              }
-            end
-          end
-        end
-      end
-
-      # My Info
-      watched_status_select_node = anime_page.at('select#myinfo_status')
-      if watched_status_select_node && (selected_option = watched_status_select_node.at('option[selected="selected"]'))
-        anime.watched_status = selected_option['value']
-      end
-      episodes_input_node = anime_page.at('input#myinfo_watchedeps')
-      if episodes_input_node
-        anime.watched_episodes = episodes_input_node['value'].to_i
-      end
-      score_select_node = anime_page.at('select#myinfo_score')
-      if score_select_node && (selected_option = score_select_node.at('option[selected="selected"]'))
-        anime.score = selected_option['value'].to_i
-      end
-      listed_anime_id_node = anime_page.at('//a[text()="Edit Details"]')
-      if listed_anime_id_node
-        anime.listed_anime_id = listed_anime_id_node['href'].match('id=(\d+)')[1].to_i
-      end
+      anime = parse_statistics anime, left_detail_content
+      anime = parse_related_anime anime, anime_page
+      anime = parse_my_info anime, anime_page
     end
 
     anime
@@ -204,5 +73,72 @@ class AnimeScraper
       end
 
       date_range
+    end
+
+    def self.parse_statistics(anime, left_detail_content)
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Score:"]')
+      anime.members_score = result.to_f unless result.nil?
+
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Popularity:"]')
+      anime.popularity_rank = result.to_i unless result.nil?
+
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Members:"]')
+      anime.members_count = result.to_i unless result.nil?
+
+      result = CommonScraper.scrape_statistic left_detail_content.at('//span[text()="Favorites:"]')
+      anime.favorited_count = result.to_i unless result.nil?
+
+      anime.tags = CommonScraper.scrape_popular_tags left_detail_content.at('//span[preceding-sibling::h2[text()="Popular Tags"]]')
+
+      anime
+    end
+
+    def self.parse_related_anime(anime, anime_page)
+      related_anime_h2 = anime_page.at('//h2[text()="Related Anime"]')
+      if related_anime_h2
+
+        # Get all text between <h2>Related Anime</h2> and the next <h2> tag.
+        match_data = related_anime_h2.parent.to_s.match(%r{<h2>Related Anime</h2>(.+?)<h2>}m)
+
+        if match_data
+          related_anime_text = match_data[1]
+
+          anime.manga_adaptations = CommonScraper.scrape_related_manga related_anime_text, %r{Adaptation: ?(<a .+?)<br}
+          anime.prequels = CommonScraper.scrape_related_anime related_anime_text, %r{Prequel: ?(<a .+?)<br}
+          anime.sequels = CommonScraper.scrape_related_anime related_anime_text, %r{Sequel: ?(<a .+?)<br}
+          anime.side_stories = CommonScraper.scrape_related_anime related_anime_text, %r{Side story: ?(<a .+?)<br}
+          anime.parent_story = CommonScraper.scrape_related_anime related_anime_text, %r{Parent story: ?(<a .+?)<br}
+          anime.character_anime = CommonScraper.scrape_related_anime related_anime_text, %r{Character: ?(<a .+?)<br}
+          anime.spin_offs = CommonScraper.scrape_related_anime related_anime_text, %r{Spin-off: ?(<a .+?)<br}
+          anime.summaries = CommonScraper.scrape_related_anime related_anime_text, %r{Summary: ?(<a .+?)<br}
+          anime.alternative_versions = CommonScraper.scrape_related_anime related_anime_text, %r{Alternative versions?: ?(<a .+?)<br}
+        end
+      end
+
+      anime
+    end
+
+    def self.parse_my_info(anime, anime_page)
+      watched_status_select_node = anime_page.at('select#myinfo_status')
+      if watched_status_select_node && (selected_option = watched_status_select_node.at('option[selected="selected"]'))
+        anime.watched_status = selected_option['value']
+      end
+
+      episodes_input_node = anime_page.at('input#myinfo_watchedeps')
+      if episodes_input_node
+        anime.watched_episodes = episodes_input_node['value'].to_i
+      end
+
+      score_select_node = anime_page.at('select#myinfo_score')
+      if score_select_node && (selected_option = score_select_node.at('option[selected="selected"]'))
+        anime.score = selected_option['value'].to_i
+      end
+
+      listed_anime_id_node = anime_page.at('//a[text()="Edit Details"]')
+      if listed_anime_id_node
+        anime.listed_anime_id = listed_anime_id_node['href'].match('id=(\d+)')[1].to_i
+      end
+
+      anime
     end
 end
