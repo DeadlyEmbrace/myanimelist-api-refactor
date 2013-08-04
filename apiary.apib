@@ -13,10 +13,39 @@ Fetch an anime
 GET /anime/:id
 < 200
 
+Search for anime
+GET /anime/search/:query
+< 200
+
+Fetch the upcoming anime
+GET /anime/upcoming
+< 200
+
+Fetch the just added anime
+GET /anime/just_added
+< 200
+
+Fetch the top anime
+GET /anime/top
+< 200
+
+Fetch the most popular anime
+GET /anime/popular
+< 200
+
+-- Manga --
+
+Fetch a manga
+GET /manga/:id
+< 200
+
+GET /manga/search/:query
+< 200
+
 -- User --
 
 Fetch a users MyAnimeList profile.
-GET /user/:username/profile
+GET /user/:username
 < 200
 
 Fetch a users anime list.
@@ -29,12 +58,4 @@ GET /user/:username/mangalist
 
 Fetch a users anime and manga history.
 GET /user/:username/history
-< 200
-
-Fetch a users anime history
-GET /user/:username/history/anime
-< 200
-
-Fetch a users manga history
-GET /user/:username/history/manga
 < 200
