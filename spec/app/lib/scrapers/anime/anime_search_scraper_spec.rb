@@ -32,7 +32,7 @@ describe AnimeSearchScraper do
 Steins;Gate is about a group of friends who have customized their microw...'
         anime.type.should be :TV
         anime.episodes.should be 24
-        anime.members_score.should be 9.17
+        anime.members_score.should eq 9.17
 
         expected_start_date = Chronic.parse('04-06-11').to_date
         anime.start_date.should eq expected_start_date

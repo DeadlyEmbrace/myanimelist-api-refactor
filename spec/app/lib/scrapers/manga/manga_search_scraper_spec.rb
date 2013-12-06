@@ -31,7 +31,7 @@ describe MangaSearchScraper do
         manga.type.should be :Manga
         manga.volumes.should be 2
         manga.chapters.should be 11
-        manga.members_score.should be 7.77
+        manga.members_score.should eq 7.77
       end
     end
 

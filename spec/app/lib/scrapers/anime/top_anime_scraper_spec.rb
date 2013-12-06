@@ -28,7 +28,7 @@ describe TopAnimeScraper do
         anime.type.should be :TV
         anime.episodes.should be 64
         anime.members_count.should be 224763
-        anime.members_score.should be 9.22
+        anime.members_score.should eq 9.22
         anime.image_url.should eq 'http://cdn.myanimelist.net/images/anime/5/47421t.jpg'
       end
     end

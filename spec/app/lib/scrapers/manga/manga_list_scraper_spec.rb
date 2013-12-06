@@ -54,7 +54,7 @@ describe MangaListScraper do
       VCR.use_cassette('manga_list/populated_list') do
         response = HTTParty.get('http://myanimelist.net/malappinfo.php?u=small_profile&status=all&type=manga')
         manga_list = MangaListScraper.scrape(response.body)
-        manga_list.statistics[:days].should be 0.0
+        manga_list.statistics[:days].should eq 0.0
       end
     end
   end

@@ -52,7 +52,7 @@ describe AnimeListScraper do
       VCR.use_cassette('anime_list/populated_list') do
         response = HTTParty.get('http://myanimelist.net/malappinfo.php?u=small_profile&status=all&type=anime')
         anime_list = AnimeListScraper.scrape(response.body)
-        anime_list.statistics[:days].should be 1.25
+        anime_list.statistics[:days].should eq 1.25
       end
     end
   end

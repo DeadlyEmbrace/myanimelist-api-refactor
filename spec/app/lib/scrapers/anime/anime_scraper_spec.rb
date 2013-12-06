@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 describe AnimeScraper do
   describe 'invalid anime' do
     it 'should return nil' do
@@ -82,7 +85,7 @@ describe AnimeScraper do
     end
 
     it 'should be able to scrape japanese titles' do
-      html = create_left_detail '<div><span>Japanese:</span> ブリーチ, ブリー</div>'
+      html = create_left_detail '<div><span>Japanese:</span> ブリーチ, ブリー</div>'.force_encoding('utf-8')
       anime = AnimeScraper.scrape(html)
       anime.other_titles.should eq({ japanese: %w(ブリーチ ブリー)})
     end
@@ -130,7 +133,7 @@ describe AnimeScraper do
     it 'should be able to scrape score' do
       html = create_left_detail '<div><span>Score:</span>8.56</div>'
       anime = AnimeScraper.scrape(html)
-      anime.members_score.should be 8.56
+      anime.members_score.should eq 8.56
     end
 
     it 'should be able to scrape popularity' do

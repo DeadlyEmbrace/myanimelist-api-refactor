@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 describe MangaScraper do
   describe 'invalid manga' do
     it 'should return nil' do
@@ -136,7 +139,7 @@ describe MangaScraper do
     it 'should be able to scrape score' do
       html = create_left_detail '<div><span>Score:</span>8.56</div>'
       manga = MangaScraper.scrape html
-      manga.members_score.should be 8.56
+      manga.members_score.should eq 8.56
     end
 
     it 'should be able to scrape popularity' do
