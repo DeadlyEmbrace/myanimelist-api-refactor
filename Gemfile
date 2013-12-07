@@ -6,6 +6,8 @@ gem 'rake', '10.1.0'
 gem 'httparty', '0.12.0'
 gem 'nokogiri', '1.6.0'
 gem 'chronic', '0.10.2'
+gem 'dotenv', '0.9.0'
+gem 'rack-cors', '0.2.9'
 
 group :development, :test do
   gem 'rspec', '2.14.1'
