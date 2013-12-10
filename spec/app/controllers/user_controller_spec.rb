@@ -67,6 +67,18 @@ describe 'UserController' do
     end
   end
 
+  describe :animelist_add do
+    it 'should require authentication' do
+      post '/user/astraldragon88/animelist/1'
+      last_response.status.should eq 401
+    end
+
+    it 'should return users anime list' do
+      post '/user/astraldragon88/animelist/1', {}, 'REMOTE_USER' => 'test'
+      last_response.should be_ok
+    end
+  end
+
   describe :mangalist do
     manga_list_url = 'http://myanimelist.net/malappinfo.php?u=astraldragon88&status=all&type=manga'
 

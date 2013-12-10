@@ -1,4 +1,9 @@
 MyAnimeListApiRefactor::App.controllers :user do
+  before :animelist_add do
+    authenticate unless authenticated?
+  end
+
+
   get :index, with: :username do
     profile_page = MALRequester.get("/profile/#{params[:username]}")
     profile = ProfileScraper.scrape(profile_page.body)
@@ -22,6 +27,10 @@ MyAnimeListApiRefactor::App.controllers :user do
     else
       anime_list.to_json
     end
+  end
+
+  post :animelist_add, map: '/user/:username/animelist/:anime_id' do
+    halt 400, 'Please supply a valid anime id' unless params[:anime_id] =~ /\d+/
   end
 
   get :mangalist, map: '/user/:username/mangalist' do
