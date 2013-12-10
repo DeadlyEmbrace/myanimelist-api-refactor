@@ -31,12 +31,11 @@ module MyAnimeListApiRefactor
     end
 
     def authenticate
-      unless authenticated?
-        unauthenticated! unless auth.provided?
-        bad_request! unless auth.basic?
-        unauthenticated! unless authenticate_with_mal(*auth.credentials)
-        request.env['REMOTE_USER'] = auth.username
-      end
+      return if authenticated?
+      unauthenticated! unless auth.provided?
+      bad_request! unless auth.basic?
+      unauthenticated! unless authenticate_with_mal(*auth.credentials)
+      request.env['REMOTE_USER'] = auth.username
     end
   end
 end
