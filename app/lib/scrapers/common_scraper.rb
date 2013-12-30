@@ -94,15 +94,19 @@ class CommonScraper
   end
 
   def self.scrape_related_manga(related_manga_text, expression)
+    results = []
+
     if related_manga_text.match expression
       $1.scan(%r{<a href="(http://myanimelist.net/manga/(\d+)/.*?)">(.+?)</a>}) do |url, manga_id, title|
-        manga.related_manga << {
+        results << {
           :manga_id => manga_id,
           :title => title,
           :url => url
         }
       end
     end
+
+    results
   end
 
   def self.parse_alternative_titles(left_detail_content)
