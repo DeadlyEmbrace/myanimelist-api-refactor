@@ -82,10 +82,13 @@ describe "AnimeController" do
   describe :upcoming do
     upcoming_url = 'http://myanimelist.net/anime.php?o=2&w=&c[]=a&c[]=b&c[]=c&c[]=d&c[]=e&c[]=f&c[]=g&cv=1&em=0&ed=0&ey=0&sm=7&sd=10&sy=2013'
 
+    before(:each) do
+      allow(Date).to receive(:today).and_return Date.parse('2013-07-10')
+      allow(AnimeSearchScraper).to receive(:scrape).and_return nil
+    end
+
     it 'should hit the MyAnimeList upcoming url with todays date if no date is provided' do
       stub_request :get, upcoming_url
-      allow(Chronic).to receive(:parse).and_return Chronic.parse('2013-07-10')
-      allow(AnimeSearchScraper).to receive(:scrape).and_return nil
       get '/anime/upcoming'
       assert_requested :get, upcoming_url
     end
@@ -93,7 +96,6 @@ describe "AnimeController" do
     it 'should hit the MyAnimeList upcoming url when passed a date' do
       date_url = 'http://myanimelist.net/anime.php?o=2&w=&c[]=a&c[]=b&c[]=c&c[]=d&c[]=e&c[]=f&c[]=g&cv=1&em=0&ed=0&ey=0&sm=7&sd=15&sy=2013'
       stub_request :get, date_url
-      allow(AnimeSearchScraper).to receive(:scrape).and_return nil
       get '/anime/upcoming?start_date=2013-07-15'
       assert_requested :get, date_url
     end
@@ -101,16 +103,12 @@ describe "AnimeController" do
     it 'should hit the MyAnimeList anime search url with pagination' do
       paging_url = upcoming_url + '&show=40'
       stub_request :get, paging_url
-      allow(Chronic).to receive(:parse).and_return Chronic.parse('2013-07-10')
-      allow(AnimeSearchScraper).to receive(:scrape).and_return nil
       get 'anime/upcoming?page=3'
       assert_requested :get, paging_url
     end
 
     it 'should return a status code 200' do
       stub_request :get, upcoming_url
-      allow(Chronic).to receive(:parse).and_return Chronic.parse('2013-07-10')
-      allow(AnimeSearchScraper).to receive(:scrape).and_return nil
       get '/anime/upcoming'
       last_response.should be_ok
     end
@@ -118,7 +116,6 @@ describe "AnimeController" do
     it 'should return upcoming results as json' do
       upcoming_results = [Anime.new, Anime.new]
       stub_request :get, upcoming_url
-      allow(Chronic).to receive(:parse).and_return Chronic.parse('2013-07-10')
       allow(AnimeSearchScraper).to receive(:scrape).and_return upcoming_results
       get '/anime/upcoming'
       last_response.body.should eq upcoming_results.to_json
@@ -130,7 +127,6 @@ describe "AnimeController" do
       stub_request(:get, upcoming_url)
         .to_return(status: 302, body: '', headers: { Location: redirect_url })
       stub_request :get, redirect_url
-      allow(Chronic).to receive(:parse).and_return Chronic.parse('2013-07-10')
       allow(AnimeScraper).to receive(:scrape).and_return upcoming_results
       get '/anime/upcoming'
       last_response.body.should eq [upcoming_results].to_json
@@ -194,7 +190,7 @@ describe "AnimeController" do
     it 'should hit the MyAnimeList top anime url with filter type' do
       filter_url = top_anime_url + '?type=ova'
       stub_request :get, filter_url
-      get '/anime/top/OVA'
+      get '/anime/top/ova'
       assert_requested :get, filter_url
     end
 
@@ -208,7 +204,7 @@ describe "AnimeController" do
     it 'should it the MyAnimeList top anime url with filter and pagination' do
       filter_paging_url = top_anime_url + '?type=ova&limit=40'
       stub_request :get, filter_paging_url
-      get 'anime/top/OVA?page=3'
+      get 'anime/top/ova?page=3'
       assert_requested :get, filter_paging_url
     end
 
