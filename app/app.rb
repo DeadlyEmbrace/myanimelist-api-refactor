@@ -1,5 +1,6 @@
-require 'active_support/json'
 require 'cgi/util'
+require 'active_support/json'
+
 
 module MyAnimeListApiRefactor
   class App < Padrino::Application
@@ -7,7 +8,20 @@ module MyAnimeListApiRefactor
     register Padrino::Mailer
     register Padrino::Helpers
 
+    disable :raise_errors
     enable :sessions
+
+    before do
+      content_type 'application/json'
+    end
+
+    def handle_400(message = 'Bad Request')
+      halt 400, { error: message }.to_json
+    end
+
+    def handle_404(message = 'Not Found')
+      halt 404, { error: message }.to_json
+    end
 
     ##
     # Caching support

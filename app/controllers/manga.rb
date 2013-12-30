@@ -4,8 +4,7 @@ MyAnimeListApiRefactor::App.controllers :manga do
     manga = MangaScraper.scrape(manga_page.body)
 
     if manga.nil?
-      status 404
-      body "Manga with id #{params[:id]} could not be found"
+      handle_404 "Manga with id #{params[:id]} could not be found"
     else
       manga.to_json
     end

@@ -9,8 +9,7 @@ MyAnimeListApiRefactor::App.controllers :user do
     profile = ProfileScraper.scrape(profile_page.body)
 
     if profile.nil?
-      status 404
-      body "User #{params[:username]} could not be found"
+      handle_404 "User #{params[:username]} could not be found"
     else
       profile.to_json
     end
@@ -22,15 +21,14 @@ MyAnimeListApiRefactor::App.controllers :user do
     anime_list = AnimeListScraper.scrape(anime_list_page.body)
 
     if anime_list.nil?
-      status 404
-      body "User #{params[:username]} could not be found"
+      handle_404 "User #{params[:username]} could not be found"
     else
       anime_list.to_json
     end
   end
 
   post :animelist_add, map: '/user/:username/animelist/:anime_id' do
-    halt 400, 'Please supply a valid anime id' unless params[:anime_id] =~ /\d+/
+    handle_400 'Please supply a valid anime id' unless params[:anime_id] =~ /\d+/
   end
 
   get :mangalist, map: '/user/:username/mangalist' do
@@ -39,8 +37,7 @@ MyAnimeListApiRefactor::App.controllers :user do
     manga_list = MangaListScraper.scrape(manga_list_page.body)
 
     if manga_list.nil?
-      status 404
-      body "User #{params[:username]} could not be found"
+      handle_404 "User #{params[:username]} could not be found"
     else
       manga_list.to_json
     end
@@ -55,8 +52,7 @@ MyAnimeListApiRefactor::App.controllers :user do
     history = UserHistoryScraper.scrape(history_page.body)
 
     if history.nil?
-      status 404
-      body "User #{params[:username]} could not be found"
+      handle_404 "User #{params[:username]} could not be found"
     else
       history.to_json
     end

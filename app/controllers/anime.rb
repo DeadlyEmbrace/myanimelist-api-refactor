@@ -57,8 +57,7 @@ MyAnimeListApiRefactor::App.controllers :anime do
     anime = AnimeScraper.scrape(anime_page.body)
 
     if anime.nil?
-      status 404
-      body "Anime with id #{params[:id]} could not be found"
+      handle_404 "Anime with id #{params[:id]} could not be found"
     else
       anime.to_json
     end
