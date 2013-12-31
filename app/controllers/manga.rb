@@ -1,6 +1,6 @@
 MyAnimeListApiRefactor::App.controllers :manga do
   get :index, with: :id do
-    manga_page = MALRequester.get "/manga/#{params[:id]}"
+    manga_page = mal_requester.manga(params[:id])
     manga = MangaScraper.scrape(manga_page.body)
 
     if manga.nil?
@@ -11,10 +11,7 @@ MyAnimeListApiRefactor::App.controllers :manga do
   end
 
   get :search, with: :query do
-    page = (params[:page].to_i - 1) * 20 unless params[:page].nil?
-    url = "/manga.php?c[]=a&c[]=b&c[]=c&c[]=d&c[]=e&c[]=f&c[]=g&q=#{CGI.escape(params[:query])}"
-    url << "&show=#{page}" unless page.nil?
-    search_page = MALRequester.get url
+    search_page = mal_requester.manga_search(query: params[:query], page: params[:page])
 
     # If the search page only has one result, MyAnimeList redirects to the
     # anime details page of that results.
